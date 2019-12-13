@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import List
+from os import listdir
 
 
 possible_date_formats = ["%d-%b-%y %H:%M:%S", "%d %b %Y %H:%M:%S"]
@@ -41,6 +42,28 @@ class ReadingSet:
             return ReadingSet.from_string(
                 f.read(), has_tail if has_tail is not None else not ("notail" in path)
             )
+
+    def from_folder(
+        path: str, has_tail: bool = None, terminate_on_error: bool = False
+    ) -> "ReadingSet":
+        """Read and merge a number of sets of readings from a folder."""
+        if path[-1] != "/":
+            raise ValueError("path must end in '/'")
+
+        sets = []
+        for file_name in listdir(path):
+            if terminate_on_error:
+                sets.append(ReadingSet.from_file(path + file_name, has_tail=has_tail))
+            else:
+                try:
+                    sets.append(
+                        ReadingSet.from_file(path + file_name, has_tail=has_tail)
+                    )
+                except:
+                    print(
+                        "[WARNING]: failed to parse file '{}'".format(path + file_name)
+                    )
+        return ReadingSet.merge(*sets)
 
 
 class Reading:
