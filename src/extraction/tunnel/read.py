@@ -39,7 +39,7 @@ class ReadingSet:
         """Read the output file of a wind tunnel run."""
         return ReadingSet(
             [
-                Reading.from_string(line)
+                Reading.from_string(line, has_tail=has_tail)
                 for line in string.split("\n")[1:]
                 # Sequential checks to ensure no out of bounds error
                 if len(line) > 0 and len(line) >= 2 and line[:2] != "//"
@@ -64,7 +64,7 @@ class ReadingSet:
         """
         with open(path, "r") as f:
             return ReadingSet.from_string(
-                f.read(), has_tail if has_tail is not None else not ("notail" in path)
+                f.read(), has_tail if (has_tail is not None) else not ("notail" in path)
             )
 
     def from_folder(
@@ -88,6 +88,10 @@ class ReadingSet:
                         "[WARNING]: failed to parse file '{}'".format(path + file_name)
                     )
         return ReadingSet.merge(*sets)
+
+    def offset_groups(self) -> dict:
+        """Split the set into subsets based on which offset each should use."""
+        return self.group(Reading.offset_key)
 
 
 class Reading:
@@ -120,6 +124,40 @@ class Reading:
         self.wing_angle = wing_angle
         self.flap_angle = flap_angle
         self.has_tail = has_tail
+
+    def offset(self, other: "Reading") -> "Reading":
+        """Copy this reading after adjusting the force/moment values for calibration."""
+        return Reading(
+            self.timestamp,
+            self.lift - other.lift,
+            self.drag - other.drag,
+            self.side - other.side,
+            self.pitch_moment - other.pitch_moment,
+            self.roll_moment - other.roll_moment,
+            self.yaw_moment - other.yaw_moment,
+            self.yaw,
+            self.pitch,
+            self.airspeed,
+            self.aerofoil,
+            self.wing_angle,
+            self.flap_angle,
+            self.has_tail,
+        )
+
+    @staticmethod
+    def offset_key(reading: "Reading") -> str:
+        """Determine a unique identifier for this reading's offset type."""
+        return "_".join(
+            [
+                str(s)
+                for s in (
+                    reading.aerofoil,
+                    reading.has_tail,
+                    reading.wing_angle,
+                    reading.flap_angle,
+                )
+            ]
+        )
 
     @staticmethod
     def from_string(string: str, has_tail: bool = True) -> "Reading":
