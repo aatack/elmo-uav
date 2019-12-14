@@ -1,5 +1,6 @@
+from typing import Callable, List, Tuple
+from collections import defaultdict
 from datetime import datetime
-from typing import List
 from os import listdir
 
 
@@ -11,6 +12,28 @@ class ReadingSet:
         """Store a sit of wind tunnel readings."""
         self.readings = readings
 
+    def __len__(self) -> int:
+        """Return the number of readings in the set."""
+        return len(self.readings)
+
+    def where(self, predicate: Callable[["Reading"], bool]) -> "ReadingSet":
+        """Filter the reading set into a new set."""
+        return ReadingSet([reading for reading in self.readings if predicate(reading)])
+
+    def partition(self, predicate: Callable[["Reading"], bool]) -> tuple:
+        """Split the reading into two based on a partition."""
+        trues, falses = [], []
+        for reading in self.readings:
+            (trues if predicate(reading) else falses).append(reading)
+        return ReadingSet(trues), ReadingSet(falses)
+
+    def group(self, key: Callable[["Reading"], any]) -> dict:
+        """Group the readings according to a keying function."""
+        groups = defaultdict(list)
+        for reading in self.readings:
+            groups[key(reading)].append(reading)
+        return {k: ReadingSet(v) for k, v in groups.items()}
+
     @staticmethod
     def from_string(string: str, has_tail: bool = True) -> "ReadingSet":
         """Read the output file of a wind tunnel run."""
@@ -18,7 +41,8 @@ class ReadingSet:
             [
                 Reading.from_string(line)
                 for line in string.split("\n")[1:]
-                if len(line) > 0
+                # Sequential checks to ensure no out of bounds error
+                if len(line) > 0 and len(line) >= 2 and line[:2] != "//"
             ]
         )
 
@@ -76,9 +100,9 @@ class Reading:
         pitch_moment: float,
         roll_moment: float,
         yaw_moment: float,
-        pitch: float,
         yaw: float,
-        windspeed: float,
+        pitch: float,
+        airspeed: float,
         aerofoil: str,
         wing_angle: float,
         flap_angle: float,
@@ -90,8 +114,8 @@ class Reading:
         self.pitch_moment = pitch_moment
         self.yaw_moment = yaw_moment
         self.roll_moment = roll_moment
-        self.pitch, self.yaw = pitch, yaw
-        self.windspeed = windspeed
+        self.yaw, self.pitch = yaw, pitch
+        self.airspeed = airspeed
         self.aerofoil = aerofoil
         self.wing_angle = wing_angle
         self.flap_angle = flap_angle
