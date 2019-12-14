@@ -1,7 +1,8 @@
-from typing import Callable, List, Tuple
+from typing import Callable, List, Tuple, Union
 from collections import defaultdict
 from datetime import datetime
 from os import listdir
+import src.utils.plotting as pu
 
 
 possible_date_formats = ["%d-%b-%y %H:%M:%S", "%d %b %Y %H:%M:%S"]
@@ -92,6 +93,15 @@ class ReadingSet:
     def offset_groups(self) -> dict:
         """Split the set into subsets based on which offset each should use."""
         return self.group(Reading.offset_key)
+
+    def plot(self, x: pu.PlotHandle, y: pu.PlotHandle, z: pu.PlotHandle = None):
+        """Plot a property of each reading in either two or three dimensions."""
+        x, y, z = (pu.parse_plot_handle(d) for d in (x, y, z))
+        pu.scatter(
+            [x(r) for r in self.readings],
+            [y(r) for r in self.readings],
+            [z(r) for r in self.readings] if z is not None else None,
+        )
 
 
 class Reading:
