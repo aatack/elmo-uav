@@ -1,0 +1,60 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Design Specification} \label{chapter:design-specification}
+
+\section{General requirements} \label{sec:design-specification:general-requirements}
+
+As this was a new project, it had not inherited any requirements from previous attempts. 
+The aircraft would not be competing, so had no requirements or constraints based on competition entry. 
+Based on our project supervisor, we were to aim for a maximum weight of 7 kg, and a maximum wingspan of approximately 2 m.
+These were mostly for transportability and based on his experience (Towell, 2019).  % TODO: reference properly
+The aircraft was required to have the ability to be flown with the propulsion unit in different location on the model in order to compare the performance of each and find the most efficient. 
+Beyond these, the design space was very open to our exploration and interpretation. 
+
+\section{Hardware requirements} \label{sec:design-specification:hardware-requirements}
+
+Again, these were very open and relaxed to the team.
+The general requirements are listed below.
+
+\begin{itemize}
+    \item The UAV is to provide a responsive, reliable, and robust flying platform for testing of the project objectives.
+        This generally means for a UAV that it must have:
+        \begin{itemize}
+            \item a wing to provide sufficient lift in all expected operating conditions;
+            \item a fuselage for structure and housing of electronics and components;
+            \item a tailplane to provide stability and control to the aircraft;
+            \item control surfaces to provide control in all roll axes of the aircraft;
+            \item propulsion unit(s) to facilitate flight, and for testing the project objectives;
+            \item landing gear to allow for safe and reliable take-off and landing.
+        \end{itemize}
+    \item The UAV is to be mechanically reliable and robust.
+    \item It is to be easily mantainable, to allow for fixes and alterations using simple tools and knowledge.
+\end{itemize}
+
+The team also defined some further requirements based on the project objectives.
+
+\begin{itemize}
+    \item The UAV be simple enough to provide easy alteration of the propulsion systems, and so that the project would not be measuring the results of drastic design alterations from the norm, other than those required to cope with the project objective. 
+    \item The propulsion system be configurable into a large variety of versions, with the UAV design being able to cope with all these changes. 
+\end{itemize}
+
+\section{System requirements} \label{sec:design-specification:system-requirements}
+
+The team set several requirements of the UAV systems, mostly to allow for analysis and interpretation of results either in real time or post flight, or a combination of both. 
+
+\begin{itemize}
+    \item Have a safe and reliable electrical system to provide power and control to propulsion, avionics and other systems.
+        \begin{itemize}
+            \item To achieve this, it was quickly noted that batteries would need to be sized appropriately to provide sufficient voltage and current to components for a long enough duration to sustain flight long enough to achieve tests runs. 
+            \item The ESC components of the propulsion would require passive cooling measures such as airflow ducts to prevent overheating and failure. 
+            \item The controls of the control surfaces and propulsion would require mapping to an adequate ground control device such as a remote control, including granular control of direct control surface and flap manipulation, control surface trim, throttle control of the propulsion and potentially the ability to shut down one of two propulsion units to test the UAV’s ability in an asymmetric thrust scenario. 
+        \end{itemize}
+    \item Have a GPS tracking module to allow for either real time or post flight analysis of GPS telemetry. 
+    \item Have a speed sensor to for either real time or post flight analysis of speed. 
+\end{itemize}
+
+Lastly the team hoped to add an autopilot functionality that would ensure the aircraft flew straight and level in order to provide a reliable test bed for experiments, such that the pilot would not be overburdened trying to fly the aircraft and initiate tests at the same time, however this was not recognised as essential, and would be a ‘nice to have’ feature.
+
+\end{document}
