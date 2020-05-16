@@ -1,9 +1,124 @@
 \documentclass[../../main.tex]{subfiles}
 
+% Uses images 218, 220
+
 \begin{document}
 
 \chapter{Project Review} \label{chapter:project-review}
 
+\section{Design and manufacture} \label{sec:project-review:design-and-manufacture}
 
+The assessment of the influence which different power unit layouts have of the vehicle efficiency involves a great magnitude of variables, especially when the test is carried on the same vehicle as in the case of ELMO UAV.
+Each configuration requires different specifications in order to be mounted and effects the behaviour of the aircraft in different manners.
+A pusher mounted motor, as an example, will have the tendency to increase the wing twist behaviour due to the additional weight on the trailing edge of the wing.
+Furthermore, for the cases of a tail or nose mounted units, the tail surfaces will be influenced since they are positioned in the flow field of these.
+These are all factors that have a potential influence on the UAV’s efficiency.
+Hence, in order to have accurate estimates on the influence of the propulsion location on performance multiple vehicles would have to be designed.
+Each one exploiting the advantages of each configuration. 
+
+Due to the time and budget constraints, only one UAV could be built for this project.
+Hence the team opted for a simple design which could accommodate all the possible layouts at the expense of efficiency.
+The focus was set on obtaining a neutral platform characterized by a constant weight and centre of gravity.
+Any increase in cross sectional area caused by mounting structures or aerodynamic effect was considered to be part of the influences induced by the power unit layouts. 
+
+Due to the outbreak of COVID-19 the team was not able to carry out the flight tests planned.
+Hence, the absence of the data necessary to compare the effects of each propulsion layout on the UAV performance.
+Despite of that, throughout the design and development of ELMO UAV, the impact of each propulsion configuration on the aircraft design was assessed.
+The final model does not represent the optimal design for efficiency instead, perhaps, is the conjuncture of all the compromises demanded to ensure the airworthiness of the UAV when flown in any layout. 
+
+As previously discussed, the layout of power unit utilized exhibited great influence on the centre of gravity position as well as the overall weight.
+The configurations which offered the lightest model are the fuselage mounted power units.
+These do not require additional elements from motor, battery and ESC since the housings were integrated in the nose and tail designs.
+Thanks to the positioning of the battery and ESC in the front section of the fuselage, the nose mounted power unit layout presents as positive influence over the CG position by moving it forward to 40\% chord length.
+Such positive effect is reduced when for the same battery and ESC position the motor is located on the tail.
+This resulted in a shift in CG to 60\% chord length.
+A single engine layout, although lighter, demands more reliable components due to the absence of a second propulsion unit in case of engine failure.
+Furthermore, for the case of a tail mounted motor, there is the risk of the propeller striking the runway during take-off or landing.
+Thus, the addition of a lower vertical stabilizer equipped with a tip bumper in order to ensure a propeller strike. 
+
+For any wing layout additional components (Power Unit Cell) are demanded in order to be mounted.
+In addition to this, the use of two power units leads to a larger increase in weight compared to a single motor configuration.
+Moreover, the roll rate of the UAV is dependent on the location of the power unit along the wingspan.
+For this reason, the ailerons have been sized for a tip mounted motor layout.
+The propulsion unit position also influences the design of the wing structure.
+The bending moment induced by the wing motor configuration closest to the fuselage is much smaller in magnitude than the tip configuration.
+Thus, the need for a stiffer wing structure despite being heavier.
+The presence of the 3D printed inserts for the mid-wingspan configurations led to the need of redesigning the flaps.
+These had to be split causing a reduction in efficiency.
+Thus, the need to increase the flaps’ chord length in order to achieve the CLmax required for take-off. 
+
+The rudder was subject to a resizing process in order to ensure the airworthiness of the UAV when in tip PU configuration.
+A motor failure in such configuration would lead to a large yaw moment induced by the large moment arm.
+Thus, the increase in the rudder size.
+It was then established to be coupled with a nose configuration so to reduce the yawing moment in the case of motor failure.
+This although led to a further increase in weight caused by the addition of a third motor unit.
+Despite this increase, the overall weight remained below the set limit of 7kg. 
+
+The main difference exhibited between tractor and pusher configurations is the shift in centre of gravity.
+This results to move backwards for a pusher configuration respect to its position at 53\% in the case of a tractor configuration.
+
+\section{Budget} \label{sec:project-review:budget}
+
+As parts were designed and the construction of the model was established, different elements were added to the budget in order to keep track of costs and maintain the budget.
+This included both costs for parts we knew we would need and estimations of costs for parts that were unclear earlier on.
+One difficulty we ran into was the cost of 3D printed parts, as the estimations made for the costs of these parts was significantly lower than the final cost.
+This was due to the change from PLA to ABS and Nylon construction and also the requirement to use a certain supplier for the 3D printing if it was paid for by the 3D printing fund, which was much more expensive than other suppliers we had originally looked at to budget for the parts.
+This meant that at the time of printing (just as the university shutdown happened) the cost  of the 3D printed parts increased massively, and we needed to change the material of a few of the 3D printed parts in order to bring the cost down.
+This meant that either the strength of these parts was reduced, or we modified the design in order to accommodate, meaning that the weight would increase, and there was a trade-off here to allow for enough strength while keeping the mass as low as possible.
+With a larger budget we would have been able to use more Nylon in the 3D printing and so reduced the mass of the aircraft. 
+
+\importimage{budget}{complete budget table.}{Budget table}{0.9}
+
+The final budget is shown in Figure 85 and it shows costs that happened in black text, and items that were budgeted for but were never bought due to the university shutdown in blue text.
+The budget was maximised as much as possible in order to cover the costs of the 3D printing, however the 3D printing budget itself was not fully accounted for, with over £85 remaining, due to the fact that items bought using this budget had to be from a certain supplier which only made parts from Nylon SLS which increased that parts cost by around double for Nylon SLS parts and more for ABS or PLA parts.
+This meant that other parts could not be made using this budget as they would go overbudget, and there was no option of supplementing the costs from another part of the funding.
+The university funding was fully allocated, with much of the spending being on parts and supplies for the wind tunnel model, with the carbon fibre parts ordered just before the university shutdown while the group still thought that the building of the final flight model would be possible.
+The external funding is also fully accounted for, with the parts ordered being the initial purchases for the electronics of the flight model, along with the expendable flight vehicle that was to be used for testing of the avionics and autopilot. 
+
+\section{Impact of Covid-19} \label{sec:project-review:impact-of-covid-19}
+
+\subsection{Progress to March} \label{sec:project-review:impact-of-covid-19:progress-to-march}
+
+By the 13th, the final design was essentially finished and parts were in the process of being ordered, or finalized for being ordered (such as 3D printed or foam cut parts).
+The presence and slow effect of the outbreak in the country altered our schedule somewhat, and these would have likely been finished earlier without it.
+Initially the group went ahead in the hope that restrictions may be lifted in time to resume construction and testing, so one of the many 3D printed parts was ordered as a test piece, however it soon became clear that lockdown would remain for an extended period of time and we would be unable to build or test our design.
+At this point the groups focus shifted onto finalising the design in CAD and mathematically, and surrounding admin work (ensuring budget would still be met despite not being used etc), so that they could be effectively communicated in the project outputs. 
+
+The thin green lines show what had actually been completed relative to our initial timeframe estimates.
+As can be seen for some activities, we were behind schedule.
+This can be partly attributed to planning, and unforeseen circumstances such as the wind tunnel being fully booked much farther ahead in time than we had planned for, and as such we were thrown off by the fact that we would not be able to begin testing until after Easter.
+This widened the range in which we planned to run a physical flight test due to the possibility of needing to fly before wind tunnel tests, which meant we needed to be significantly more confident in the design, as no aspects would have been physically validated beforehand. 
+
+\subsection{Adjustments around restrictions} \label{sec:project-review:impact-of-covid-19:adjustments-around-restrictions}
+
+Once restrictions were put in place, the group quickly shifted to meetings over Skype, and then Microsoft Teams, both as a group and with our supervisors.
+These were held mostly held weekly once everyone had settled back into routine, so that communication between ourselves and our supervisors could be maintained.
+With regards to the project, the focus quickly shifted from what had been an attempt to build and test, to maximising our efficiency as a group in work on the project outputs, and work quickly began on polishing our CAD and mathematical work (represented by the lines extended beyond the outbreak announcement on the Gantt chart) to be presented in the report, presentation and video, as well as work on preparing for, and then working on these outputs. 
+
+\subsection{Planned future work} \label{sec:project-review:planned-future-work}
+
+The university took the decision to end term a week early, on the 13th of March.
+Rates of work had already changed by this point and we were off the original project schedule, as we knew that we would not be building, and as such had the time to refine the mathematical and 3D design to present instead of a physical model and results.  
+
+However, had the COVID-19 outbreak not happened, the project would have looked very different from what it looked like on March the 13th, and what it looks like now.
+Observing figure 87, there are two ways to look at what we would have planned to do, which is either based on the original project plan, or what had happened to date.
+The thin green lines show what had been completed, and as it can be seen, we were partly behind schedule for some activities (any missing before the purple line are unknown or unimportant to this section).
+Had the order to stop not come through, we would have finalised mathematical and CAD aspects of the design by approximately the end of the thin green line for ‘Final model design’, which is where we finished initially, work past that shown in ‘Mathematical analysis’ and ‘CAD design’ are mostly a result of polishing, though a minor change to the tailplane mounting angle (by 0.2 degrees, not significant enough to be a problem) did occur as a result.  
+
+The thin red lines show the teams estimate for what would have occurred had the outbreak not happened based on what had been completed already, and the purple line shows the date of the early end to term.
+We had already begun part ordering, and had finalised many of the 3D printed parts, foam cut parts, electronics, avionics and fasteners to order.
+Many had been ordered or were prepared to be before it became clear that it would be pointless.
+Other parts that were being finalised up to the design finish date would have been ordered as soon as they were ready.  
+
+\importimage{gantt-chart}{initial plan compared with how the project progressed and what would have happened next.}{Gantt chart}{0.9}
+
+The original plan was to have construction and testing complete by Easter and to be making project deliverables over Easter and after to submit by the original deadline.
+However, instead we would have been finishing the construction of the UAV over Easter, and have been working on aspects of the report, video and presentation that could have been done, prior to inserting aspects about the final construction and testing into all three.
+The team respects that this is off the original plan, and that it would have been more of a ‘crunch time’, however it is felt by all, including our supervisor that it would have been possible, and up to the end we were proceeding as though it would have been; planning new days for wind tunnel testing after Easter, and flight test days with the RC plane group, and our own tests with a Pilot whom we could pay for his services.  
+
+At the start of the project we were made aware of the potential for commercial progression.
+Ideally, had the wind tunnel, or flight tests been completed, and results shown that changes were required, these would have been documented and worked upon through analytical processes, CFD, FEA, and iteration in CAD to produce a refined concept of the next UAV.
+At the conclusion of design, our budget was projected to be near its limit, therefore we would not have been able to produce a second model based on further design work.
+However, had the results and further design work shown enough promise, our team could have worked further with Dr. Kirk to continue the production at a commercial level, with the intention of eventually expanding the scale of the design, or another team could have picked up where our design left off and continued the process of design, testing and refinement on another GDP budget. 
 
 \end{document}

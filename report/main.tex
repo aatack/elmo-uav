@@ -22,7 +22,7 @@
     \usepackage[toc,page]{appendix}
 
     \linespread{1.5}
-    \graphicspath{{./}{./chapters/2-design-brief/}{./chapters/4-design-process/images/}}
+    \graphicspath{{./}{./chapters/2-design-brief/}{./chapters/4-design-process/images/}{./chapters/5-testing-and-evaluation/images/}{./chapters/6-project-review/images/}}
     \colorlet{punct}{red!60!black}
     \definecolor{background}{HTML}{EEEEEE}
     \definecolor{delim}{RGB}{20,105,176}
@@ -41,9 +41,9 @@
 \newcommand{\importimage}[4]{
     \begin{figure}[H]
         \begin{center}
-        \includegraphics[width=#4\textwidth]{#1.png}
+        \includegraphics[width=#4\textwidth]{#1}
         \caption[#3]{#2}
-        \label{fig:#1}
+        \label{fig:#1}  % TODO: fix figure labelling
         \end{center}
     \end{figure}
 }
