@@ -1,0 +1,16 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter*{Appendices} \label{chapter:appendices}
+
+\addcontentsline{toc}{chapter}{Appendices}
+\renewcommand{\thesection}{\Alph{section}}
+\setcounter{section}{0}
+\renewcommand*{\theHsection}{chX.\the\value{section}}
+
+\section{Example} \label{appendix:example}
+
+Content.
+
+\end{document}

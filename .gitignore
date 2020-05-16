@@ -1,3 +1,27 @@
+# Build artefacts
 *__pycache__*
-data/
+*.synctex.gz
+*.log
+*.aux
+*.out
+*.fdb_latexmk
+*.fls
+*.toc
+*.lof
+*.lot
+reports/draft/main.pdf
+reports/draft/**/main.pdf
+reports/poster/main.pdf
+
+# Entry point
 main.py
+
+# IDE & CLI files
+.vscode
+*.bat
+
+# Data
+data/
+
+# PDF outputs
+*.pdf
