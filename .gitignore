@@ -12,6 +12,7 @@
 reports/draft/main.pdf
 reports/draft/**/main.pdf
 reports/poster/main.pdf
+tmp/*
 
 # Entry point
 main.py

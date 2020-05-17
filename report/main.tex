@@ -1,6 +1,9 @@
-\documentclass[11pt]{report}
+\documentclass[11pt,landscape]{report}
 
-    \usepackage[a4paper, margin=2cm]{geometry}
+    \usepackage[a3paper, margin=2cm]{geometry}
+    \usepackage{multicol}
+    \raggedcolumns
+    \setlength{\columnsep}{1cm}
     \usepackage{subfiles}
     \usepackage[hidelinks]{hyperref}
     \usepackage{bookmark}
@@ -21,7 +24,6 @@
     \usepackage{float}
     \usepackage[toc,page]{appendix}
 
-    \linespread{1.5}
     \graphicspath{{./}{./chapters/2-design-brief/}{./chapters/4-design-process/images/}{./chapters/5-testing-and-evaluation/images/}{./chapters/6-project-review/images/}}
     \colorlet{punct}{red!60!black}
     \definecolor{background}{HTML}{EEEEEE}
@@ -37,11 +39,21 @@
 
 % Commands
 
+% Chapter name, chapter label
+\newcommand{\newchapter}[2]{
+    {
+        \let\clearpage\relax
+        \columnbreak
+        \chapter{#1} \label{chapter:#2}
+    }
+}
+
 % Image file name, caption, figure title in figure list, textwidth multiplier
 \newcommand{\importimage}[4]{
     \begin{figure}[H]
         \begin{center}
-        \includegraphics[width=#4\textwidth]{#1}
+        \includegraphics[width=#4\columnwidth]{#1}
+        % \includegraphics{#1}
         \caption[#3]{#2}
         \label{fig:#1}  % TODO: fix figure labelling
         \end{center}
@@ -57,6 +69,7 @@
 }
 
 \begin{document}
+\begin{multicols*}{3}
 
 \begin{titlepage}
     \begin{center}
@@ -98,15 +111,8 @@
 \end{abstract}
 
 \tableofcontents
-\begingroup
-\let\clearpage\relax
-\pagebreak
-\listoffigures
-\pagebreak
-\listoftables
-\endgroup
 
-\subfile{nomenclature/main}
+% \subfile{nomenclature/main}
 \subfile{chapters/0-introduction/main}
 \subfile{chapters/1-background-research/main}
 \subfile{chapters/2-design-brief/main}
@@ -118,4 +124,5 @@
 \subfile{bibliography/main}
 \subfile{appendix/main}
 
+\end{multicols*}
 \end{document}
