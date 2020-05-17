@@ -8,74 +8,75 @@
 
 \section{Brief} \label{sec:design-specification:brief}
 
-This project aimed to create a configurable, stable and reliable test platform for determining the effect of the position of propulsion systems on the efficiency of an electric aerial vehicle.
+This project aimed to create a configurable, stable, and reliable test platform for determining the effect of the position of propulsion systems on the efficiency of an electric aerial vehicle.
 Specific emphasis was placed on isolating the effect of the location of the propellers on the power required to sustain flight at a particular velocity, through mechanisms such as promoting airflow over lifting surfaces or counteracting wingtip vortices, while negating the effect of other variables such as the mass or frontal area by keeping them constant. 
 
-Integral to the success of this project was the construction of a robust UAV, representing a typical and generic aircraft and as such capable of producing results that are widely applicable, but which can have propulsion units fixed to it in an entirely modular fashion.
-This allows the construction of a wide range of flight configurations, altering the characteristics of the propulsion system by changing its position between the front and rear of the fuselage; multiple locations along the span of the wing, including the wingtips; above or below the wing; or in a tractor or pusher configuration. 
+Integral to the success of this project was the construction of a robust UAV, representing a typical and generic aircraft $-$ and as such capable of producing results that are widely applicable $-$ but which can have propulsion units fixed to it in an entirely modular fashion.
+This enables the construction of a wide range of flight configurations, altering the characteristics of the propulsion system by changing its position to be between the front and rear of the fuselage; in multiple locations along the span of the wing, including the wingtips; above or below the wing; or in a tractor or pusher configuration. 
 
-By constructing a model capable of completely traversing the design space, a number of experiments were to be run which, when combined with results of computational experiments, would yield insight as to the optimal propulsion configuration for similar fixed-wing electric vehicles. 
+By designing a model capable of completely traversing the design space, a number of experiments were to be run which, when combined with results of computational experiments, would yield insight as to the optimal propulsion configuration for similar fixed-wing electric vehicles. 
 
 \section{Requirements} \label{sec:design-specification:requirements}
 
-As this was a new project, it had not inherited any requirements from previous attempts. 
-The aircraft would not be competing, so had no requirements or constraints based on competition entry. 
-Based on our project supervisor, we were to aim for a maximum weight of 7 kg, and a maximum wingspan of approximately 2 m.
-These were mostly for transportability and based on his experience (Towell, 2019).  % TODO: reference properly
-The aircraft was required to have the ability to be flown with the propulsion unit in different location on the model in order to compare the performance of each and find the most efficient. 
-Beyond these, the design space was very open to our exploration and interpretation. 
+As this was a new project, it had not inherited any requirements from previous groups. 
+The aircraft would not be competing, so had no requirements or constraints derived from competition entry regulations. 
+Based on feedback from the project supervisor, a maximum weight of \kg{7} was targetted, along with a maximum wingspan of approximately \metres{2}.
+These were mostly for transportability and based on prior experiences \cite{towell-19}.  % TODO: reference properly
+
+The aircraft was also required to have the ability to be flown with propulsion units in different locations on the model in order to compare the performance of each and find the most efficient. 
+Beyond this, the design space was open to exploration and interpretation. 
 
 \subsection{Hardware} \label{sec:design-specification:requirements:hardware}
 
-Again, these were very open and relaxed to the team.
+Relaxed requirements meant that few specific hardware requirements bounded the UAV's design.
 The general requirements are listed below.
 
 \begin{itemize}
-    \item The UAV is to provide a responsive, reliable, and robust flying platform for testing of the project objectives.
-        This generally means for a UAV that it must have:
+    \item The UAV is to provide a responsive flying platform for testing in accordance with the project objectives.
+        This generally means that the UAV must have:
         \begin{itemize}
-            \item a wing to provide sufficient lift in all expected operating conditions;
+            \item wings to provide sufficient lift in all expected operating conditions;
             \item a fuselage for structure and housing of electronics and components;
             \item a tailplane to provide stability and control to the aircraft;
-            \item control surfaces to provide control in all roll axes of the aircraft;
-            \item propulsion unit(s) to facilitate flight, and for testing the project objectives;
+            \item control surfaces to provide control in all rotational axes;
+            \item one or more propulsion units to facilitate flight, and for testing the project objectives;
             \item landing gear to allow for safe and reliable take-off and landing.
         \end{itemize}
     \item The UAV is to be mechanically reliable and robust.
-    \item It is to be easily mantainable, to allow for fixes and alterations using simple tools and knowledge.
+    \item The UAV to be easily mantainable, allowing for fixes and alterations using simple tools and minimal knowledge.
 \end{itemize}
 
-The team also defined some further requirements based on the project objectives.
+Some further requirements were also defined based on the project objectives.
 
 \begin{itemize}
-    \item The UAV be simple enough to provide easy alteration of the propulsion systems, and so that the project would not be measuring the results of drastic design alterations from the norm, other than those required to cope with the project objective. 
-    \item The propulsion system be configurable into a large variety of versions, with the UAV design being able to cope with all these changes. 
+    \item The UAV should be simple enough that the propulsion systems can be easily altered, and that the project would not be measuring the results of drastic design alterations from the norm, other than those required to examine the project objectives.
+    \item The propulsion system should be configurable into a large variety of layouts, with the UAV design being able to fly in any one of these. 
 \end{itemize}
 
 \subsection{System} \label{sec:design-specification:requirements:system}
 
-The team set several requirements of the UAV systems, mostly to allow for analysis and interpretation of results either in real time or post flight, or a combination of both. 
+Several requirements were set for the control systems, mostly to allow for analysis and interpretation of results, either in real time or post-flight, or a combination of both. 
 
 \begin{itemize}
-    \item Have a safe and reliable electrical system to provide power and control to propulsion, avionics and other systems.
+    \item The UAV is to have a safe and reliable electrical system to provide power and control to propulsion, avionics and other systems.
         \begin{itemize}
-            \item To achieve this, it was quickly noted that batteries would need to be sized appropriately to provide sufficient voltage and current to components for a long enough duration to sustain flight long enough to achieve tests runs. 
-            \item The ESC components of the propulsion would require passive cooling measures such as airflow ducts to prevent overheating and failure. 
-            \item The controls of the control surfaces and propulsion would require mapping to an adequate ground control device such as a remote control, including granular control of direct control surface and flap manipulation, control surface trim, throttle control of the propulsion and potentially the ability to shut down one of two propulsion units to test the UAV’s ability in an asymmetric thrust scenario. 
+            \item To achieve this, it was quickly noted that batteries would need to be sized appropriately to provide sufficient voltage and current to components for the duration of flight required to complete tests runs. 
+            \item The electronic speed controller (ESC) components of the propulsion system would require passive cooling measures such as airflow ducts to prevent overheating and failure. 
+            \item The controls of the control surfaces and propulsion would require mapping to an adequate ground control device such as a remote control, including granular control of direct control surface and flap manipulation, control surface trim, throttle control of the propulsion, and potentially the ability to shut down one of two propulsion units to test the UAV’s safety in an asymmetric thrust scenario. 
         \end{itemize}
-    \item Have a GPS tracking module to allow for either real time or post flight analysis of GPS telemetry. 
-    \item Have a speed sensor to for either real time or post flight analysis of speed. 
+    \item The UAV should have a GPS tracking module to allow for either real-time or post-flight analysis of GPS telemetry. 
+    \item The UAV must have a speed sensor to allow for either real-time or post-flight analysis of speed. 
+    \item Autopilot functionality is desirable to ensure the aircraft flies straight an level, providing a reliable and repeatable test environment for experiments.
+        This would also make sure that the pilot will not be overburdened trying to fly the aircraft and conduct tests simultaneously.
 \end{itemize}
-
-Lastly the team hoped to add an autopilot functionality that would ensure the aircraft flew straight and level in order to provide a reliable test bed for experiments, such that the pilot would not be overburdened trying to fly the aircraft and initiate tests at the same time, however this was not recognised as essential, and would be a ‘nice to have’ feature.
 
 \section{Resources} \label{sec:introduction:resources}
 
-Like all GDP teams, the project had an initial project allocation of £850 to design and build the UAV.
-As the project had been proposed by alumni, Ewan Kirk, he had pledged an additional £1500 towards the development if it were required, however this was to be used as a last resort.
-Finally, through a successful pitch to the Northrop Grumman 3D printing fund, our team leader managed to secure an additional up to £1000 allocation to be spent on 3D printed parts. 
+Like all GDPs, the project had an initial allocation of £850 to design and build the UAV.
+As the project had been proposed by an alumnus, Dr. Kirk pledged an additional £1500 towards the development were it required; this was, however, to be used as a last resort.
+Finally, through a successful pitch to the Northrop Grumman 3D printing fund, an additional grant of up to £1000 was secured to be spent on 3D printed parts. 
 
-The team also had access to university resources provided by our course, which included access to workshops such as the EDMC and TSRL, and specialist tools such as metalworking machinery, a CNC laser cutter, a CNC hot wire foam cutter, and the university 3D printers.
-We also had access to electronics workshops and equipment, as well as general access to vital tools and fasteners.
+Various university facilities were also available to the project team, including access to workshops such as the EDMC and TSRL, and specialist tools such as metalworking machinery, a CNC laser cutter, a CNC hot wire foam cutter, and the university 3D printers.
+Access was also granted to electronics workshops and equipment, as well as to vital tools and fasteners.
 
 \end{document}
