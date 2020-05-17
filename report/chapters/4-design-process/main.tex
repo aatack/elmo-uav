@@ -37,6 +37,7 @@ This can then be used to find the probability distribution for the power require
         \caption{Power}
         \label{fig:cruise-distribution:power}
     \end{subfigure}
+
     \caption{expected distribution of selected properties during cruise.}
     \label{fig:cruise-distribution}
 \end{figure}
@@ -51,8 +52,8 @@ This code gives more refined estimates for the power requirement in different ar
 This can be updated quickly and easily as design decisions are made and various operational parameters are refined.
 Figure 5 shows the final plots after all research and design decision were made.
 
-\importimage{full-constraint-analysis}{full constraint analysis plot with feasible region highlighted.}{Full constraint analysis}{0.7}
-\importimage{takeoff-speed-plot}{takeoff speed plot.}{Takeoff speed plot}{0.7}
+\importimage{full-constraint-analysis}{full constraint analysis plot with feasible region highlighted.}{Full constraint analysis}{0.85}
+\importimage{takeoff-speed-plot}{takeoff speed plot.}{Takeoff speed plot}{0.85}
 
 It can be seen that the lowest thrust to weight ratio required is around 0.29, which corresponds to a power requirement of around 520W, however this is for a wing loading of only 100N/m2.
 The final wing loading of ELMO UAV turned out to be approximately 111N/m2, giving a thrust to weight requirement of just over 0.3 and a corresponding power requirement of around 650W, and so the final selection of motors is sufficient with a small amount of power to spare. 
@@ -214,7 +215,7 @@ The middle was a guide for the rear spar to help changing the angle.
 The rear set of holes were to secure the wing in place.
 This section contained seven holes in total, each 2 degrees apart, meaning the wings angle could be changed form 0 degrees up to 12 degrees. 
 
-\importimage{fuselage-cross-section}{a cross-section of the fuselage, showing the structure and hole layouts.}{Fuselage cross-section}{0.7}
+\importimage{fuselage-cross-section}{a cross-section of the fuselage, showing the structure and hole layouts.}{Fuselage cross-section}{0.6}
 
 At the rear of the model, on the underside, the middle two ribs contained an attachment point for the wind tunnel.
 This was extruded from the model to enable the model to be easily attached and removed from the struts. 
@@ -238,7 +239,7 @@ The next rib, located 101mm outboard, was the rib used to connect the model to t
 Therefore, it was made from 6mm birch ply as this provided enough strength to an integral component.
 The two final ribs were located at the wing tip and 50mm inboard.
 
-\importimage{underside-of-wing}{the underside of the wing, showing attachment and flap adjustment methods.}{Underside of wing}{0.5}
+\importimage{underside-of-wing}{the underside of the wing, showing attachment and flap adjustment methods.}{Underside of wing}{0.6}
 
 The thicker birch ply rib, located 700mm outboard of the centre of the aircraft, contained an extrusion with a hole for a M6 bolt to allow easy attachment and removal to the wind tunnel mounts.
 It was located at 700mm from the centre of the fuselage as dictated by the wind tunnel capabilities. 
@@ -248,7 +249,7 @@ This was to allow the wing sections to be removed from the spars during the wind
 
 The wings were secured to the wing using two 3D printed clamps on each spar. 
 
-\importimage{internal-spar-structure}{Wing section showing the internal spar structure.}{Internal spar structure}{0.5}
+\importimage{internal-spar-structure}{Wing section showing the internal spar structure.}{Internal spar structure}{0.6}
 
 \subsubsection{Control surfaces} \label{sec:design-process:interim-design-review:wind-tunnel-test:control-surfaces}
 
@@ -266,7 +267,7 @@ The flaps were designed to be changed manually, whilst the model was still attac
 The guided either side of the flaps had M2 holes every 5 degrees up to 35 degrees.
 As the flap was altered two M2 bolts would secure the flap in place. 
 
-\importimage{flap-mechanism}{close of of the flap mechanism.}{Flap mechanism}{0.6}
+\importimage{flap-mechanism}{close up of the flap mechanism.}{Flap mechanism}{0.6}
 
 \subsubsection{Tail} \label{sec:design-process:interim-design-review:wind-tunnel-test:tail}
 
@@ -288,7 +289,7 @@ Holes were drilled through these that were intentionally a half millimetre short
 One horizontal tail surface was glued to one spar, and the other to the second, so they would slot together neatly in the model.
 The vertical tail surface contained both spars, and simply slotted in all at once. 
 
-\importimage{wind-tunnel-model}{final wind tunnel model.}{Wind tunnel model}{0.5}
+\importimage{wind-tunnel-model}{final wind tunnel model.}{Wind tunnel model}{0.8}
 
 \subsubsection{Test plan} \label{sec:design-process:interim-design-review:wind-tunnel-test:test-plan}
 
@@ -442,8 +443,8 @@ Because of this, little work went into analysing the results from this test in t
 
 \subsubsection{Overview} \label{sec:design-process:interim-design-review:motor-and-propellor-test:overview}
 
-\importimage{motor-bracket}{the motor bracket attached to the rear of the motor.}{Motor bracket}{0.7}
-\importimage{motor-test}{the motor in the wind tunnel.}{Motor test}{0.7}
+\importimage{motor-bracket}{the motor bracket attached to the rear of the motor.}{Motor bracket}{0.5}
+\importimage{motor-test}{the motor in the wind tunnel.}{Motor test}{0.5}
 
 Once the motor and propeller selection had been completed based on wind tunnel results and propeller performance analysis, we ordered one of the wing motors with its tractor configuration propeller in order to test them together.
 This test was to be performed in a small wind tunnel so as to give data for the motor in flight as well as a static thrust test.
@@ -530,14 +531,86 @@ While for the tip mounted element the available configurations are two: pusher, 
 Adapters are adopted to blend the standardized connection surface of the motor housing with the wing’s surface.
 Thus, reducing the aerodynamic footprint. 
 
-\importimage{mid-span-rib}{mid-span rib.}{Mid-span rib}{0.5}
-\importimage{tip-rib}{tip rib.}{Tip rib}{0.5}
-\importimage{underwing-pusher}{underwing pusher configuration.}{Underwing pusher}{0.5}
-\importimage{underwing-tractor}{underwing tractor configuration.}{Underwing tractor}{0.5}
-\importimage{overwing-pusher}{overwing pusher configuration.}{Overwing pusher}{0.5}
-\importimage{overwing-tractor}{overwing tractor configuration.}{Overwing tractor}{0.5}
-\importimage{wingtip-pusher}{wingtip pusher configuration.}{Wingtip pusher}{0.5}
-\importimage{wingtip-tractor}{wingtip tractor configuration.}{Wingtip tractor}{0.5}
+% \importimage{mid-span-rib}{mid-span rib.}{Mid-span rib}{0.5}
+% \importimage{tip-rib}{tip rib.}{Tip rib}{0.5}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{mid-span-rib}
+        \caption{Mid-span}
+        \label{fig:ribs:mid-span}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tip-rib}
+        \caption{Tip}
+        \label{fig:ribs:tip}
+    \end{subfigure}
+    
+    \caption{CAD models of the wing ribs.}
+    \label{fig:ribs}
+\end{figure}
+
+% \importimage{underwing-pusher}{underwing pusher configuration.}{Underwing pusher}{0.5}
+% \importimage{underwing-tractor}{underwing tractor configuration.}{Underwing tractor}{0.5}
+% \importimage{overwing-pusher}{overwing pusher configuration.}{Overwing pusher}{0.5}
+% \importimage{overwing-tractor}{overwing tractor configuration.}{Overwing tractor}{0.5}
+% \importimage{wingtip-pusher}{wingtip pusher configuration.}{Wingtip pusher}{0.5}
+% \importimage{wingtip-tractor}{wingtip tractor configuration.}{Wingtip tractor}{0.5}
+
+\begin{figure}[H]
+    
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{underwing-pusher}
+        \caption{Underwing pusher}
+        \label{fig:wing-mounting:underwing-puller}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{underwing-tractor}
+        \caption{Underwing tractor}
+        \label{fig:wing-mounting:underwing-tractor}
+    \end{subfigure}
+    
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{overwing-pusher}
+        \caption{Overwing pusher}
+        \label{fig:wing-mounting:overwing-pusher}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{overwing-tractor}
+        \caption{Overwing tractor}
+        \label{fig:wing-mounting:overwing-tractor}
+    \end{subfigure}
+    
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{wingtip-pusher}
+        \caption{Wingtip pusher}
+        \label{fig:wing-mounting:wingtip-pusher}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{wingtip-tractor}
+        \caption{Wingtip tractor}
+        \label{fig:wing-mounting:wingtip-tractor}
+    \end{subfigure}
+    
+    \caption{possible configurations of the PUC on the wing mounts.}
+    \label{fig:wing-mounting}
+\end{figure}
 
 Each ‘mid-span’ insert in equipped four brass threaded inserts on both bottom and top surface.
 These permit the fastening of the power unit cells and the respective adapter.
@@ -546,7 +619,7 @@ Doing so, the same motor housing can be mounted on the top and bottom surface wi
 Furthermore, as presented in Fig. 5, the inserts are located at equal distance from the centreline positioned at half chord.
 Thus, allowing the mounting of the same power unit cell in tractor or pusher configurations without the need for alterations. 
 
-\importimage{wing-insert}{section view of the wing insert.}{Wing insert}{0.6}
+\importimage{wing-insert}{section view of the wing insert.}{Wing insert}{0.9}
 
 The tip insert is designed so to mount the motor housing in horizontal position.
 In order to use the same configuration of mounting points the tip adapter covers a structural role (unlike the rest).
@@ -566,7 +639,7 @@ The wing assembly is then clamped onto the fuselage attachment plate through fou
 These are positioned at the corners of the 3D printed plate as it is shown in Fig. 6.
 A Styrofoam cover placed on top of the mounting plate is responsible for the blending of the wing assembly with the rest of the fuselage. 
 
-\importimage{wing-assembly}{exploded view of the wing assembly attachment procedure}{Wing assembly attachment}{0.5}
+\importimage{wing-assembly}{exploded view of the wing assembly attachment procedure}{Wing assembly attachment}{0.8}
 
 The two cylinders housing the carbon spars ensure an even distribution of the loads though a large area (Fig. 7a).
 This was essential since this component is subject to the totality of the load transferring from the wing to the fuselage and vice versa.
@@ -574,8 +647,31 @@ Therefore, extensive work was conducted using finite element analysis to generat
 The peak loading for this component was established to be 4g, simulating an abrupt increase in lift Fig. 7b.
 Hence producing the design shown in Fig. 7a. 
 
-\importimage{wing-plate-cad}{CAD representation of the wing mounting plate.}{Wing mounting plate CAD}{0.5}
-\importimage{wing-plate-fea}{stress concentration due to an applied load of 275 N.}{Wing mounting plate FEA}{0.5}
+% \importimage{wing-plate-cad}{CAD representation of the wing mounting plate.}{Wing mounting plate CAD}{0.6}
+% \importimage{wing-plate-fea}{stress concentration due to an applied load of 275 N.}{Wing mounting plate FEA}{0.6}
+
+\begin{figure}[H]
+
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{wing-plate-cad}
+        \caption{CAD}
+        \label{fig:wing-plate:cad}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{wing-plate-fea}
+        \caption{FEA}
+        \label{fig:wing-plate:fea}
+    \end{subfigure}
+    
+    \caption{
+        models of the wing mounting plate; (b) shows the stress concentration under a 275 N load.
+    }
+    \label{fig:wing-plate}
+\end{figure}
 
 \subsubsection{Flap mathematical modelling} \label{sec:design-process:final-design-proposal:wing:flap-mathematical-modelling}
 
@@ -607,8 +703,12 @@ The value for the slotted flap was further multiplied by the chord ratio as requ
 A simple version of the lift equation was then defined to account for the flap and aileron deflection at take-off: 
 
 \importequation{
-    L_{TO} = q S_{NoHLDs} (C_{L_0}+C_{L_\alpha}\alpha) + qS_f ((C_{L_0}+C_{L_\alpha}\alpha) + \Delta C_{L_f}) + qS_a ((C_{L_0}+C_{L_\alpha}\alpha) + \Delta C_{L_\alpha})
-    = qSC_{L_0} + qSC{L_\alpha}\alpha + q S_a \Delta C_{L_\alpha} + q S_f \Delta C_{L_f}
+    \begin{aligned}
+    L_{TO}  & {}= q S_{NoHLDs} (C_{L_0}+C_{L_\alpha}\alpha) \\
+            & \quad + qS_f ((C_{L_0}+C_{L_\alpha}\alpha) + \Delta C_{L_f}) \\
+            & \quad + qS_a ((C_{L_0}+C_{L_\alpha}\alpha) + \Delta C_{L_\alpha}) \\
+            & {}= qSC_{L_0} + qSC{L_\alpha}\alpha + q S_a \Delta C_{L_\alpha} + q S_f \Delta C_{L_f}
+    \end{aligned}
 }{takeoff-lift}
 % TODO: put line breaks into equation
 
@@ -635,8 +735,29 @@ Images of this were studied, and a mechanism designed producing a smooth deploym
 The pins were made as central as possible in the flap so that they would not melt the walls of the flap in foam cutting.
 These pins were also eventually changed to stiffening spars that would protrude beyond the end of the flaps to run along the tracks in the mechanism, but also stiffen the flap under aerodynamic loads.
 
-\importimage{retracted-flap}{retracted flap with endplates for horn controls.}{retracted-flap}{0.4}
-\importimage{deployed-flap}{deployed flap with endplates for horn controls.}{deployed-flap}{0.4}
+% \importimage{retracted-flap}{retracted flap with endplates for horn controls.}{retracted-flap}{0.4}
+% \importimage{deployed-flap}{deployed flap with endplates for horn controls.}{deployed-flap}{0.4}
+
+\begin{figure}[H]
+
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{retracted-flap}
+        \caption{Retracted}
+        \label{fig:flaps:retracted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{deployed-flap}
+        \caption{Deployed}
+        \label{fig:flaps:deployed}
+    \end{subfigure}
+    
+    \caption{flap, with endplates for horn controls.}
+    \label{fig:flaps}
+\end{figure}
 
 \subsection{Fuselage} \label{sec:design-process:final-design-proposal:fuselage}
 
@@ -648,7 +769,7 @@ Changing the motor configuration multiple time demands the ability to check and 
 Therefore, the design presents a large electronics tray placed in the lower section of the fuselage; shown in purple in Fig. 8.
 This can be accessed through the removal of the UAV’s nose.
 
-\importimage{fuselage-inner-structure}{CAD representation of the inner structure of the fuselage's central section.}{Fuselage inner structure}{0.5}
+\importimage{fuselage-inner-structure}{CAD representation of the inner structure of the fuselage's central section.}{Fuselage inner structure}{0.8}
 
 All the fuselage’s structural components are located in the top section of this last.
 Doing so a large area was created for the housing of the electronics as shown in Fig. 8.
@@ -665,8 +786,8 @@ Mounted below the plate are two PLA printed brackets (Fig. 9a); these are respon
 This is better shown in Fig. 9b.
 Furthermore, they are designed to withstand a vertical load of 170N each; thus, offering a redundant attachment for the mounting plate in case of failure.
 
-\importimage{pla-bracket}{CAD representation of the PLA bracket.}{PLA bracket}{0.4}
-\importimage{brackets-highlighted}{fuselage central assembly with brackets highlighted in green.}{Highlighted brackets}{0.4}
+\importimage{pla-bracket}{CAD representation of the PLA bracket.}{PLA bracket}{0.5}
+\importimage{brackets-highlighted}{fuselage central assembly with brackets highlighted in green.}{Highlighted brackets}{0.7}
 
 \subsubsection{Landing gear attachment} \label{sec:design-process:final-design-proposal:fuselage:landing-gear-attachment}
 
@@ -681,8 +802,29 @@ These have been specified to withstand vertical loads up to 5g.
 Furthermore, two triangular braces, as shown in Fig. 10b, are attached to the lowest section of the bulkheads and are clamped to the main spar through a PLA insert.
 These work in compression and are designed to counteract the moments generated by the loads acting on the wheels in the direction of travel. 
 
-\importimage{landing-gear-attachment}{landing gear attachment structure.}{Landing gear attachment}{0.4}
-\importimage{landing-gear-side}{landing gear attachment side view.}{Landing gear attachment side view}{0.4}
+% \importimage{landing-gear-attachment}{landing gear attachment structure.}{Landing gear attachment}{0.4}
+% \importimage{landing-gear-side}{landing gear attachment side view.}{Landing gear attachment side view}{0.4}
+
+\begin{figure}[H]
+
+    \centering
+    \begin{subfigure}[b]{0.4\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{landing-gear-attachment}
+        \caption{}
+        \label{fig:landing-gear-attachment:angled}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{landing-gear-side}
+        \caption{}
+        \label{fig:landing-gear-attachment:side}
+    \end{subfigure}
+    
+    \caption{landing gear attachment structure.}
+    \label{fig:landing-gear-attachment}
+\end{figure}
 
 The carbon fibre sandwich panels bulkheads are design in the same manner as the fuselage central plate discussed previously.
 A schematic of this is provided in Fig. 11. 
@@ -699,7 +841,7 @@ Initially a simulation was run to test the effects of high turning loads, with t
 These loads were chosen to simulate 3g loads in a turn, with the mass of the components assumed evenly distributed over the tray.
 Figure 1 shows the results.
 
-\importimage{fuselage-stress-distribution}{fuselage stress distribution during a simulated 3g turn.}{Fuselage stress distribution}{0.4}
+\importimage{fuselage-stress-distribution}{fuselage stress distribution during a simulated 3g turn.}{Fuselage stress distribution}{0.7}
 
 It can be seen that the wing mount shows that the maximum stress experienced is around 1.6 MPa, which is significantly below the 30 MPa yield stress of the ABS material used.
 The other high stress locations are on the lower parts of the component tray mounts, which peak at over 2 MPa, but the plywood used has a yield stress of 30 MPa and so this is also well below the point of breaking.
@@ -710,7 +852,7 @@ This simulation only tests the main gear as this is where the highest forces sho
 The forces applied are 350N vertically up and 105N horizontally rearwards to simulate a heavy landing of 5g with 1.5g deceleration force. 
 
 \importimage{landing-leg-simulation}{simulated stress distribution over one of the landing legs.}{Landing leg simulation}{0.4}
-\importimage{fuselage-landing-simulation}{stress distribution over the fuselage during a simulated landing.}{Fuselage landing simulation}{0.4}
+\importimage{fuselage-landing-simulation}{stress distribution over the fuselage during a simulated landing.}{Fuselage landing simulation}{0.6}
 
 It can be seen in Figure 2 that the peak loads experienced by the landing gear are around 260MPa, which is below the yield stress of the carbon fibre as previously stated, and although it is nearing the yield stress, this is an extreme case of a particularly heavy landing and so a heavier landing than this would not be expected unless it occurs in a crash landing scenario in which case the UAV surviving would be down to luck.
 It can also be seen that the peak stress on the landing gear brackets is around 100MPa, below the yield stress of around 270MPa of the aluminium they are made of.
@@ -728,7 +870,7 @@ When the landing gear was first being designed  weight was the limiting factor, 
 The modularity and moving centre of gravity was a unique challenge to this UAV.
 The first step of the design was the calculation of the maximum loading conditions the landing gear would encounter (Goud, 2014). 
 
-\importimage{moment-calculations}{moment calculations.}{Moment calculations}{0.5}
+\importimage{moment-calculations}{moment calculations.}{Moment calculations}{0.7}
 
 The forward most CG meant x=150mm and y=765mm, this led to a maximum static loading of 57.4N over the front wheels and 11.26N over the rear wheel.
 The rearmost CG led to x=200mm and y=815mm, the maximum static loadings for this condition is 55.13N and 13.53N over the front and rear wheels, respectively.
@@ -738,7 +880,7 @@ A vertical velocity of 3m/s was assumed to be an aggressive landing velocity in 
 Using Newtons 2nd law, and an assume impact time of 0.5 seconds, the maximum force of the UAV is equal to 42N, meaning a total force of 110.67N on landing.
 Most UAVs land with their main wheels touching down first, the main landing gear must absorb most of the load, on previous calculations the main gear should withstand 99.4N.  
 
-\importimage{landing-gear-design-one}{landing gear design one.}{Landing gear design}{0.6}
+\importimage{landing-gear-design-one}{landing gear design one.}{Landing gear design}{0.8}
 
 A setting angle of 5.8degrees was needed to meet take-off requirements, as shown in figure 1.
 To avoid hitting the rear propeller or the rudder, the rear wheel was designed to extrude from the bottom of the under-rudder.
@@ -757,21 +899,41 @@ After the design of the leg was finalised a clamping system was devised to mount
 Further FEA showed that the clamping would be effective at attaching the fibreglass to the boom but would cause the boom to buckle on landing.
 Figure 5 shows how the addition of a prepreg cover around the boom significantly reduces the stress of the boom itself, by roughly a factor of 10. 
 
-\importimage{landing-gear-design}{main landing gear design.}{Landing gear design}{0.4}
-\importimage{landing-gear-stress}{stress on landing gear.}{Landing gear stress}{0.4}
-\importimage{prepreg-cover-stress}{effect of a prepreg cover on carbon fibre spar.}{Prepreg cover stress}{0.4}
+% \importimage{landing-gear-design}{main landing gear design.}{Landing gear design}{0.4}
+\importimage{landing-gear-stress}{stress on landing gear.}{Landing gear stress}{0.5}
+\importimage{prepreg-cover-stress}{effect of a prepreg cover on carbon fibre spar.}{Prepreg cover stress}{0.95}
 
 At this point in the design process, the weight of the UAV was no longer an issue, and after a supervisor meeting in which the landing gear design was discussed, it was decided that the landing gear should be steerable.
 This would reduce time to retrieve the UAV on landing as well as making take-off easier.
 The tail wheel set up is not optimum for a steerable configuration.
 Therefore, as the fuselage and the weight of the aircraft had been reduced making weight less of an important factor, the decision was made to redesign the landing gear in a tricycle configuration. 
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.33\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{landing-gear-design}
+        \caption{Initial}
+        \label{fig:main-gear-progression:initial}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{main-gear-design}
+        \caption{Final}
+        \label{fig:main-gear-progression:final}
+    \end{subfigure}
+    
+    \caption{progression of the main gear design.}
+    \label{fig:main-gear-progression}
+\end{figure}
+
 Using a similar process to the tail wheel design, the main landing gear was calculated to experience up to 105.8N on landing.
 The main gear is now located behind the centre of gravity, behind the internal electronics.
 This, along with a redesigned fuselage means the landing gear could be designed as a single part and attached easily to the bottom of the fuselage. 
 
-\importimage{main-gear-design}{main gear design.}{Main gear design}{0.4}
-\importimage{main-gear-fea}{main gear FEA stress results.}{Main gear FEA}{0.4}
+% \importimage{main-gear-design}{main gear design.}{Main gear design}{0.4}
+\importimage{main-gear-fea}{main gear FEA stress results.}{Main gear FEA}{0.6}
 
 The main shape of the design didn’t change from the initial design, a similar design which is seen on many small UAVs as it is simple, easy to implement and robust.
 FEA was carried out on the design and small changes made until an optimum design was found.
@@ -784,7 +946,7 @@ The redesigned fuselage structure with two lower plates meant the landing gear c
 
 Before manufacturing began on the component, a similar model was found online. A cost benefit analysis was carried out, along with a time benefit analysis, and it was determined that purchasing the landing gear would allow the focus on other areas of design that needed finalising. 
 
-\importimage{landing-gear-join}{landing gear joining mechanism.}{Landing gear joining mechanism}{0.7}
+\importimage{landing-gear-join}{landing gear joining mechanism.}{Landing gear joining mechanism}{0.6}
 
 The nose gear was chosen at recommendation of co supervisor Mario Ferraro, it is the same at that used on the SPOTTER aircraft, a 24kg split fuselage UAV (SPOTTER, 2019). It was easy to implement into the nose design and make steerable, whilst being cheap, lightweight, and strong. 
 
@@ -858,14 +1020,41 @@ The inner component would be secured to the fuselage at all times, and the front
 The inner part would be secured to the boom using a clamping mechanism, originally devised for the landing gear, via three M3 bolts located underneath the boom.
 The outer part would then twist into the inner part then be locked in place using two M3 bolts. 
 
-\importimage{nose-inner-section}{inner section of the nose.}{Nose inner section}{0.7}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.6\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nose-inner-section}
+        \caption{Inner section}
+        \label{fig:nose-design:inner}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.6\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nose-outer-section}
+        \caption{Outer section}
+        \label{fig:nose-design:outer}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.6\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{steerable-gear}
+        \caption{Steerable gear attachment}
+        \label{fig:nose-design:steerable-nose-gear}
+    \end{subfigure}
+    
+    \caption{detailed models of the final nose design.}
+    \label{fig:nose-design}
+\end{figure} 
+
+% \importimage{nose-inner-section}{inner section of the nose.}{Nose inner section}{0.7}
 
 The inner part would have a 1mm wall thickness, supported by 5mm deep and 3mm wide support structures, this is common on 3D printed UAV components as it is a light way of adding strength.
 The clamping system is supported by a web like structure.
 The battery tray and ESC compartment had a small redesign, two larger vents channelling airflow to the ESC.
 The steerable landing gear has also been incorporated into the design, through the air vents. 
 
-\importimage{nose-outer-section}{outer section of the nose.}{Nose outer section}{0.7}
+% \importimage{nose-outer-section}{outer section of the nose.}{Nose outer section}{0.7}
 
 The outer section will be held in place via a twist and lock system.
 To remove the front section two screws will be removed from the side of the nose, the front will then twist anticlockwise and be removed.
@@ -883,7 +1072,7 @@ However, with the 140N load applied, the maximum stress reached was 5.582MPa, an
 Having fulfilled the first three criteria, the final design also incorporates a steerable landing gear.
 This part of the design was thought about throughout the design process, but only fully implemented after the landing gear design had been finalised. 
 
-\importimage{steerable-gear}{integration of the steerable nose gear.}{Steerable nose gear}{0.7}
+% \importimage{steerable-gear}{integration of the steerable nose gear.}{Steerable nose gear}{0.7}
 
 Figure 16 shows how the nose gear would have been incorporated within the vent design.
 The nose gear would be secured using two collars, one above and below the thicker part of the nose, as well as one to secure the servo arm in place.
@@ -900,7 +1089,7 @@ When the nose motor was not needed it was removed and replaced with a small inse
 The hollow insert would have been 3D printed on the university 3D printer using PLA as it is not a structural component.
 It was designed to be screwed in the same manner as the motor. 
 
-\importimage{nose-motor-filler}{nose motor filler.}{Nose motor filler}{0.7}
+\importimage{nose-motor-filler}{nose motor filler.}{Nose motor filler}{0.5}
 
 \subsection{Tail} \label{sec:design-process:final-design-proposal:tail}
 
@@ -955,8 +1144,29 @@ The wing downwash calculation requires the downwash at 0 angle of attack, and th
 These were both determined using equation E-52 in (Torenbeek, 1976): Calculating these values and substituting into the equation for downwash gave a value for the downwash caused by the wing, at the tail as 1.924o.
 Finally, the tail setting angle could be calculated , which resulted as a setting angle relative to the fuselage datum of 2.979o. 
 
-\importimage{resulting-tail-design}{the resulting tail design.}{Resulting tail design}{0.4}
-\importimage{resulting-tail-design-side}{the resulting tail design, viewed from the side.}{Resulting tail design side}{0.4}
+% \importimage{resulting-tail-design}{the resulting tail design.}{Resulting tail design}{0.4}
+% \importimage{resulting-tail-design-side}{the resulting tail design, viewed from the side.}{Resulting tail design side}{0.4}
+
+\begin{figure}[H]
+
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{resulting-tail-design}
+        \caption{}
+        \label{fig:final-tail-design:angle}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{resulting-tail-design-side}
+        \caption{}
+        \label{fig:final-tail-design:side}
+    \end{subfigure}
+    
+    \caption{resulting tail design.}
+    \label{fig:final-tail-design}
+\end{figure} 
 
 One verification was to calculate the pitch stability derivative, using equation 6.67 in (Sadraey, 2013), which resulted as -0.6301.
 A negative value indicates that the pitch moment decreases with alpha, which is desirable.
@@ -982,9 +1192,36 @@ The tail surfaces were designed to be inserted into 3D printed component as it w
 This was decided to be a piece that would split in half vertically, allowing the vertical surfaces to be inserted easily, and the horizontal surfaces would require a small amount of trimming to allow them to slide in over the spars, and then secured using bolts.
 The CAD process for the final version of the tail mount can be seen below:
 
-\importimage{tail-mount-one}{tail mount design, version one.}{Tail mount version one}{0.3}
-\importimage{tail-mount-two}{tail mount design, version two.}{Tail mount version two}{0.3}
-\importimage{tail-mount-three}{tail mount design, version three.}{Tail mount version three}{0.3}
+% \importimage{tail-mount-one}{tail mount design, version one.}{Tail mount version one}{0.3}
+% \importimage{tail-mount-two}{tail mount design, version two.}{Tail mount version two}{0.3}
+% \importimage{tail-mount-three}{tail mount design, version three.}{Tail mount version three}{0.3}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tail-mount-one}
+        \caption{}
+        \label{fig:tail-mount-progression:initial}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tail-mount-two}
+        \caption{}
+        \label{fig:tail-mount-progression:revised}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tail-mount-three}
+        \caption{}
+        \label{fig:tail-mount-progression:final}
+    \end{subfigure}
+    
+    \caption{progressive iterations of the tail mount design.}
+    \label{fig:tail-mount-progression}
+\end{figure} 
 
 The process began with a tapered section hollowed out to 1.5 mm wall thickness, and a rectangular tube added for the tail spar.
 The inside and outside corners were filleted. 
@@ -1006,9 +1243,30 @@ This was based on Michael Pywell’s design earlier on in the project, and simpl
 The motor mount had the same teeth, and would slide axially in the cylinder through the gaps, and then rotate, the teeth overlapping to prevent the mount from moving.
 Small holes cut through both parts of the mount allowed for threaded inserts to be placed inside, and then screws through the same holes would secure the mount in place. 
 
-\importimage{tail-mount-slice}{a view of one half of the final tail mount.}{Tail mount slice}{0.4}
-\importimage{tail-mount-final}{a view of the final tail mount design.}{Tail mount design}{0.4}
-\importimage{exploded-tail}{exploded view of the tail assembly, including fasteners.}{Exploded tail assembly}{0.4}
+% \importimage{tail-mount-slice}{a view of one half of the final tail mount.}{Tail mount slice}{0.4}
+% \importimage{tail-mount-final}{a view of the final tail mount design.}{Tail mount design}{0.4}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tail-mount-slice}
+        \caption{}
+        \label{fig:tail-mount-design:slice}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tail-mount-final}
+        \caption{}
+        \label{fig:tail-mount-design:whole}
+    \end{subfigure}
+    
+    \caption{final tail mount design; (a) shows a cut view.}
+    \label{fig:tail-mount-design}
+\end{figure} 
+
+\importimage{exploded-tail}{exploded view of the tail assembly, including fasteners.}{Exploded tail assembly}{0.7}
 
 \subsection{Control surfaces} \label{sec:design-process:final-design-proposal:control-surfaces}
 
@@ -1036,7 +1294,7 @@ The increase of the span had the effect of increasing the effective aspect ratio
 
 The calculation was run with different speed values in Excel, to plot the rudder effectiveness and the motor thrust moment, over the expected speed range of the UAV: 
 
-\importimage{rudder-thrust-moment}{rudder against thrust moment at various speeds.}{Rudder against thrust moment}{0.7}
+\importimage{rudder-thrust-moment}{rudder against thrust moment at various speeds.}{Rudder against thrust moment}{0.95}
 
 With this requirement satisfied, design of the rudder was concluded.
 The lack of runway landing and already excessive rudder size lead to the decision to forgo other rudder validation tests. 
@@ -1076,7 +1334,7 @@ With this, the elevator deflection can finally be calculated using:
 
 The process used above, along with the failed MATLAB code, repeated for a range of speeds yielded this plot (see legend for details):
 
-\importimage{elevator-deflection}{elevator deflection plots for both processes.}{Elevator deflection plots}{0.7}
+\importimage{elevator-deflection}{elevator deflection plots for both processes.}{Elevator deflection plots}{0.95}
 
 The second process captured the 0 deflection required at cruise speed, and appeared to be correct, so design was concluded as satisfactory in this case.
 Additionally the deflections required from below the stall (and take off) speed are within the maximum deflections of the elevator selected.
@@ -1116,8 +1374,29 @@ The SG90S had been selected, and was appropriate for all control surfaces, apart
 
 \subsubsection{CAD modelling} \label{sec:design-process:final-design-proposal:control-surfaces:cad-modelling}
 
-\importimage{elevator}{a single elevator.}{Elevator}{0.4}
-\importimage{transparent-stabiliser}{a transparent view of the assembly of one horizontal stabiliser and elevator.}{Horizontal stabiliser}{0.4}
+% \importimage{elevator}{a single elevator.}{Elevator}{0.4}
+% \importimage{transparent-stabiliser}{a transparent view of the assembly of one horizontal stabiliser and elevator.}{Horizontal stabiliser}{0.4}
+
+\begin{figure}[H]
+
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{elevator}
+        \caption{Elevator}
+        \label{fig:tail-assembly:elevator}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{transparent-stabiliser}
+        \caption{Horizontal stabiliser}
+        \label{fig:tail-assembly:horizontal-stabiliser}
+    \end{subfigure}
+    
+    \caption{components of the horizontal component of the tail section.}
+    \label{fig:tail-assembly}
+\end{figure} 
 
 The rudder basic shape was cut out from a duplicate of the vertical stabiliser model.
 The space for the servo was cut out from the root, then additional cut-outs made for the stiffening spar near the leading edge, and foam cutter wire paths.
@@ -1150,7 +1429,7 @@ While the Pixhawk could have been easier to set up, with its advertised “plug 
 The Matek hardware came at about half the cost, and while the corresponding firmware was relatively immature, its open source nature meant that its functionality was expanding quickly, and it had favourable reviews from a number of online sources.
 Another potential advantage of the Matek controller was that it was designed specifically with fixed wing aircraft in mind, whereas the Pixhawk was focused more towards quadcopters. 
 
-\importimage{matek}{pin layout and documentation for the Matek flight controller.}{Flight controller layout}{0.6}  % TODO: include source (http://www.mateksys.com/?portfolio=f405-wing)
+\importimage{matek}{pin layout and documentation for the Matek flight controller.}{Flight controller layout}{0.95}  % TODO: include source (http://www.mateksys.com/?portfolio=f405-wing)
 
 Other beneficial features of the Matek board were the built-in current sensor and inertial measurement unit (IMU) which would provide estimates of the position, and more importantly orientation, of the UAV.
 There were also a number of fairly low-cost GPS and airspeed sensor units, required for the latter part of the avionics system’s brief of providing autopilot functionality. 
@@ -1166,8 +1445,8 @@ This would be a good option for extracting the data from the current sensor and 
 Being able to do this onboard was appealing because the need for telemetry, which would have significantly increased the complexity of the radio system, could be removed.
 All data could be logged by a relatively simple program, written in C++, which could then be downloaded after each flight. 
 
-\importimage{flight-controller-computer}{flight controller plugged into a computer running the flight configurator.}{Flight controller configuration}{0.4}
-\importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.4}
+\importimage{flight-controller-computer}{flight controller plugged into a computer running the flight configurator.}{Flight controller configuration}{0.6}
+\importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.5}
 
 While a Futaba transmitter was originally to be loaned from the university, scheduling constraints resulted in its unavailability for the duration of the project.
 As an alternative, a FrSky Taranis X9D was purchased upon recommendation of its being a good tradeoff between price and flexibility.
@@ -1202,7 +1481,7 @@ It was decided that these servos would need to be of a different type to those e
 In all, fourteen servos would be required to control the aircraft, including the two servos of different specification for the rudder.
 The exact configuration of these servos, as well as the signals passed to each of them, is shown below. 
 
-\importimage{signal-splitters}{control signal splitter schematic.}{Signal splitter schematic}{0.4}
+\importimage{signal-splitters}{control signal splitter schematic.}{Signal splitter schematic}{0.7}
 
 Note that each flap is supported by two servos of opposing deflection directions.
 While the flaps increase the lift of the aircraft quite dramatically, and thereby exert a large moment onto their supporting servos, the distribution of this load across four flap segments and eight servos meant that the smaller servo size was capable of holding the flaps in place during takeoff and landing. 
@@ -1249,17 +1528,17 @@ Its low cost means that multiple can be bought and swapped out between flights, 
 With all the components of the avionics subsystem specified, a wiring diagram could be created and from this an iron bird constructed.
 The primary goal of this exercise was to check that every required component was present, and that they would all fit together with the necessary wires. 
 
-\importimage{wiring-diagram}{wiring diagram for the avionics subsystem.}{Wiring diagram}{0.5}
+\importimage{wiring-diagram}{wiring diagram for the avionics subsystem.}{Wiring diagram}{0.6}
 
 From the above diagram, the iron bird was built onto a miniaturised cutout of the same general shape as the full-size aircraft. 
 
-\importimage{iron-bird}{iron bird.}{Iron bird}{0.5}
+\importimage{iron-bird}{iron bird.}{Iron bird}{0.7}
 
 While not all of the servos were included in the iron bird, each servo group was represented.
 The iron bird also gave a much clearer indication of roughly how much wiring would be needed to connect the various groups, and which layout would be most efficient for splitting the signals; that is, which signals should be brought down each of the main “limbs” of the aircraft, and where should they be split.
 Once this was decided, the splitters could be designed and manufactured. 
 
-\importimage{splitter-schematic}{manufacturing schematic for a single splitter.}{Manufacturing schematic}{0.4}
+\importimage{splitter-schematic}{manufacturing schematic for a single splitter.}{Manufacturing schematic}{0.5}
 
 A schematic similar to the one shown above was drawn out for each of the splitters identified in Figure \ref{fig:splitter-schematic}.
 This includes the specification of the splitter in terms of the signals designated as inputs and outputs, and shows its layout in terms of header pins (rectangular boxes) soldered (ovals) across a stripboard whose strips are assumed to go across the page horizontally.
@@ -1272,8 +1551,29 @@ The seven splitters also had small outcrops of stripboard so that they could be 
 
 Although the full electronics system was never assembled in the UAV due to the COVID-19 pandemic, all of the necessary physical components were purchased and manufactured, and their compatibility was tested in the iron bird. 
 
-\importimage{electronics-housing}{render of the electronics housing bay in the tractor nose propulsion configuration.}{Electronics housing}{0.4}
-\importimage{electronics-exploded}{exploded view of the avionics subsystem.}{Avionics subsystem}{0.4}
+% \importimage{electronics-housing}{render of the electronics housing bay in the tractor nose propulsion configuration.}{Electronics housing}{0.4}
+% \importimage{electronics-exploded}{exploded view of the avionics subsystem.}{Avionics subsystem}{0.4}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{electronics-housing}
+        \caption{Housing bay}
+        \label{fig:electronics-subsystem:bay}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{electronics-exploded}
+        \caption{Subsystem, exploded}
+        \label{fig:electronics-subsystem:exploded}
+    \end{subfigure}
+    
+    \caption{renders of the key parts of the electronics subsystem.}
+    \label{fig:electronics-subsystem}
+\end{figure} 
+
 \importimage{bixler}{image of the Bixler 3 RC plane.}{Bixler model}{0.5}
 
 Before the electronics were to be flown on the UAV, they needed to be tested.
@@ -1302,8 +1602,38 @@ In order to guarantee a smooth passage of the flow around the housing an adapter
 This slots onto the standardized surfaces of the power unit cell and mounts directly on the wing surfaces blending the two together.
 Furthermore, they ensure that the thrust line in unvaried between tractor and pusher configurations. 
 
-\importimage{puc-tractor}{PUC section view in top-tractor configuration.}{PUC top tractor}{0.5}
-\importimage{puc-pusher}{PUC section view in top-pusher configuration; yellow is the adaptor, green is the ESC, red is the battery, and blue is the motor.}{PUC top pusher}{0.5}
+% \importimage{puc-tractor}{PUC section view in top-tractor configuration.}{PUC top tractor}{0.5}
+% \importimage{puc-pusher}{PUC section view in top-pusher configuration; yellow is the adaptor, green is the ESC, red is the battery, and blue is the motor.}{PUC top pusher}{0.5}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{puc-pusher}
+        \caption{Overwing pusher}
+        \label{fig:puc-assemblies:pusher}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{puc-tractor}
+        \caption{Overwing tractor}
+        \label{fig:puc-assemblies:tractor}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.7\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{puc-exploded}
+        \caption{Exploded}
+        \label{fig:puc-assemblies:exploded}
+    \end{subfigure}
+    
+    \caption{
+        various views of the PUC assembly.
+        Adapters are in yellow; ESCs are in green; batteries are in red; and motors are in blue.
+    }
+    \label{fig:puc-assemblies}
+\end{figure} 
 
 The distance from the trailing edge to the propeller in the pusher layout is equivalent to the distance from the leading edge to the propeller in the tractor layout.
 Moreover, as in can be seen in Fig. 12.
@@ -1317,7 +1647,7 @@ The open section into which the ESC is placed ensures the cooling of this compon
 So to avoid common reliability issues caused by the overheating of this last.
 An exploded view of the PUC assembly is shown in Fig. 13. 
 
-\importimage{puc-exploded}{exploded view of the PUC assembly.}{Exploded PUC}{0.6}
+% \importimage{puc-exploded}{exploded view of the PUC assembly.}{Exploded PUC}{0.6}
 
 Due to the fitting of the battery and the ESC, the PUC assembly has a sensible weight.
 In fact, as it will be discussed, the CG of the UAV is subject to a significant shift as the motor configuration is changed from tractor to pusher.
@@ -1327,8 +1657,29 @@ Furthermore, a work of light weighting of the components was carried.
 Hence the use of ribs and reinforcements where loads concentrate and the use of thin walls shown in Fig. 14.
 This resulted into an overall housing dry weight of 207g. 
 
-\importimage{puc-front}{PUC front section inner structure.}{PUC front section}{0.3}
-\importimage{puc-rear}{PUC rear section inner structure.}{PUC rear section}{0.3}
-\importimage{puc-printed}{SLS nylon printed PUC.}{SLS nylon PUC}{0.3}
+% \importimage{puc-front}{PUC front section inner structure.}{PUC front section}{0.3}
+% \importimage{puc-rear}{PUC rear section inner structure.}{PUC rear section}{0.3}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.4\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{puc-front}
+        \caption{Front}
+        \label{fig:puc-design:front}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{puc-rear}
+        \caption{Rear}
+        \label{fig:puc-design:rear}
+    \end{subfigure}
+    
+    \caption{inner structure of the PUC.}
+    \label{fig:puc-design}
+\end{figure} 
+
+\importimage{puc-printed}{PUC, printed in SLS nylon.}{SLS nylon PUC}{0.5}
 
 \end{document}
