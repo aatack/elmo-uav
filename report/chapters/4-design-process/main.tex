@@ -98,7 +98,17 @@ Therefore, the design of the UAV was based around commercial aircraft, this disc
 
 Initial designs included a square, circular and airfoil shaped fuselage.
 
-% TODO: insert table from &REF1
+\importtable{| >{\raggedright\arraybackslash}p{0.12\columnwidth} | >{\raggedright\arraybackslash}p{0.36\columnwidth} | >{\raggedright\arraybackslash}p{0.36\columnwidth} |}{
+    \hline
+    \textbf{Design} & \textbf{Advantages} & \textbf{Disadvantages} \\
+    \hline
+    Square & Easy manufacturing and wing attachment; strong structural performance & Poor aerodynamics \\
+    \hline
+    Circular & Easy to manufacture & Hard to attach wing; difficult to create internal structure \\
+    \hline
+    Aerofoil & Aerodynamic; aesthetically pleasing & Difficult to manufacture \\
+    \hline
+}{tradeoffs involved in the type of fuselage design.}{fuselage-tradeoffs}
 
 \importimage{potential-aerofoil-design}{potential aerofoil fuselage design.}{Potential aerofoil design}{0.5}
 
@@ -434,6 +444,37 @@ The maximum number of repeats for one test was only 2, and so the sample size is
 These uncertainties were then converted to percentages and applied to all results of that type, with an example table for the uncertainty of $C_L$ shown in Table 1, and the others provided in the appendix. 
 
 % TODO: insert table from &REF2
+% TODO: units
+% TODO: define uncertainty and variance outside table
+% TODO: reduce width slightly
+\importtable{|
+    >{\raggedright\arraybackslash}m{0.16\columnwidth}
+    >{\raggedleft\arraybackslash}m{0.16\columnwidth}
+    >{\raggedleft\arraybackslash}m{0.17\columnwidth}
+    >{\raggedleft\arraybackslash}m{0.17\columnwidth}
+    >{\raggedleft\arraybackslash}m{0.17\columnwidth} |
+}{
+    \hline
+    Measured variable & $L$ & $q$ & $S$ & Rep. $C_L$ \\
+    \hline
+    Typical value & 77.04 & 249.55 & 0.6 & 0.01715 \\
+    Accuracy & 0.07704 & 0.349 & 0.0012 & 0.01213 \\
+    PDF & rect. & rect. & rect. & norm. \\
+    PDF factor & 1.7321 & 1.7321 & 1.7321 & 1 \\
+    $k$ factor & 1 & 1 & 1 & 1 \\
+    SC value & 0.006679 & -0.00206 & -0.85754 & 1 \\
+    Uncertainty & 0.000297 & -0.000416 & -0.000594 & 0.012128 \\
+    Variance & $9\times10^{-8}$ & $1.7\times10^{-7}$ & $3.5\times10^{-7}$ & $1.471\times10^{-4}$ \\
+    \hline
+}{uncertainty calculations for $C_L$.}{cl-uncertainty}
+
+\importtable{| l r |}{
+    \hline
+    Combined standard uncertainty & 0.01215 \\
+    $C_L$ mean & 0.5145 \\
+    Percentage uncertainty & 2.36 \\
+    \hline
+}{uncertainty summary for $C_L$.}{uncertainty-summary}
 
 Unfortunately, the scope of the work required to design a fully functional tailplane with control surfaces had not been realised at this point, and the design was far too simple, with no mounting angle or control surfaces.
 The tail was also undersized based on observation by our project supervisors.
@@ -863,7 +904,15 @@ With the scale modified to a reduced upper bound, the stresses on the other part
 There are two main types of landing gear design considered for this project: the tricycle and a tail wheel approach. A tricycle consists of a single front wheel, and two rear wheels, as seen on most commercial aircraft.
 Whereas a tail wheel design uses a single rear wheel with two front wheels.
 
-% TODO: import table from &REF3
+\importtable{| >{\raggedright\arraybackslash}p{0.12\columnwidth} | >{\raggedright\arraybackslash}p{0.36\columnwidth} | >{\raggedright\arraybackslash}p{0.36\columnwidth} |}{
+    \hline
+    \textbf{Design} & \textbf{Advantages} & \textbf{Disadvantages} \\
+    \hline
+    Tricycle & Prevents nose tipping; improved stability; better manoeuvrability; better in crosswinds & Increased drag and weight; nose gears are prone to damage \\
+    \hline
+    Tail wheel & Lighter; easier to integrate with under rudder; more suitable for integration with nose design; propellors would have more ground clearance & Harder to attach front wheels; harder to manoeuvre \\
+    \hline
+}{tradeoffs involved in the gear layout used.}{gear-layout-tradeoffs}
 
 When the landing gear was first being designed  weight was the limiting factor, with the UAV close to the 7kg mass limit, because of this the decision was made to use a tail wheel approach as it is lighter than the tricycle approach.
 

@@ -68,6 +68,21 @@
     \label{eqn:#2}  % TODO: fix equation labelling
 }
 
+% Adds padding to table rows
+\renewcommand{\arraystretch}{1.2}
+
+% Heading, contents, caption, label
+\newcommand{\importtable}[4]{
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{#1}
+            #2
+        \end{tabular}
+        \caption{#3}
+        \label{tbl:#4}
+    \end{table}
+}
+
 \begin{document}
 \begin{multicols*}{3}
 
