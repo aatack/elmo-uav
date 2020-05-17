@@ -16,15 +16,30 @@ The cruise speed was estimated using preliminary values of mass, $C_L$, aspect r
 This function could then be used to form a probability distribution and find the most likely value of the cruise velocity based on the estimated values.
 The probability distribution is shown in Figure 2.
 
-\importimage{cruise-velocity-distribution}{distribution of cruise velocities.}{Cruise velocity distribution}{0.7}
-
 We find that the mean and median both have values of approximately 21m/s, and so this taken as the estimated cruise velocity at this point. 
 
 The power requirements can then be estimated using a similar procedure, taking preliminary values for efficiency, mass, Vcruise (as estimated above), $C_L$, and $C_D$, again using normal distributions of values for the unknowns.
 Appendix B contains the function used.
 This can then be used to find the probability distribution for the power required in cruise, shown in Figure 4.
 
-\importimage{cruise-power-distribution}{distribution of power required in cruise.}{Cruise power distribution}{0.7}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{cruise-velocity-distribution}
+        \caption{Velocity}
+        \label{fig:cruise-distribution:velocity}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{cruise-power-distribution}
+        \caption{Power}
+        \label{fig:cruise-distribution:power}
+    \end{subfigure}
+    \caption{expected distribution of selected properties during cruise.}
+    \label{fig:cruise-distribution}
+\end{figure}
 
 We find that the mean value of the power required in cruise is 315W, with a median of 302W, giving an estimated power requirement in cruise of around 310W.
 There is more uncertainty with this than with the cruise speed due to the larger range of values covered within one standard deviation of the mean, however this still provides a good starting point for the project.
@@ -84,7 +99,7 @@ Initial designs included a square, circular and airfoil shaped fuselage.
 
 % TODO: insert table from &REF1
 
-\importimage{potential-aerofoil-design}{potential aerofoil fuselage design.}{Potential aerofoil design}{0.7}
+\importimage{potential-aerofoil-design}{potential aerofoil fuselage design.}{Potential aerofoil design}{0.5}
 
 For the wind tunnel model, it was decided that a hybrid of a square fuselage and an airfoil shaped fuselage would be beneficial.
 It was thought that a side profile of a NACA0012 airfoil would reduce drag and increase lift, whilst a square front section would make manufacturing easier.
@@ -121,10 +136,38 @@ It was hoped that the first test would ‘nail down’ the basics of the fuselag
 
 \subsubsection{Twist-in motor attachment} \label{sec:design-process:initial-designs:propulsion:twist-in-motor-attachment}
 
-\importimage{twist-in-in-place}{the twist-in motor in place within the housing}{Twist-in motor in place}{0.7}
-\importimage{twist-in-attached}{bracket attached to the motor}{Bracket attached to motor}{0.7}
-\importimage{twist-in-bracket}{the bracket for the twist-in motor}{Bracket}{0.7}
-\importimage{twist-in-housing}{the housing for the twist-in motor}{Housing}{0.7}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{twist-in-in-place}
+        \caption{Motor in-place in housing}
+        \label{fig:twist-in:in-place}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{twist-in-attached}
+        \caption{Bracket attached to motor}
+        \label{fig:twist-in:attached}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{twist-in-bracket}
+        \caption{Bracket}
+        \label{fig:twist-in:bracket}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{twist-in-housing}
+        \caption{Housing}
+        \label{fig:twist-in:housing}
+    \end{subfigure}
+    \caption{CAD models of the twist-in motor attachment used in the tail.}
+    \label{fig:twist-in}
+\end{figure}
 
 Designed early on in the project this was a proposed design for the attachment of the wing motors, however when the design criteria changed to include a battery and ESC in the movable propulsion unit, a new design was required.
 However, this design is still used in the tail location as the battery and ESC are fixed in the fuselage for that configuration, and so only the motor moves making this an ideal solution.
@@ -278,16 +321,81 @@ Once a suitable amount of data were collected, similar sweeps of the parameter s
 
 \subsubsection{Results and analysis} \label{sec:design-process:interim-design-review:wind-tunnel-test:results-and-analysis}
 
-\importimage{wing-setting-angle}{a graph showing how the setting angle of the wings were found.}{Wing setting angle}{0.4}
-\importimage{lift-comparison}{lift comparing between the two wings.}{Lift comparison}{0.4}
-\importimage{drag-comparison}{drag comparison between the two wings.}{Drag comparison}{0.4}
-\importimage{naca-lift-coefficient}{$C_L$ plots with the chosen NACA aerofoil.}{NACA lift coefficient}{0.4}
-\importimage{naca-drag-coefficient}{$C_D$ plots.}{NACA drag coefficient}{0.4}  % TODO: expand on caption
-\importimage{cl-against-cd}{$C_L$ vs $C_D$ plots.}{$C_L$ against £C_D£}{0.4}
-\importimage{flap-drag-comparison}{drag comparison between different flap angles.}{Flap drag comparison}{0.4}
-\importimage{flap-lift-comparison}{lift comparison between different flap angles.}{Flap lift comparison}{0.4}
-\importimage{30-degree-flap-lift}{lift at 30 degree flap.}{30 degree flap lift}{0.4}
-\importimage{moment-coefficients}{moment coefficient plots.}{Moment coefficients}{0.4}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{wing-setting-angle}
+        \caption{Wing setting angle}
+        \label{fig:wind-tunnel-results:wing-setting-angle}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{lift-comparison}
+        \caption{Lift comparison}
+        \label{fig:wind-tunnel-results:lift-comparison}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{drag-comparison}
+        \caption{Drag comparison}
+        \label{fig:wind-tunnel-results:drag-comparison}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{naca-lift-coefficient}
+        \caption{NACA lift coefficient}
+        \label{fig:wind-tunnel-results:naca-lift-coefficient}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{naca-drag-coefficient}
+        \caption{NACA drag coefficient}
+        \label{fig:wind-tunnel-results:naca-drag-coefficient}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{cl-against-cd}
+        \caption{$C_L$ against $C_D$}
+        \label{fig:wind-tunnel-results:cl-against-cd}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{flap-drag-comparison}
+        \caption{Flap drag comparison}
+        \label{fig:wind-tunnel-results:flap-drag-comparison}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{flap-lift-comparison}
+        \caption{Flap lift comparison}
+        \label{fig:wind-tunnel-results:flap-lift-comparison}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{30-degree-flap-lift}
+        \caption{30$^o$ flap lift}
+        \label{fig:wind-tunnel-results:30-degree-flap-lift}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{moment-coefficients}
+        \caption{Moment coefficients}
+        \label{fig:wind-tunnel-results:moment-coefficients}
+    \end{subfigure}
+
+    \caption{graphical results of the analysis of data gathered during the wind tunnel test.}
+    \label{fig:wind-tunnel-results}
+\end{figure}
 
 The results from the wind tunnel test required considerable post processing before analysis could be carried out, but once this was complete the graphs could be made, and the results could be easily analysed.
 There was a significant problem when the correction for the drag of the mounting structure, used to hold the model in the wind tunnel, was implemented because it caused some of the drag results to be negative.
@@ -354,22 +462,22 @@ The propeller was balanced by the manufacturer, and during the test showed no si
 
 \subsubsection{Results and analysis} \label{sec:design-process:interim-design-review:motor-and-propellor-test:results-and-analysis}
 
-\importimage{manufacturer-comparison}{comparison between the power data quoted by the manufacturer and the data collected in the wind tunnel.}{Manufacturer comparison}{0.5}
+\importimage{manufacturer-comparison}{comparison between the power data quoted by the manufacturer and the data collected in the wind tunnel.}{Manufacturer comparison}{0.8}
 
 Figure 1 shows that the data provided by the propeller supplier and the data from the test performed match up very well for the power output from the propeller at a given RPM, this shows that the data provided is accurate and can be used as a good estimate of the power provided by the other propellers intended for use on the UAV, the pusher version of the propeller tested and both fuselage propellers. 
 
-\importimage{thrust-data}{thrust data collected at the three airspeeds tested.}{Thrust data}{0.5}
+\importimage{thrust-data}{thrust data collected at the three airspeeds tested.}{Thrust data}{0.8}
 
 Figure 2 shows again the similarities between the data given by the propeller supplier for the static case and the test data, but more importantly this graph shows the drop off of thrust with an increase in airspeed.
 This can be used to estimate the thrust developed by the propulsion unit at cruise, and so find if the propeller is suitable for use.
 
-\importimage{maximum-thrust}{maximum thrust at the airspeeds tested, with an extrapolation to the intended cruise speed of 20 m.s-1}{Maximum thrust}{0.5}
+\importimage{maximum-thrust}{maximum thrust at the airspeeds tested, with an extrapolation to the intended cruise speed of 20 m.s-1}{Maximum thrust}{0.8}
 
 Figure 3 shows the extrapolation of the thrust of the propulsion unit at different airspeeds up to the intended cruise speed of 20m/s.
 This predicts that the thrust in cruise would be 6.5N, therefore 13N for the total thrust of the UAV.
 From CFD drag results giving 10N at 20m/s, this would be sufficient to cruise at 77\% throttle, saving battery and giving a longer flight time than if cruise had required full throttle. 
 
-\importimage{efficiency-data}{efficiency data collected at the three different airspeeds tested}{Efficiency data}{0.5}
+\importimage{efficiency-data}{efficiency data collected at the three different airspeeds tested}{Efficiency data}{0.8}
 
 Figure 4 shows the efficiency curves for the power unit at different airspeeds, and also the data provided by the supplier for the propeller at static conditions.
 From this data it is clear to see a significant difference between the data provided by the propeller manufacturer and the data recorded, which is surprising given that the power produced by the propeller is so similar to the manufacturer data.
@@ -696,9 +804,36 @@ To fulfil all the above criteria, it was obvious from the start that the nose wo
 The initial design was simple, incorporated the ability to attach the motor via four internal screw holes.
 The nose would be attached to the fuselage via a spar running through the nose and the front of the spar.
 Although not optimal, at the time it was deemed acceptable to drill through the end of the carbon spar as it was away from the structural core of the fuselage.
-The design also incorporated a slot for the battery to slide into to act as a ballast, as well as a slot for the ESC which would maximise airflow to it therefore cooling. 
+The design also incorporated a slot for the battery to slide into to act as a ballast, as well as a slot for the ESC which would maximise airflow to it therefore cooling.
 
-\importimage{initial-nose-design}{initial nose design.}{Initial nose design}{0.6}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.6\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{initial-nose-design}
+        \caption{Initial}
+        \label{fig:nose-design-progression:initial}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.6\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{revised-nose-design}
+        \caption{Revised}
+        \label{fig:nose-design-progression:revised}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.6\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{twice-revised-nose}
+        \caption{Final}
+        \label{fig:nose-design-progression:final}
+    \end{subfigure}
+    
+    \caption{various stages of the design of the printed nose.}
+    \label{fig:nose-design-progression}
+\end{figure} 
+
+% \importimage{initial-nose-design}{initial nose design.}{Initial nose design}{0.6}
 
 Figure 11 shows a redesigned model of the nose.
 Firstly, the outer body has been light weighted considerably from 5mm to 1.5mm and supports added.
@@ -707,13 +842,13 @@ The tray has a section underneath for the ESC to be placed, with cooling vents i
 The nose will be secured to the fuselage via two bolts the width of the fuselage.
 More light weighting was done to the motor support and rods used instead of the previous bulky design. 
 
-\importimage{revised-nose-design}{revised nose design.}{Revised nose design}{0.7}
+% \importimage{revised-nose-design}{revised nose design.}{Revised nose design}{0.7}
 
 After advice from our supervisor, alterations were made to the initial design.
 Noticeably a battery and ESC tray was added to the back of the nose, with vents in the front of the nose to allow cooling to the ESC.
 The tray was supported by two vertical poles to support the weight of the battery. 
 
-\importimage{twice-revised-nose}{twice revised nose design.}{Twice revised nose design}{0.7}
+% \importimage{twice-revised-nose}{twice revised nose design.}{Twice revised nose design}{0.7}
 
 The nose would now be secured by one bolt, through the carbon fibre spar, this would also act as a support for the motor mount as well.
 However, after further deliberation with our supervisor, it was decided that the loss I structural performance from drilling through the carbon fibre boom was not worth the reduction in workload so a new way of attaching the nose to the fuselage needed to be devised.  
