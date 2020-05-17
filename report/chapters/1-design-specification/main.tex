@@ -4,7 +4,19 @@
 
 \newchapter{Design Specification}{design-specification}
 
-\section{General requirements} \label{sec:design-specification:general-requirements}
+% TODO: disentangle duplicated ideas
+
+\section{Brief} \label{sec:design-specification:brief}
+
+This project aimed to create a configurable, stable and reliable test platform for determining the effect of the position of propulsion systems on the efficiency of an electric aerial vehicle.
+Specific emphasis was placed on isolating the effect of the location of the propellers on the power required to sustain flight at a particular velocity, through mechanisms such as promoting airflow over lifting surfaces or counteracting wingtip vortices, while negating the effect of other variables such as the mass or frontal area by keeping them constant. 
+
+Integral to the success of this project was the construction of a robust UAV, representing a typical and generic aircraft and as such capable of producing results that are widely applicable, but which can have propulsion units fixed to it in an entirely modular fashion.
+This allows the construction of a wide range of flight configurations, altering the characteristics of the propulsion system by changing its position between the front and rear of the fuselage; multiple locations along the span of the wing, including the wingtips; above or below the wing; or in a tractor or pusher configuration. 
+
+By constructing a model capable of completely traversing the design space, a number of experiments were to be run which, when combined with results of computational experiments, would yield insight as to the optimal propulsion configuration for similar fixed-wing electric vehicles. 
+
+\section{Requirements} \label{sec:design-specification:requirements}
 
 As this was a new project, it had not inherited any requirements from previous attempts. 
 The aircraft would not be competing, so had no requirements or constraints based on competition entry. 
@@ -13,7 +25,7 @@ These were mostly for transportability and based on his experience (Towell, 2019
 The aircraft was required to have the ability to be flown with the propulsion unit in different location on the model in order to compare the performance of each and find the most efficient. 
 Beyond these, the design space was very open to our exploration and interpretation. 
 
-\section{Hardware requirements} \label{sec:design-specification:hardware-requirements}
+\subsection{Hardware} \label{sec:design-specification:requirements:hardware}
 
 Again, these were very open and relaxed to the team.
 The general requirements are listed below.
@@ -40,7 +52,7 @@ The team also defined some further requirements based on the project objectives.
     \item The propulsion system be configurable into a large variety of versions, with the UAV design being able to cope with all these changes. 
 \end{itemize}
 
-\section{System requirements} \label{sec:design-specification:system-requirements}
+\subsection{System} \label{sec:design-specification:requirements:system}
 
 The team set several requirements of the UAV systems, mostly to allow for analysis and interpretation of results either in real time or post flight, or a combination of both. 
 
@@ -56,5 +68,14 @@ The team set several requirements of the UAV systems, mostly to allow for analys
 \end{itemize}
 
 Lastly the team hoped to add an autopilot functionality that would ensure the aircraft flew straight and level in order to provide a reliable test bed for experiments, such that the pilot would not be overburdened trying to fly the aircraft and initiate tests at the same time, however this was not recognised as essential, and would be a ‘nice to have’ feature.
+
+\section{Resources} \label{sec:introduction:resources}
+
+Like all GDP teams, the project had an initial project allocation of £850 to design and build the UAV.
+As the project had been proposed by alumni, Ewan Kirk, he had pledged an additional £1500 towards the development if it were required, however this was to be used as a last resort.
+Finally, through a successful pitch to the Northrop Grumman 3D printing fund, our team leader managed to secure an additional up to £1000 allocation to be spent on 3D printed parts. 
+
+The team also had access to university resources provided by our course, which included access to workshops such as the EDMC and TSRL, and specialist tools such as metalworking machinery, a CNC laser cutter, a CNC hot wire foam cutter, and the university 3D printers.
+We also had access to electronics workshops and equipment, as well as general access to vital tools and fasteners.
 
 \end{document}
