@@ -1,6 +1,7 @@
 \documentclass[../../main.tex]{subfiles}
 
 % Image numbers: 10-201 inclusive
+% NOTE: present tense
 
 \begin{document}
 
@@ -8,38 +9,32 @@
 
 \section{Wing} \label{sec:final-design-proposal:wing}
 
-The wing assembly was designed to be unfasten from the fuselage assembly with ease.
-Such decision was established so to reduce the encumbrance of the UAV during transportation.
-The wing assembly is composed by two carbon spars placed respectively at quarter and half chord, and extending for the entire 2m wing span.
-Each half of the wing presents three ribs, as shown in Fig.
-0, obtained with the aid of additive manufacturing.
-These cover multiple functions in the wing assembly as it will be later discussed.
-The use of profiles carved out of blue Styrofoam (extruded polystyrene) provided a lightweight structure for the aerodynamic profiles such as flaps, aileron and wing itself.
-A hollow profile also allowed the fitting of wires in the wing structure.
-A central mounting plate provided the fitting points for the fastening of the wing assembly to the fuselage.
+The wing assembly was designed to be unfastened from the fuselage assembly with ease.
+Such a decision was established so as to reduce the encumbrance of the UAV during transportation.
+The wing assembly is comprised of two carbon spars placed respectively at quarter and half chord, and extending for the entire \metres{2} wingspan, each half of the wing containing three ribs (Figure \ref{fig:ribs}).
+These ribs fulfil multiple functions in the wing assembly and will be discussed in further detail later.
+The use of profiles carved out of blue styrofoam (extruded polystyrene) provide a lightweight structure for the aerodynamic profiles such as flaps, aileron, and wing itself.
+A hollow profile also allows the fitting of wires in the wing structure.
+A central mounting plate provides the fitting points for the fastening of the wing assembly to the fuselage.
 
 \subsection{Spars} \label{sec:final-design-proposal:wing:spars}
 
-The two-spar structure utilized for the wind tunnel model’s wing exhibited small deflections in bending and twist when tested.
-Therefore, this same configuration was maintained for the flight model.
-Two carbon spars were used for the final design, thus reducing the weight although maintaining the same structural characteristics.
-These have been sized for a case of a loading equal to 4g; at which the wing would present a deflection of 54mm at the wing tip as it can be seen in Fig. 1.
-Both spars have a wall thickness of 2mm whereas their diameters differ.
-The first one, position at quarter chord, has a diameter of 16mm; while the one positioned at half chord has a diameter of 14mm.
+The two-spar structure utilised for the wind tunnel model's wing exhibited only small deflections in bending and twist when tested, and this same configuration is therefore maintained for the flight model.
+Two carbon spars are used for the final design, thus reducing the weight while maintaining the same structural characteristics.
+These were sized for a loading case equal to $4g$, at which the wing would present a deflection of \mm{54} at the wing tip as can be seen in Figure \ref{fig:fea-half-wingspan}.
+Both spars have a wall thickness of \mm{2} whereas their diameters differ: the first one, positioned at quarter chord, has a diameter of \mm{16}; while the one positioned at half chord has a diameter of \mm{14}.
 
 \importimage{fea-half-wingspan}{FEA of half wingspan subject to a distributed load of 138N/m.}{FEA of half wingspan}{0.9}
 
 \subsection{Ribs} \label{sec:final-design-proposal:wing:ribs}
 
-The attachment points for the power units are obtained through the use of 3D printed inserts imbedded in the wing structure.
-These, as shown in Fig. 2, present the same airfoil section as the wing so to not disrupt the airflow.
-Three inserts per half wingspan allow as many different possible propulsion positions: 20\% half-span, 40\% half-span and 100\% half-span (tip).
-Thus allowing the assessment of the effects of the propulsion unit placed close to the fuselage structure (20\% half-span); at the optimal position shown in Propeller-wing interaction for minimum induced loss (Kroo, 1986) (40\% half-span) and wing tip (100\% half-span).
-The design of this last is, although, different from the ‘mid-span’ elements.
-For each of the mid-span inserts, the same motor unit can be mounted in four different configurations: top-tractor, bottom-tractor, top-pusher, bottom-pusher (Fig. 3).
-While for the tip mounted element the available configurations are two: pusher, tractor (Fig. 4).
-Adapters are adopted to blend the standardized connection surface of the motor housing with the wing’s surface.
-Thus, reducing the aerodynamic footprint. 
+The attachment points for the power units take the form of 3D printed inserts embedded in the wing structure.
+These, as shown in Figure \ref{fig:ribs}, present the same aerofoil section as the wing so as not to disrupt the airflow.
+Three inserts per half wingspan allow as many different propulsion positions as possible: \pc{20} wingspan, \pc{40} wingspan, and \pc{100} wingspan (wingtip); thus allowing the assessment of the effects of the propulsion unit placed close to the fuselage structure (\pc{20} wingspan); at the optimal position found by Kroo (\cite{kroo-86}), \pc{40} wingspan; and at the wingtip (\pc{100} wingspan).
+
+The design of this last is mounting point is, however, different from the semi-span inserts.
+For each of the semi-span inserts, the same motor unit can be mounted in four different configurations: underwing pusher, underwing tractor, overwing pusher, and overwing tractor (Figures \ref{fig:wing-mounting:underwing-pusher} through \ref{fig:wing-mounting:overwing-tractor} respectively); while for the wingtip-mounted element the number of available configurations is two: pusher and tractor (Figures \ref{fig:wing-mounting:wingtip-pusher} and \ref{fig:wing-mounting:wingtip-tractor}).
+Adaptors are adopted to blend the standardised connection surface of the motor housing with the wing's surface, thus reducing the aerodynamic footprint. 
 
 % \importimage{mid-span-rib}{mid-span rib.}{Mid-span rib}{0.5}
 % \importimage{tip-rib}{tip rib.}{Tip rib}{0.5}
@@ -78,7 +73,7 @@ Thus, reducing the aerodynamic footprint.
         \centering
         \includegraphics[width=\textwidth]{underwing-pusher}
         \caption{Underwing pusher}
-        \label{fig:wing-mounting:underwing-puller}
+        \label{fig:wing-mounting:underwing-pusher}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\columnwidth}
@@ -122,40 +117,36 @@ Thus, reducing the aerodynamic footprint.
     \label{fig:wing-mounting}
 \end{figure}
 
-Each ‘mid-span’ insert in equipped four brass threaded inserts on both bottom and top surface.
+Each semi-span insert is equipped with four brass threaded inserts on both the top and bottom surfaces.
 These permit the fastening of the power unit cells and the respective adapter.
 The location of the holes is the same for top and bottom surface (when viewed from the top).
-Doing so, the same motor housing can be mounted on the top and bottom surface without alterations.
-Furthermore, as presented in Fig. 5, the inserts are located at equal distance from the centreline positioned at half chord.
-Thus, allowing the mounting of the same power unit cell in tractor or pusher configurations without the need for alterations. 
+As such, the same motor housing can be mounted on the top and bottom surface without alterations.
+Furthermore, as presented in Figure \ref{fig:wing-insert}, the inserts are equidistant from the centreline positioned at half chord, thereby allowing the mounting of the same power unit cell (PUC) in tractor or pusher configurations without the need for alterations. 
 
 \importimage{wing-insert}{section view of the wing insert.}{Wing insert}{0.9}
 
-The tip insert is designed so to mount the motor housing in horizontal position.
-In order to use the same configuration of mounting points the tip adapter covers a structural role (unlike the rest).
-This presents the brass inserts configuration discussed above so to guarantee the attachment of the standardized PUC.
-The adapter is then mounted to the insert though two M6 bolts fastened to the two imbedded nuts shown in Fig. 2b. 
+The tip insert is designed to mount the motor housing in a horizontal orientation.
+In order to use the same configuration of mounting points the tip adaptor covers a structural role, unlike the others.
+This presents the brass inserts configuration discussed above so to guarantee the attachment of the standardized PUC.  % TODO: clarify meaning
+The adapter is then mounted to the insert though two M6 bolts fastened to the two imbedded nuts shown in Figure \ref{fig:ribs:tip}. 
 
-In order to reduce the elements composing the wing assembly, these components cover the function of ribs as well providing further torsional rigidity to the wing structure.
-The two holes shown in Fig. 5 permit the carbon spars to run through the rib insert.
-Thus, providing a secure attachment and sufficient bonding area.
-Furthermore, as it will be later exposed, the housing for the active surfaces’ servos and flaps’ guides are designed to be integral part of the rib structure. 
+In order to reduce the number of elements comprising the wing assembly, these components cover the function of ribs as well providing further torsional rigidity to the wing structure.
+The two holes shown in Figure \ref{fig:wing-insert} permit the carbon spars to run through the rib insert, providing a secure attachment and sufficient bonding area.
+Furthermore, as will be discussed in more detail later, the housing for the active surfaces' servos and flap guides are designed to be an integral part of the rib structure. 
 
 \subsection{Mounting plate} \label{sec:final-design-proposal:wing:mounting-plate}
 
-A Nylon printed mounting plate is located at the centre of the wing assembly.
-This is tightly mounted to the wing spars so to guarantee a rigid support.
-The wing assembly is then clamped onto the fuselage attachment plate through four M6 bolts.
-These are positioned at the corners of the 3D printed plate as it is shown in Fig. 6.
-A Styrofoam cover placed on top of the mounting plate is responsible for the blending of the wing assembly with the rest of the fuselage. 
+A nylon printed mounting plate is located at the centre of the wing assembly and is tightly mounted to the wing spars so as to guarantee a rigid support.
+The wing assembly is then clamped onto the fuselage attachment plate by four M6 bolts.
+These are positioned at the corners of the 3D printed plate as shown in Figure \ref{fig:wing-assembly}.
+A styrofoam cover placed on top of the mounting plate is responsible for the blending of the wing assembly with the rest of the fuselage. 
 
 \importimage{wing-assembly}{exploded view of the wing assembly attachment procedure}{Wing assembly attachment}{0.8}
 
-The two cylinders housing the carbon spars ensure an even distribution of the loads though a large area (Fig. 7a).
-This was essential since this component is subject to the totality of the load transferring from the wing to the fuselage and vice versa.
-Therefore, extensive work was conducted using finite element analysis to generate a reliable and light design.
-The peak loading for this component was established to be 4g, simulating an abrupt increase in lift Fig. 7b.
-Hence producing the design shown in Fig. 7a. 
+The two cylinders housing the carbon spars (Figure \ref{fig:wing-plate:cad}) ensure an even distribution of the loads though a large area.
+This is essential since this component is subject to the entirety of the load transferring from the wing to the fuselage and vice versa.
+Extensive work was therefore conducted using finite element analysis to generate a reliable and light design.
+The peak loading for this component was established to be $4g$, simulating an abrupt increase in lift as in Figure \ref{fig:wing-plate:fea}, and producing the optimal design that was eventually used. 
 
 % \importimage{wing-plate-cad}{CAD representation of the wing mounting plate.}{Wing mounting plate CAD}{0.6}
 % \importimage{wing-plate-fea}{stress concentration due to an applied load of 275 N.}{Wing mounting plate FEA}{0.6}
@@ -178,40 +169,41 @@ Hence producing the design shown in Fig. 7a.
     \end{subfigure}
     
     \caption{
-        models of the wing mounting plate; (b) shows the stress concentration under a 275 N load.
+        models of the wing mounting plate; (b) shows the stress concentration under a \newtons{275} load.
     }
     \label{fig:wing-plate}
 \end{figure}
 
 \subsection{Flap mathematical modelling} \label{sec:final-design-proposal:wing:flap-mathematical-modelling}
 
+% TODO: should this go in the design process?
+
 Flaps were an obvious addition to aid take-off and landing.
-It was decided to use single slotted flaps to increase flap efficiency and high lift capability.
+It was decided that single slotted flaps should be used to increase flap efficiency and high lift capability.
 The wing was split into three main sections between the motor mounts.
-Because of the restrictions to span, the flap to wing chord ratios were the values that were altered to change high light performance.
-It was also decided to use a small symmetrical deflection of the ailerons as the flaps were limited in performance.
-It was considered to convert the trailing edges of the mounting locations into flaps too, however the increase in complexity led to the decision to ignore this idea. 
+Because of the restrictions bounding wingspan, the flap-to-chord ratio was the value that was altered to change high lift performance.
+It was also decided that a small symmetrical deflection of the ailerons should be used in addition to the deployment of flaps, as the flaps were limited in performance.
+Converting the trailing edges of the mounting locations into additional flaps was also considered, but the increase in complexity led to the decision to shelve this idea. 
 
-To begin, the flap geometry was parametrized by defining a chord ratio of the flaps to the wing, as well as the inboard and outboard spans of each flap.
-The mathematical outcome of the process gave a required angle of the fuselage either on rotation or induced by a tail gear configuration, so work on the flaps aimed to reduce this angle, especially given the clearance required by the tail propeller demanding long landing gear legs. 
+Initially, the flap geometry was parametrised by defining a chord ratio of the flaps to the wing, as well as the inboard and outboard spans of each flap.
+The mathematical outcome of the process gave a required angle of the fuselage either on rotation or induced by a tail gear configuration, so work on the flaps aimed to reduce this angle, especially given the clearance required by the tail propeller and the correspondingly long tail gear. 
 
-To mathematically model the flaps, first, a take-off speed was obtained from data provided by a teammate’s work on propulsion performance.
-His initial calculation had provided a take-off speed of 10 m s-1 was not possible to design the flaps around with a reasonable required incidence.
-After a dialogue, the take-off speed was agreed to be raised to 13 m s-1. 
+To mathematically model the flaps, a takeoff speed was first obtained from the previously acquired data on propulsion performance.
+This initial calculation suggested that for a takeoff speed of \mps{10} it would not be possible to design the flaps around with a reasonable required incidence.
+After a some discussion, it was agreed that the takeoff speed should be raised to \mps{13}. 
 
-To analyse the flap geometry, a process was devised from this authors own understanding, using flap parameters from M.
-Sadraey’s book: ‘Aircraft design: A systems engineering perspective’.
-According to table 5.15 in (Sadraey, 2013), the increase in local sectional lift coefficient for a slotted flap is 1.3 times the chord ratio of the flap to the wing, and the increase in local sectional lift coefficient for a plain flap (such as a converted aileron) is 0.7-0.9. 0.7 was selected out of this range to be conservative. 
+To analyse the flap geometry, a devised from methods introduced by Sadraey \cite{sadraey-13}.
+According to table 5.15 in \cite{sadraey-13}, the increase in local sectional lift coefficient for a slotted flap is 1.3 times the chord ratio of the flap to the wing, and the increase in local sectional lift coefficient for a plain flap (such as a converted aileron) is 0.7 to 0.9; 0.7 was selected from this range to be conservative. 
 
-It is important to note that this increase in lift coefficient is for a flap deflection of 60 degrees.
-This is unrealistic for this application.
-Additionally, because roll authority is required in all flight phases, so the full aileron deflection would not be usable for high lift gain, so a small angle of 5o downwards deflection was selected.
-The maximum deflection of the slotted flaps was selected as 40o based on data in table 5.16 from (Sadraey, 2013).
-The increase in lift coefficient for the respective flap was then multiplied by the ratio of the maximum deflection to 60o.
-The value for the slotted flap was further multiplied by the chord ratio as required by the method. 
+It is important to note that this increase in lift coefficient is for a flap deflection of \degr{60}, which is unrealistic for this application.
+Additionally, because roll authority is required in all flight phases, the full aileron deflection would not be usable for high lift gain, so a small angle of \degr{5} downwards deflection was selected.
+The maximum deflection of the slotted flaps was selected as \degr{40} based on data in table 5.16 from \cite{sadraey-13}.
+The increase in lift coefficient for the respective flap was then multiplied by the ratio of the maximum deflection to \degr{60}.
+The value for the slotted flap was further multiplied by the chord ratio as required by this method. 
 
-A simple version of the lift equation was then defined to account for the flap and aileron deflection at take-off: 
+A simple version of the lift equation was then defined to account for the flap and aileron deflection at takeoff: 
 
+% TODO: mathrm on letters
 \importequation{
     \begin{aligned}
     L_{TO}  & {}= q S_{NoHLDs} (C_{L_0}+C_{L_\alpha}\alpha) \\
@@ -220,29 +212,29 @@ A simple version of the lift equation was then defined to account for the flap a
             & {}= qSC_{L_0} + qSC{L_\alpha}\alpha + q S_a \Delta C_{L_\alpha} + q S_f \Delta C_{L_f}
     \end{aligned}
 }{takeoff-lift}
-% TODO: put line breaks into equation
 
-which can be rearranged for $alpha$:
+which can be rearranged for $\alpha$:
 
 \importequation{\alpha = \frac{L_{TO} - q S C_{L_0} - q S_a \Delta C_{L_\alpha} - q S_f \Delta C_{L_f}}{q S C_{L_\alpha}}}{rearranged-takeoff-lift}
 
-The take-off lift was estimated as 10 N greater than the maximum take-off weight of the UAV to provide responsive climb performance. Sa and Sf were determined by multiplying the total span for the flaps and ailerons by the wing chord, and $\Delta$CLa and $\Delta$CLf from the earlier calculations.
-$\alpha$ resulted as 7.88o required wing total incidence on take-off, based on a final selected value of flap to wing chord ratio of 0.4, which was the maximum reasonable value before the flaps would begin impinging on electronics or wing spars.
+The takeoff lift was estimated as \newtons{10} greater than the maximum takeoff weight of the UAV to provide responsive climb performance.
+$S_a$ and $S_f$ were determined by multiplying the total span for the flaps and ailerons by the wing chord, and $\Delta$\cla and $\Delta$\clf from the earlier calculations.
+$\alpha$ turned out to require \degr{7.88} total wing incidence on takeoff, based on the final selected value of flap to wing chord ratio of 0.4, which was the maximum reasonable value before the flaps would begin impinging on electronics or wing spars.
 
-The wing chord line had been set at an angle of 2o relative to the fuselage, the required incidence of the fuselage, either provided by the landing gear or rotation would be 7.8768o – 2o = 5.8768o. 
+The wing chord line had been set at an angle of \degr{2} relative to the fuselage: the required incidence of the fuselage, either provided by the landing gear or rotation, would be $7.8768^\circ – 2^\circ = 5.8768^\circ$. 
 
 \subsection{Flap CAD} \label{sec:final-design-proposal:wing:flap-cad}
 
 The shape of the flap was defined from a copy of the wing CAD.
 Since a slotted flap had been chosen, a shroud from the wing had to extend to near the leading edge of the flaps in a deployed position such that boundary layer re-energisation on top of the flap would be optimal.
-The wing shroud had been defined in CAD, so the profile of this was transferred onto the flap profile, smoothed out and then cut off from the leading edge and upper surface.  
+The wing shroud had been defined in CAD, so its profile was transferred onto the flap profile, smoothed out, and then cut off from the leading edge and upper surface.  
 
-Based on feedback on an original design, the flap mechanism of a Cessna-172 was selected as inspiration for the next version (Towell, 2019).
-Images of this were studied, and a mechanism designed producing a smooth deployment both translationally back and down, and rotationally back to the 40 degree angle specified. 
+Based on feedback on an original design, the flap mechanism of a Cessna-172 was selected as inspiration for the next version \cite{towell-19}.
+Images of this mechanism were studied, and a mechanism designed producing a smooth deployment both translationally back and down, and rotationally back to the \degr{40} angle specified. 
 
 \importimage{flap-mechanism-side}{the flap mechanism.}{Flap mechanism side view}{0.6}
 
-The pins were made as central as possible in the flap so that they would not melt the walls of the flap in foam cutting.
+The pins were made as central as possible in the flap so that they would not melt the walls of the flap during foam cutting.
 These pins were also eventually changed to stiffening spars that would protrude beyond the end of the flaps to run along the tracks in the mechanism, but also stiffen the flap under aerodynamic loads.
 
 % \importimage{retracted-flap}{retracted flap with endplates for horn controls.}{retracted-flap}{0.4}
@@ -273,43 +265,41 @@ These pins were also eventually changed to stiffening spars that would protrude 
 
 \subsection{Central structure} \label{sec:final-design-proposal:fuselage:central-structure}
 
-The main focus for the design of the UAV’s fuselage was to provide a reliable and simple platform for the experiments.
+The main focus for the design of the UAV's fuselage was to provide a reliable and simple platform for the experiments.
 The concept for the design of the fuselage revolved around the idea of providing easy access to the electronics.
-Changing the motor configuration multiple time demands the ability to check and modify the electronics with ease in order to proceed with the experiments in a smooth manner.
-Therefore, the design presents a large electronics tray placed in the lower section of the fuselage; shown in purple in Fig. 8.
-This can be accessed through the removal of the UAV’s nose.
+Changing the motor configuration multiple times demands the ability to check and modify the electronics with ease in order to proceed with the experiments in a smooth manner.
+The design therefore presents a large electronics tray placed in the lower section of the fuselage, shown in purple in Figure \ref{fig:fuselage-inner-structure}.
+This can be accessed through the removal of the UAV's nose.
 
 \importimage{fuselage-inner-structure}{CAD representation of the inner structure of the fuselage's central section.}{Fuselage inner structure}{0.8}
 
-All the fuselage’s structural components are located in the top section of this last.
-Doing so a large area was created for the housing of the electronics as shown in Fig. 8.
-The supports for the electronics tray, also referred as ‘fuselage ribs’, are designed to be manufactured out of 5mm birch wood sheets.
-Such supports (represented in brown in Fig. 8), are mounted onto the fuselage central beam.
-This is a square section carbon spar (20mm x 20mm) which extends for the entire fuselage length. 
+All of the fuselage's structural components are located in the top section of this part.
+In so doing a large area was created for the housing of the electronics as shown in Figure \ref{fig:fuselage-inner-structure}.
+The supports for the electronics tray, also referred as the fuselage ribs, were designed to be manufactured out of \mm{5} birch wood sheets.
+Such supports (shown in brown in Figure \ref{fig:fuselage-inner-structure}) are mounted onto the fuselage central beam.
+This is a square section carbon spar (\mm{20} $\times$ \mm{20}) which extends for the entire fuselage length. 
 
-A carbon fibre sandwich panel is placed onto the top surface of the fuselage’s central spar.
-This is bonded at the wing’s attachment area with the aid of epoxy bonding agent.
-In fact, its function is to provide the four mounting points for the bolts so to allow the fixing of the wing assembly to the fuselage.
-The sandwich panel obtained by using a 5mm thickness nomex core placed between two carbon skins.
-These last are each made out of 3ply woven carbon prepreg cured in autoclave.
-Mounted below the plate are two PLA printed brackets (Fig. 9a); these are responsible for the correct positioning of the fuselage ribs and the landing gear mounting structure.
-This is better shown in Fig. 9b.
-Furthermore, they are designed to withstand a vertical load of 170N each; thus, offering a redundant attachment for the mounting plate in case of failure.
+A carbon fibre sandwich panel is placed onto the top surface of the fuselage's central spar.
+This is bonded at the wing's attachment area with the aid of epoxy bonding agent.
+Its function is to provide the four mounting points for the bolts so as to allow the fixing of the wing assembly to the fuselage.
+The sandwich panel is comprised of a \mm{5} thick nomex core placed between two carbon skins.
+These are each made out of three ply woven carbon prepreg cured in autoclave.
+Mounted below the plate are two PLA printed brackets (Figure \ref{fig:pla-bracket}); these are responsible for the correct positioning of the fuselage ribs and the landing gear mounting structure (Figure \ref{fig:brackets-highlighted}).
+Furthermore, they are designed to withstand a vertical load of \newtons{170} each, thus offering a redundant attachment for the mounting plate in case of failure.
 
 \importimage{pla-bracket}{CAD representation of the PLA bracket.}{PLA bracket}{0.5}
 \importimage{brackets-highlighted}{fuselage central assembly with brackets highlighted in green.}{Highlighted brackets}{0.7}
 
 \subsection{Landing gear attachment} \label{sec:final-design-proposal:fuselage:landing-gear-attachment}
 
-The aircraft was design to not exceed 7kg of total mass.
-Thus the position and the mass of the landing gear structure proved to be of significance in the position of the aircraft centre of gravity.
-The ideal position of this was set to be at 50\% of the wing’s chord length; with a 5\% shift caused by the change in propulsion configuration.
-The landing gear is mounted on two ‘C’ shaped 5mm aluminium brackets.
-These are mounted to two bulkheads as shown in Fig. 10a.
-These last cover the role of transferring and absorbing the vertical loads encountered during taxi, take off and landing.
-In order to minimize the weight of this structure the bulkheads are designed to be manufactured as carbon fibre sandwich panels.
-These have been specified to withstand vertical loads up to 5g.
-Furthermore, two triangular braces, as shown in Fig. 10b, are attached to the lowest section of the bulkheads and are clamped to the main spar through a PLA insert.
+The aircraft was designed to not exceed \kg{7} of total mass.
+Hence the position and the mass of the landing gear structure proved to be of significance in positioning the aircraft's centre of gravity.
+Its ideal position was set to be at \pc{50} of the wing's chord length, with a \pc{5} shift caused by the change in propulsion configuration.
+The landing gear is mounted on two C-shaped \mm{5} aluminium brackets.
+These are mounted to two bulkheads as shown in Figure \ref{fig:landing-gear-attachment}, and fulfil the role of transferring and absorbing the vertical loads encountered during taxi, takeoff, and landing.
+In order to minimise the weight of this structure the bulkheads were designed to be manufactured as carbon fibre sandwich panels.
+These have been specified to withstand vertical loads up to $5g$.
+Furthermore, two triangular braces, as shown in Figure \ref{fig:landing-gear-attachment:side}, are attached to the lowest section of the bulkheads and are clamped to the main spar through a PLA insert.
 These work in compression and are designed to counteract the moments generated by the loads acting on the wheels in the direction of travel. 
 
 % \importimage{landing-gear-attachment}{landing gear attachment structure.}{Landing gear attachment}{0.4}
@@ -336,42 +326,43 @@ These work in compression and are designed to counteract the moments generated b
     \label{fig:landing-gear-attachment}
 \end{figure}
 
-The carbon fibre sandwich panels bulkheads are design in the same manner as the fuselage central plate discussed previously.
-A schematic of this is provided in Fig. 11. 
+The carbon fibre sandwich panels bulkheads were designed in the same manner as the aforementioned fuselage central plate, whose schematic can be seen in Figure \ref{fig:carbon-fibre-sandwich}. 
 
 \importimage{carbon-fibre-sandwich}{CAD representation of the carbon fibre sandwich panel components.}{Carbon fibre sandwich}{0.5}
 
 \subsection{Finite element analysis} \label{sec:final-design-proposal:fuselage:finite-element-analysis}
 
-In order to verify the strength of the design and identify any weak points, some FEA was carried out using the Simulation function in SolidWorks.
-This is a fairly basic FEA system and can only use coarse meshes otherwise the simulations fail, but it gives a good indication of the strong and weak areas of the fuselage design.
-The materials of the parts of the fuselage were all specified and the data for those materials applied as accurately as possible in order to ensure the parts relative strengths were reflected in the simulations.
-The model is stripped down to the minimum components required to perform the simulations in order to save computational time and simplify the simulations.
-Initially a simulation was run to test the effects of high turning loads, with the main tail boom fixed in place as the reference point of the study and loads of 210N applied vertically upwards on the wing spar holes in the wing mount, and 80N applied vertically down on the component tray.
-These loads were chosen to simulate 3g loads in a turn, with the mass of the components assumed evenly distributed over the tray.
-Figure 1 shows the results.
+In order to verify the strength of the design and identify any weak points, some FEA was carried out using the simulation function in SolidWorks.
+This is a fairly basic FEA system and can only use coarse meshes $-$ otherwise the simulations fail $-$ but it gives a good indication of the strong and weak areas of the fuselage design.
+The materials of the parts of the fuselage were all specified and the data for those materials applied as accurately as possible in order to ensure the parts' relative strengths were reflected in the simulations.
+The model was stripped down to the minimum components required to perform the simulations in order to save computational time and simplify the simulations.
+Initially a simulation was run to test the effects of high turning loads, with the main tail boom fixed in place as the reference point of the study, with loads of \newtons{210} applied vertically upwards on the wing spar holes in the wing mount, and \newtons{80} applied vertically down on the component tray.
+These loads were chosen to simulate $3g$ loads in a turn, with the mass of the components assumed to be evenly distributed over the tray.
+Figure \ref{fig:fuselage-stress-distribution} shows the results.
 
-\importimage{fuselage-stress-distribution}{fuselage stress distribution during a simulated 3g turn.}{Fuselage stress distribution}{0.7}
+\importimage{fuselage-stress-distribution}{fuselage stress distribution during a simulated $3g$ turn.}{Fuselage stress distribution}{0.7}
 
 It can be seen that the wing mount shows that the maximum stress experienced is around 1.6 MPa, which is significantly below the 30 MPa yield stress of the ABS material used.
 The other high stress locations are on the lower parts of the component tray mounts, which peak at over 2 MPa, but the plywood used has a yield stress of 30 MPa and so this is also well below the point of breaking.
-It can also be seen that the stress on the carbon fibre tail boom reaches over 2 MPa, but this is well below the yield stress of the carbon tube which will be over 600 MPa based on the properties quoted at [Performance Composites [REF]]. 
+It can also be seen that the stress on the carbon fibre tail boom reaches over 2 MPa, but this is well below the yield stress of the carbon tube which will be over 600 MPa based on the properties quoted at \cite{unknown}. % TODO: [Performance Composites [REF]]. 
 
-The second simulation is showing the effects of landing loads, with the tail boom again fixed and the loads applied at the locations of the wheel centres on the landing gear.
-This simulation only tests the main gear as this is where the highest forces should be experienced if the UAV is landed properly.
-The forces applied are 350N vertically up and 105N horizontally rearwards to simulate a heavy landing of 5g with 1.5g deceleration force. 
+The second simulation determined the effects of landing loads, with the tail boom again fixed and the loads applied at the locations of the wheel centres on the landing gear.
+This simulation only tested the main gear as this is where the highest forces should be experienced if the UAV is landed properly.
+The forces applied are \newtons{350} vertically up and \newtons{105} horizontally backwards to simulate a heavy landing of $5g$ with $1.5g$ deceleration force. 
 
 \importimage{landing-leg-simulation}{simulated stress distribution over one of the landing legs.}{Landing leg simulation}{0.4}
 \importimage{fuselage-landing-simulation}{stress distribution over the fuselage during a simulated landing.}{Fuselage landing simulation}{0.6}
 
-It can be seen in Figure 2 that the peak loads experienced by the landing gear are around 260MPa, which is below the yield stress of the carbon fibre as previously stated, and although it is nearing the yield stress, this is an extreme case of a particularly heavy landing and so a heavier landing than this would not be expected unless it occurs in a crash landing scenario in which case the UAV surviving would be down to luck.
-It can also be seen that the peak stress on the landing gear brackets is around 100MPa, below the yield stress of around 270MPa of the aluminium they are made of.
-With the scale modified to a reduced upper bound, the stresses on the other parts can be seen, with the peak stress experienced by the landing gear mounts seen as around 10 MPa, which is massively below the yield stress of carbon fibre and although the properties of carbon fibre sandwich panel are varied, they are quoted as having a yield stress of at least 100 MPa, and so this is not close to failure. 
+It can be seen in Figure \ref{fig:landing-leg-simulaion} that the peak loads experienced by the landing gear are around 260 MPa, which is below the yield stress of the carbon fibre as previously stated, and although it is nearing the yield stress, this is an extreme case of a particularly heavy landing and so a heavier landing than this would not be expected unless it occurs in a crash landing scenario (in which case the UAV's survival can never be guaranteed).
+It can also be seen that the peak stress on the landing gear brackets is around 100 MPa, below the yield stress of around 270 MPa of the aluminium from which they are made.
+With the scale modified to a reduced upper bound, the stresses on the other parts can be seen, with the peak stress experienced by the landing gear mounts seen as around 10 MPa, which is far below the yield stress of carbon fibre and so $-$ although the properties of carbon fibre sandwich panel are varied $-$ this is not close to failure. 
 
 \section{Landing gear} \label{sec:final-design-proposal:landing-gear}
 
-There are two main types of landing gear design considered for this project: the tricycle and a tail wheel approach. A tricycle consists of a single front wheel, and two rear wheels, as seen on most commercial aircraft.
-Whereas a tail wheel design uses a single rear wheel with two front wheels.
+% TODO: could this go under design process?
+
+Two main types of landing gear design were considered for this project: the tricycle and a tail wheel approach.
+A tricycle consists of a single front wheel, and two rear wheels, as seen on most commercial aircraft; whereas a tail wheel design uses a single rear wheel with two front wheels.
 
 \importtable{| >{\raggedright\arraybackslash}p{0.12\columnwidth} | >{\raggedright\arraybackslash}p{0.36\columnwidth} | >{\raggedright\arraybackslash}p{0.36\columnwidth} |}{
     \hline
@@ -383,48 +374,47 @@ Whereas a tail wheel design uses a single rear wheel with two front wheels.
     \hline
 }{tradeoffs involved in the gear layout used.}{gear-layout-tradeoffs}
 
-When the landing gear was first being designed  weight was the limiting factor, with the UAV close to the 7kg mass limit, because of this the decision was made to use a tail wheel approach as it is lighter than the tricycle approach.
-
-The modularity and moving centre of gravity was a unique challenge to this UAV.
-The first step of the design was the calculation of the maximum loading conditions the landing gear would encounter (Goud, 2014). 
+When the landing gear was first being designed weight was the limiting factor, with the UAV close to the \kg{7} mass limit.
+Because of this the decision was made to use a tail wheel approach as it is lighter than the tricycle approach.
+The modularity and moving centre of gravity was a challenge unique challenge to this UAV, however, and the first step of the design was the calculation of the maximum loading conditions the landing gear would encounter \cite{goud-14}. 
 
 \importimage{moment-calculations}{moment calculations.}{Moment calculations}{0.7}
 
-The forward most CG meant x=150mm and y=765mm, this led to a maximum static loading of 57.4N over the front wheels and 11.26N over the rear wheel.
-The rearmost CG led to x=200mm and y=815mm, the maximum static loadings for this condition is 55.13N and 13.53N over the front and rear wheels, respectively.
-Based on these calculations, a load of 57.4N and 13.53N were used in future calculations and analysis. 
+The forwardmost centre of gravity (CG) meant $x=150\,\mathrm{mm}$ and $y=765\,\mathrm{mm}$, which led to a maximum static loading of \newtons{57.4} over the front wheels and \newtons{11.26} over the rear wheel.
+The rearmost CG led to $x=200\,\mathrm{mm}$ and $y=815\,\mathrm{mm}$; the maximum static loadings for this condition are \newtons{55.13} and \newtons{13.53} over the front and rear wheels respectively.
+Based on these calculations, a load of \newtons{57.4} and \newtons{13.53} were used in future calculations and analyses. 
 
-A vertical velocity of 3m/s was assumed to be an aggressive landing velocity in the hands of a competent pilot and was used in calculation to ensure the landing gear would be strong enough to withstand multiple rough landings.
-Using Newtons 2nd law, and an assume impact time of 0.5 seconds, the maximum force of the UAV is equal to 42N, meaning a total force of 110.67N on landing.
-Most UAVs land with their main wheels touching down first, the main landing gear must absorb most of the load, on previous calculations the main gear should withstand 99.4N.  
+A vertical velocity of \mps{3} was assumed to be an aggressive landing velocity in the hands of a competent pilot and so was used in calculation to ensure the landing gear would be strong enough to withstand multiple rough landings.
+Using Newton's $2^\mathrm{nd}$ law, and an assumed impact time of 0.5 seconds, the maximum force of the UAV would be equal to \newtons{42}, meaning a total force of \newtons{110.67} on landing.
+Since most UAVs land with their main wheels touching down first, the main landing gear must absorb the majority of the load: from previous calculations, the main gear should withstand \newtons{99.4}.  
 
 \importimage{landing-gear-design-one}{landing gear design one.}{Landing gear design}{0.8}
 
-A setting angle of 5.8degrees was needed to meet take-off requirements, as shown in figure 1.
+A setting angle of \degr{5.8} was needed to meet takeoff requirements, as shown in Figure \ref{fig:landing-gear-design-one}.
 To avoid hitting the rear propeller or the rudder, the rear wheel was designed to extrude from the bottom of the under-rudder.
-The carbon fibre spar in the rudder would be string enough to support the maximum 10N load it would encounter on landing. 
+The carbon fibre spar in the rudder would be strong enough to support the maximum \newtons{10} load it would encounter on landing. 
 
 \importimage{landing-gear-attachment-locations}{potential landing gear attachment locations.}{Landing gear attachment locations}{0.7}
 
 It immediately became clear that the main gear would have to be mounted to the main carbon fibre boom running the length of the fuselage.
-However, after a supervisor meeting it was advised that the main wheels should be located below the leading edge of the wing.
-However, as figure 2 shows, mounting the main gear would not be possible in this location.
-A solution to have the main gear mounted further forward but curved backwards was devised.  
+Following advice from the project supervisor, however, it was decided that the main wheels should be located below the leading edge of the wing.
+As Figure \ref{fig:landing-gear-attachment-locations} shows, mounting the main gear would not be possible in this location.
+A solution involving having the main gear mounted further forward but curved backwards was investigated.  
 
-Several iterations similar to the final design, in figure 3, were designed and tested using FEA.
-The FEA was initially carried out on a single leg, with a loading of 50N applied to a fiberglass construction.
+Several iterations similar to the final design in Figure \ref{fig:main-gear-progression:final} were designed and tested using FEA.
+The FEA was initially carried out on a single leg, with a loading of \newtons{50} applied to a fiberglass construction.
 After the design of the leg was finalised a clamping system was devised to mount the main gear to the boom.
 Further FEA showed that the clamping would be effective at attaching the fibreglass to the boom but would cause the boom to buckle on landing.
-Figure 5 shows how the addition of a prepreg cover around the boom significantly reduces the stress of the boom itself, by roughly a factor of 10. 
+Figure \ref{fig:prepreg-cover-stress} shows how the addition of a prepreg cover around the boom significantly reduces the stress of the boom itself, roughly by a factor of 10. 
 
 % \importimage{landing-gear-design}{main landing gear design.}{Landing gear design}{0.4}
 \importimage{landing-gear-stress}{stress on landing gear.}{Landing gear stress}{0.5}
 \importimage{prepreg-cover-stress}{effect of a prepreg cover on carbon fibre spar.}{Prepreg cover stress}{0.95}
 
-At this point in the design process, the weight of the UAV was no longer an issue, and after a supervisor meeting in which the landing gear design was discussed, it was decided that the landing gear should be steerable.
-This would reduce time to retrieve the UAV on landing as well as making take-off easier.
-The tail wheel set up is not optimum for a steerable configuration.
-Therefore, as the fuselage and the weight of the aircraft had been reduced making weight less of an important factor, the decision was made to redesign the landing gear in a tricycle configuration. 
+At this point in the design process, the weight of the UAV was no longer an issue, and after a supervisor meeting in which the landing gear design was discussed it was decided that the landing gear should be steerable.
+This would reduce the time taken time to retrieve the UAV upon landing as well as making takeoff easier.
+The tail wheel setup is not optimal for a steerable configuration and so, as the fuselage and the weight of the aircraft had been reduced $-$ making weight less of a limiting factor $-$ the decision was made to redesign the landing gear in a tricycle configuration. 
+FEA was carried out on the design and small changes were made until an optimal design was found.
 
 \begin{figure}[H]
     \centering
@@ -446,29 +436,31 @@ Therefore, as the fuselage and the weight of the aircraft had been reduced makin
     \label{fig:main-gear-progression}
 \end{figure}
 
-Using a similar process to the tail wheel design, the main landing gear was calculated to experience up to 105.8N on landing.
-The main gear is now located behind the centre of gravity, behind the internal electronics.
+% TODO: start final design proposal section for gear here?
+
+Using a similar process to that used in the original tail wheel design, it was calculated that the main landing gear would experience up to \newtons{105.8} on landing.  % TODO: add section reference if reordered
+The main gear in the final design proposal is located behind the centre of gravity, behind the internal electronics.
 This, along with a redesigned fuselage means the landing gear could be designed as a single part and attached easily to the bottom of the fuselage. 
 
 % \importimage{main-gear-design}{main gear design.}{Main gear design}{0.4}
 \importimage{main-gear-fea}{main gear FEA stress results.}{Main gear FEA}{0.6}
 
-The main shape of the design didn’t change from the initial design, a similar design which is seen on many small UAVs as it is simple, easy to implement and robust.
-FEA was carried out on the design and small changes made until an optimum design was found.
-The final design would experience a maximum stress of 92.5Mpa on a rough landing.
-The final design would later be manufactured from carbon fibre because it can be manufactured cheaply on at university and it has a high strength to weight ratio.
-The knowledge of this manufacturing decision gave more freedom to the design.
-The final design had a maximum thickness of 6mm at the top where it joins the fuselage, narrowing to 4mm by the wheels.
-The depth remained constant at 65mm, with a wheelbase of 490mm and a height of 220mm this was to avoid hitting the under rudder on take-off.
-The redesigned fuselage structure with two lower plates meant the landing gear could easily be mounted to the fuselage using two M4 bolts. 
+The main shape of the design remains unchanged from the initial design, and is a similar design to that seen on many small UAVs which is simple, easy to implement, and robust.
+The final design is expected to experience a maximum stress of 92.5 MPa on a rough landing, and is manufactured from carbon fibre because it can be manufactured cheaply in university workshops and has a high strength to weight ratio.
+The final design has a maximum thickness of \mm{6} at the top where it joins the fuselage, narrowing to \mm{4} by the wheels.
+The depth remained constant at \mm{65}, with a wheelbase of \mm{490} and a height of \mm{220} to avoid hitting the under-rudder on takeoff.
+The redesigned fuselage structure with two lower plates means that the landing gear can easily be mounted to the fuselage using two M4 bolts. 
 
-Before manufacturing began on the component, a similar model was found online. A cost benefit analysis was carried out, along with a time benefit analysis, and it was determined that purchasing the landing gear would allow the focus on other areas of design that needed finalising. 
+Eventually, a landing gear model very similar to the one described here was found online and purchased instead of manufacturing one from scratch; this was found to be more time- and cost-effective.
 
 \importimage{landing-gear-join}{landing gear joining mechanism.}{Landing gear joining mechanism}{0.6}
 
-The nose gear was chosen at recommendation of co supervisor Mario Ferraro, it is the same at that used on the SPOTTER aircraft, a 24kg split fuselage UAV (SPOTTER, 2019). It was easy to implement into the nose design and make steerable, whilst being cheap, lightweight, and strong. 
+The nose gear was chosen at the recommendation of the project co-supervisor and is the same as the one used on the SPOTTER aircraft \cite{spotter-19}, a \kg{24} split fuselage UAV.
+It is easy to implement into the nose and is steerable, while also being cheap, lightweight, and strong. 
 
 \section{Nose} \label{sec:final-design-proposal:nose}
+
+% TODO: split part of this into the design process section
 
 The nose was a key component in the project and needed to fulfil several criteria:
 
@@ -479,12 +471,11 @@ The nose was a key component in the project and needed to fulfil several criteri
     \item integrate the landing gear.
 \end{itemize}
 
-To fulfil all the above criteria, it was obvious from the start that the nose would have to be 3D printed, this meant there were no restrictions regarding the design.  
-
-The initial design was simple, incorporated the ability to attach the motor via four internal screw holes.
+To fulfil all the above criteria, it was obvious from the start that the nose would have to be 3D printed, meaning there were no geometry restrictions placed upon the design. 
+The initial design was simple, incorporating the ability to attach the motor via four internal screw holes.
 The nose would be attached to the fuselage via a spar running through the nose and the front of the spar.
 Although not optimal, at the time it was deemed acceptable to drill through the end of the carbon spar as it was away from the structural core of the fuselage.
-The design also incorporated a slot for the battery to slide into to act as a ballast, as well as a slot for the ESC which would maximise airflow to it therefore cooling.
+The design also incorporated a slot for the battery to slide into to act as a ballast, as well as a slot for the ESC, which would maximise airflow to it for cooling purposes.
 
 \begin{figure}[H]
     \centering
@@ -515,28 +506,28 @@ The design also incorporated a slot for the battery to slide into to act as a ba
 
 % \importimage{initial-nose-design}{initial nose design.}{Initial nose design}{0.6}
 
-Figure 11 shows a redesigned model of the nose.
-Firstly, the outer body has been light weighted considerably from 5mm to 1.5mm and supports added.
-The battery compartment has become a tray, which will make removal easier.
-The tray has a section underneath for the ESC to be placed, with cooling vents in the front of the nose.
-The nose will be secured to the fuselage via two bolts the width of the fuselage.
-More light weighting was done to the motor support and rods used instead of the previous bulky design. 
+Figure \ref{fig:nose-design-progression:revised} shows an updated version of the nose design.
+Firstly, the outer body was lightweighted considerably from \mm{5} to \mm{1.5}, and supports were added.
+The battery compartment became a tray, which will serves to make removal easier.
+The tray had a section underneath in which the ESC was to be placed, with cooling vents in the front of the nose.
+The nose was to be secured to the fuselage via two bolts along the width of the fuselage.
+More light weighting was done to the motor support and rods used in place of the previous bulky design. 
 
 % \importimage{revised-nose-design}{revised nose design.}{Revised nose design}{0.7}
 
-After advice from our supervisor, alterations were made to the initial design.
-Noticeably a battery and ESC tray was added to the back of the nose, with vents in the front of the nose to allow cooling to the ESC.
+After advice from the project supervisor, alterations were made to the revised design.
+Most notably, a battery and ESC tray were added to the back of the nose, with vents in the front of the nose to allow cooling to the ESC.
 The tray was supported by two vertical poles to support the weight of the battery. 
 
 % \importimage{twice-revised-nose}{twice revised nose design.}{Twice revised nose design}{0.7}
 
-The nose would now be secured by one bolt, through the carbon fibre spar, this would also act as a support for the motor mount as well.
-However, after further deliberation with our supervisor, it was decided that the loss I structural performance from drilling through the carbon fibre boom was not worth the reduction in workload so a new way of attaching the nose to the fuselage needed to be devised.  
+The nose would now be secured by one bolt, through the carbon fibre spar, which would also act as a support for the motor mount.
+After further deliberation with the project supervisor, however, it was decided that the loss in structural performance from drilling through the carbon fibre boom was not worth the reduction in workload, so a new way of attaching the nose to the fuselage was sought.  
 
-The new nose design had two components.
+The new multi-component nose design had two components.
 The inner component would be secured to the fuselage at all times, and the front part would be removeable.
 The inner part would be secured to the boom using a clamping mechanism, originally devised for the landing gear, via three M3 bolts located underneath the boom.
-The outer part would then twist into the inner part then be locked in place using two M3 bolts. 
+The outer part would then twist into the inner part and be locked in place using two M3 bolts. 
 
 \begin{figure}[H]
     \centering
@@ -567,45 +558,47 @@ The outer part would then twist into the inner part then be locked in place usin
 
 % \importimage{nose-inner-section}{inner section of the nose.}{Nose inner section}{0.7}
 
-The inner part would have a 1mm wall thickness, supported by 5mm deep and 3mm wide support structures, this is common on 3D printed UAV components as it is a light way of adding strength.
-The clamping system is supported by a web like structure.
-The battery tray and ESC compartment had a small redesign, two larger vents channelling airflow to the ESC.
-The steerable landing gear has also been incorporated into the design, through the air vents. 
+The inner part would had a \mm{1} wall thickness, supported by \mm{5} deep and \mm{3} wide support structures common on 3D printed UAV components as they are such a light way of increasing strength.
+The clamping system was supported by a web-like structure.
+The battery tray and ESC compartment were given a small redesign, with two larger vents channelling airflow to the ESC.
+The steerable landing gear were also incorporated into the design, through the air vents. 
 
 % \importimage{nose-outer-section}{outer section of the nose.}{Nose outer section}{0.7}
 
-The outer section will be held in place via a twist and lock system.
-To remove the front section two screws will be removed from the side of the nose, the front will then twist anticlockwise and be removed.
-Once removed, the electronics inside will be removed easily over the battery tray.
-The motor can easily be removed via 4 screws located towards the front of the nose and replaced by a 3D printed part for when not in use.
-The motor mount area has also been lightened, will similar structural supports on the 1mm outer wall applied. 
+The outer section would be held in place via a twist and lock system.
+To remove the front section, two screws would be removed from the side of the nose; the front would then twist anticlockwise and be removed.
+Once removed, the electronics inside could be easily removed over the battery tray.
+The motor could easily be removed via four screws located towards the front of the nose and replaced by a 3D printed part for aerodynamic purposes when the nose motor is not in use.
+The motor mount area was also lightened, with similar structural supports on the \mm{1} outer wall. 
 
 \importimage{outer-nose-fea}{FEA on the outer nose join.}{Nose join FEA}{0.7}
 
 FEA was carried out on the outer section to ensure it was strong enough to support the fuselage.
-Figure 13 shows a 140N force applied to the locking tabs.
-For SLS Nylon the yield strength was set at 60Mpa.
-However, with the 140N load applied, the maximum stress reached was 5.582MPa, and a maximum displacement of 0.1mm. 
+Figure \ref{fig:outer-nose-fea} shows a \newtons{140} force applied to the locking tabs.
+For SLS nylon the yield strength was set at 60 Mpa.
+With the \newtons{140} load applied, however, the maximum stress reached was 5.582 MPa, resulting in a maximum displacement of \mm{0.1}. 
 
-Having fulfilled the first three criteria, the final design also incorporates a steerable landing gear.
-This part of the design was thought about throughout the design process, but only fully implemented after the landing gear design had been finalised. 
+% TODO: move to final design proposal here?
+
+The final design of the nose also incorporates a steerable landing gear.
+This part of the design was carefully considered throughout the design process, but only fully implemented after the landing gear design had been finalised. 
 
 % \importimage{steerable-gear}{integration of the steerable nose gear.}{Steerable nose gear}{0.7}
 
-Figure 16 shows how the nose gear would have been incorporated within the vent design.
-The nose gear would be secured using two collars, one above and below the thicker part of the nose, as well as one to secure the servo arm in place.
-The servo arm would be attached to the servo via two springs, these will reduce the impacts and prevent the nose from rapid direction changes due to bumps.
-The servo will be bolted onto the battery tray, to one side, to allow space for the battery tray to be removed. 
+Figure \ref{fig:nose-design:steerable-nose-gear} shows how the nose gear is incorporated within the vent design.
+The nose gear is secured using two collars, one above and one below the thicker part of the nose, as well as one to secure the servo arm in place.
+The servo arm is attached to the servo via two springs, which alleviate impacts and prevent the nose from rapid direction changes due to bumps.
+The servo is bolted onto the battery tray, to one side, to allow space for the battery tray to be removed. 
 
-As stated during the landing gear analysis, depending on the configuration, will have to withstand a force of up to around 35N on landing.
-Therefore, FEA was carried out on the nose.
-The results show a moderate level of stress on the wall at the bottom of the vent; however, this was about half of the perceived yield strength of the SLS nylon which would be used. 
+As mentioned during the analysis of the landing gear, depending on the configuration, the landing gear will have to withstand a force of up to around \newtons{35} on landing.
+Therefore, further FEA was carried out on the nose.
+The results (Figure \ref{fig:nose-connection-fea}) show a moderate level of stress on the wall at the bottom of the vent, although this was about half of the perceived yield strength of the SLS nylon which is to be used. 
 
 \importimage{nose-connection-fea}{FEA on nose and landing gear connection.}{Nose connection FEA}{0.7}
 
-When the nose motor was not needed it was removed and replaced with a small insert.
-The hollow insert would have been 3D printed on the university 3D printer using PLA as it is not a structural component.
-It was designed to be screwed in the same manner as the motor. 
+When the nose motor is not needed it can be removed and replaced with a small insert.
+The hollow insert is to be 3D printed on the university 3D printer using PLA as it is not a structural component.
+It was designed to be screwed in in the same manner as the motor. 
 
 \importimage{nose-motor-filler}{nose motor filler.}{Nose motor filler}{0.5}
 
