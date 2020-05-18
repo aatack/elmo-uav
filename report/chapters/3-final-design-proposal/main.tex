@@ -540,4 +540,42 @@ This resulted into an overall housing dry weight of 207 g.
     \label{fig:puc-design}
 \end{figure}
 
+\section{Control of variables} \label{sec:final-design-proposal:control-of-variables}
+
+Assessment of the influence of different power unit layouts upon efficiency involves a great many variables, especially when the test is carried on the same vehicle.
+Each configuration requires different specifications in order to be mounted and affects the behaviour of the aircraft in different ways.
+A pusher mounted motor, for example, will have the tendency to increase wing twist due to the additional weight on the trailing edge of the wing.
+Furthermore, for the cases of a tail or nose mounted unit, the tail surfaces will be influenced since they are positioned in the flow field of the propeller.
+These are all factors that have a potential influence on the UAV's efficiency.
+Hence, in order to have entirely accurate estimates of the influence of solely the propulsion location on performance, multiple vehicles would have to be designed, each one exploiting the advantages of each configuration. 
+
+Due to the time and budget constraints, only one UAV could be built for this project, and as such was the main driving factor behind a simple design which could accommodate all the possible layouts for fair testing at the expense of overall efficiency.
+A focus was maintained on obtaining a neutral platform characterised by a constant weight and centre of gravity.
+Any increase in cross sectional area caused by mounting structures or aerodynamic effect was considered to be part of the influences induced by the power unit layouts and so was not tightly controlled, but was kept broadly similar. 
+
+% TODO: put this in somewhere
+% Due to the outbreak of COVID-19 the flight tests were not able to be carried out as planned, causing the absence of the data necessary to compare the effects of each propulsion layout on the UAV performance.
+% In spite of this, throughout the design and development of ELMO UAV, the impact of each propulsion configuration on the aircraft design was assessed.
+% The final model does not represent the optimal design for efficiency instead, perhaps, is the conjuncture of all the compromises demanded to ensure the airworthiness of the UAV when flown in any layout. 
+
+As aforementioned, the PUC locations have great influence over the centre of gravity position as well as the overall weight.
+The configurations which offer the lightest model are the fuselage mounted power units.
+These do not require additional additively manufactured components for motor, battery and ESC housing since the housings are integrated into the nose and tail designs.
+Thanks to the positioning of the battery and ESC in the front section of the fuselage, the nose mounted power unit layout presents a positive influence over the CG position by moving it forward to \pc{40} chord length.
+Such a positive effect is reduced when, for the same battery and ESC position, the motor is located on the tail.
+This results in a shift in CG to \pc{60} chord length.
+The main difference exhibited between tractor and pusher configurations is also a shift in the centre of gravity.
+This results in its moving backwards for a pusher configuration with respect to its position at \pc{53} chord in the case of a tractor configuration.
+
+A single engine layout, although lighter, demands more reliable components due to the absence of a second propulsion unit in case of engine failure.
+Furthermore, for the case of a tail mounted motor, there is the risk of the propeller striking the runway during takeoff or landing.
+The addition of a lower vertical stabiliser equipped with a tip bumper protects the propeller in the event of a tail strike. 
+
+For any wing layout, additional PUCs must be mounted.
+In addition to this, the use of two power units leads to a larger increase in weight as compared to a single motor configuration.
+The propulsion unit position also influences the design of the wing structure.
+The bending moment induced by the wing motor configuration closest to the fuselage is much smaller in magnitude than the tip configuration, mandating a stiffer wing structure despite being heavier.
+
+In spite of the numerous design features required to accommodate the modularity of the UAV $-$ while maintaining consistency in key variables to ensure the validity of experiments by isolating the effect of the position of the propulsion system $-$ the final model's total mass remains below the \kg{7} threshold originally set.
+
 \end{document}
