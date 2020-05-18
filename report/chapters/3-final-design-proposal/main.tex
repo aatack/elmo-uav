@@ -798,7 +798,7 @@ The first version of this with only the upper vertical stabiliser yielded a lift
 This required comparing to the moment from the tip motor at full thrust, at stall speed.
 The thrust of the motor changes with the inflow velocity.
 Analysis of motor test data gave the thrust at predicted stall speed to be \newtons{8.73}.
-The wing had a semi-span of \zmetres{1}, so this force is equal to the moment theoretically created in an asymmetric thrust scenario at this speed.
+The wing had a semi-span of \metres{1}, so this force is equal to the moment theoretically created in an asymmetric thrust scenario at this speed.
 The tail arm was initially to be \metres{1}, but was reduced to \metres{0.9} for the purpose of moving the centre of mass forward, giving a tail moment of \Nm{4.57}, which is approximately half of that required by the asymmetric thrust scenario.
 This design flaw, combined with the fact that the rear propeller in that configuration would be unprotected on rotation or a hard landing, led to the decision to add a lower vertical stabiliser, despite it being surplus to the required vertical stabiliser area. 
 
@@ -867,7 +867,7 @@ This concluded elevator design.
 
 Finally, the ailerons required sizing.
 This was based around their ability to reach a required roll angle within a set time.
-This requirement varies based on the aircraft type and flight phase, which was determined from table 12.12b \zcite{sadraey-13} as a class II at phase C, at level 1.
+This requirement varies based on the aircraft type and flight phase, which was determined from table 12.12b \cite{sadraey-13} as a class II at phase C, at level 1.
 The ailerons were parameterised by chord ratio (beginning with a value of 0.25, which proved satisfactory, so remained), and their inboard and outboard spans, however these were limited by the motor mount locations, so the main value to iterate upon was the chord ratio.  
 
 A process from \S 12.8.1 \cite{sadraey-13} was used to determine aileron performance, beginning with the determination of the angle of attack effectiveness of the ailerons using the same method as previously.
@@ -930,41 +930,6 @@ Finally, holes were added for a stiffening spar, and wire paths added for the fo
 \section{Electronics} \label{sec:final-design-proposal:electronics}
 
 % TODO: split into subsubsections
-
-The avionics of the aircraft were meant to fulfil two main goals.
-
-\begin{itemize}
-    \item Provide the pilot with assistance in flying the aircraft using a flight controller, generally maintaining stability. 
-    \item Have basic autopilot functionality, allowing the aircraft to fly in straight and level flight at a consistent speed to enable the fair testing of different flight configurations. 
-\end{itemize}
-
-As well as this, the avionics would be required to extend and retract the flaps, and ideally to record data - specifically on the rate of battery drainage. 
-
-The primary role of the flight controller is to convert control inputs from the pilot into control inputs that are sent directly to the servos, and is normally accomplished through a range of techniques, including PID controllers.
-Two main flight controllers were investigated, the first being a Pixhawk flight controller - more expensive, but potentially more useful and had been used by people at the university before - and the second being a Matek F405-Wing board with iNav Flight firmware installed on it. 
-
-While the Pixhawk could have been easier to set up, with its advertised “plug and play” functionality, it was significantly more expensive, and it was decided that looking into the Matek controller could be worth a potentially large saving, albeit with a greater risk of purchasing the controller to find that it did not work as expected.
-The Matek hardware came at about half the cost, and while the corresponding firmware was relatively immature, its open source nature meant that its functionality was expanding quickly, and it had favourable reviews from a number of online sources.
-Another potential advantage of the Matek controller was that it was designed specifically with fixed wing aircraft in mind, whereas the Pixhawk was focused more towards quadcopters. 
-
-\importimage{matek}{pin layout and documentation for the Matek flight controller.}{Flight controller layout}{0.95}  % TODO: include source (http://www.mateksys.com/?portfolio=f405-wing)
-
-Other beneficial features of the Matek board were the built-in current sensor and inertial measurement unit (IMU) which would provide estimates of the position, and more importantly orientation, of the UAV.
-There were also a number of fairly low-cost GPS and airspeed sensor units, required for the latter part of the avionics system’s brief of providing autopilot functionality. 
-
-\importimage{flight-configurator}{flight configurator software used to set up the flight controller.}{Flight configurator}{0.6}
-
-Input to the flight controller could be achieved through a number of systems, most notably through SBUS; this type of serial connection appeared to be the most commonly supported amongst receivers, and would allow up to sixteen channels to be passed from the receiver to the controller.
-The minimum required channels would be eight: four for throttle, yaw, pitch, and roll; two for flaps (on/off); and similarly two for the autopilot toggle.
-With the additional channels it would in principle be feasible to implement extra features, such as manually cutting off outboard motors in the event that one of them should fail. 
-
-Also of interest were the UART ports, which is a serial communication protocol broadly compatible with a number of microcontrollers, including Arduinos.
-This would be a good option for extracting the data from the current sensor and passing it to a microcontroller - most likely an Arduino Nano - which could then integrate the current draw over time to provide an estimate of the battery capacity used by a particular configuration.
-Being able to do this onboard was appealing because the need for telemetry, which would have significantly increased the complexity of the radio system, could be removed.
-All data could be logged by a relatively simple program, written in C++, which could then be downloaded after each flight. 
-
-\importimage{flight-controller-computer}{flight controller plugged into a computer running the flight configurator.}{Flight controller configuration}{0.6}
-\importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.5}
 
 While a Futaba transmitter was originally to be loaned from the university, scheduling constraints resulted in its unavailability for the duration of the project.
 As an alternative, a FrSky Taranis X9D was purchased upon recommendation of its being a good tradeoff between price and flexibility.

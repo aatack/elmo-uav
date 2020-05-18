@@ -159,6 +159,33 @@ The initial design was with the first wind tunnel test in mind, and as such had 
 It was hoped that the first test would finalise the basics of the fuselage, wing, and tail geometry, and highlight where changes would be required from the initial design
 Subsequent models and tests could validate the performance of more complex aspects of the UAV. 
 
+Work did begin, however, on selecting and configuring a flight controller.
+The primary role of the flight controller is to convert control inputs from the pilot into control inputs that are sent directly to the servos, and is normally accomplished through a range of techniques, including PID controllers.
+Two main flight controllers were investigated, the first being a Pixhawk flight controller $-$ more expensive, but potentially more useful and had been used by people at the university before $-$ and the second being a Matek F405-Wing board with iNav Flight firmware installed on it. 
+
+While the Pixhawk could have been easier to set up, with its advertised plug-and-play functionality, it was significantly more expensive, and so it was decided that looking into the Matek controller could be worth a potentially large saving (albeit with a greater risk of purchasing the controller to find that it did not work as expected).
+The Matek hardware came at about half the cost of the Pixhawk, and while the corresponding firmware was relatively immature, its open source nature meant that its functionality was expanding quickly, and it had favourable reviews from a number of online sources.
+Another potential advantage of the Matek controller was that it was designed specifically with fixed wing aircraft in mind, whereas the Pixhawk was focused more towards quadcopters. 
+
+\importimage{matek}{pin layout and documentation for the Matek flight controller.}{Flight controller layout}{0.95}  % TODO: include source (http://www.mateksys.com/?portfolio=f405-wing)
+
+Other beneficial features of the Matek board were the built-in current sensor and inertial measurement unit (IMU) which would provide estimates of the position, and more importantly orientation, of the UAV.
+There were also a number of fairly low-cost GPS and airspeed sensor units, required for the latter part of the avionics system's specification of providing autopilot functionality. 
+
+\importimage{flight-configurator}{flight configurator software used to set up the flight controller.}{Flight configurator}{0.6}
+
+Input to the flight controller could be achieved through a number of protocols, most notably through SBUS; this type of serial connection appeared to be the most commonly supported amongst receivers, and would allow up to sixteen channels to be passed from the receiver to the controller.
+The minimum required channels would be eight: four for throttle, yaw, pitch, and roll; two for flaps (on/off); and similarly two for the autopilot toggle.
+With the additional channels it would in principle be feasible to implement extra features, such as manually cutting off outboard motors in the event that one of them should fail. 
+
+Also of interest were the UART ports (Figure \ref{fig:matek}), which is a serial communication protocol broadly compatible with a number of microcontrollers, including Arduinos.
+This would be a good option for extracting the data from the current sensor and passing it to a microcontroller $-$ most likely an Arduino Nano $-$ which could then integrate the current draw over time to provide an estimate of the battery capacity used by a particular configuration.
+Being able to do this onboard was appealing because the need for telemetry, which would have significantly increased the complexity of the radio system, could be removed.
+All data could be logged by a relatively simple program, written in C++, to be downloaded after each flight. 
+
+\importimage{flight-controller-computer}{flight controller plugged into a computer running the flight configurator.}{Flight controller configuration}{0.6}
+\importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.5}
+
 \subsection{Propulsion} \label{sec:design-process:initial-designs:propulsion}
 
 \subsubsection{Twist-in motor attachment} \label{sec:design-process:initial-designs:propulsion:twist-in-motor-attachment}

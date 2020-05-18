@@ -55,6 +55,8 @@ Some further requirements were also defined based on the project objectives.
 
 \subsection{System} \label{sec:design-specification:requirements:system}
 
+The avionics of the aircraft were meant to fulfil two main goals.
+
 Several requirements were set for the control systems, mostly to allow for analysis and interpretation of results, either in real time or post-flight, or a combination of both. 
 
 \begin{itemize}
@@ -66,8 +68,11 @@ Several requirements were set for the control systems, mostly to allow for analy
         \end{itemize}
     \item The UAV should have a GPS tracking module to allow for either real-time or post-flight analysis of GPS telemetry. 
     \item The UAV must have a speed sensor to allow for either real-time or post-flight analysis of speed. 
-    \item Autopilot functionality is desirable to ensure the aircraft flies straight an level, providing a reliable and repeatable test environment for experiments.
-        This would also make sure that the pilot will not be overburdened trying to fly the aircraft and conduct tests simultaneously.
+    \item The control systems should provide the pilot with assistance in flying the aircraft, generally maintaining its stability.
+    \item Autopilot functionality is desirable to ensure the aircraft flies straight and level, providing a reliable and repeatable test environment for experiments.
+    This would also make sure that the pilot will not be overburdened trying to fly the aircraft and conduct tests simultaneously.
+    \item Toggles for flaps (retracted or deployed) and for outboard motors (to prevent excessive yawing moments in the event of an asymmetric engine failure) should be controllable by the pilot.
+    \item Finally, the flight systems should either record or transmit any collected data for analysis.
 \end{itemize}
 
 \section{Resources} \label{sec:introduction:resources}
