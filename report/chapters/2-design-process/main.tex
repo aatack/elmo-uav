@@ -6,9 +6,9 @@
 
 \newchapter{Design Process}{design-process}
 
-\section{Initial designs} \label{sec:design-process:initial-designs}
+\section{Preliminary design} \label{sec:design-process:preliminary-design}
 
-\subsection{Operation and initial constraint analysis} \label{sec:design-process:initial-designs:operation-and-initial-constraint-analysis}
+\subsection{Operation and initial constraint analysis} \label{sec:design-process:preliminary-design:operation-and-initial-constraint-analysis}
 
 To size the propulsion systems, initial analysis was conducted by estimating a number of design and environment parameters, using a normal distribution around each one to form a distribution of the most likely power requirement.
 From this, early estimates of crucial parameters such as motor power, wingspan, and aspect ratio could be made.
@@ -44,9 +44,9 @@ This was then be used to find the probability distribution for the power require
 The mean value of the power required in cruise was found to be \watts{315}, with a median of \watts{302}, giving an estimated power requirement in cruise of around \watts{310}.
 There is more uncertainty in power than \vcruise\, due to the larger range of values covered within one standard deviation of the mean, but this still provided a good starting point for the project.
 
-\subsection{Further constraint analysis} \label{sec:design-process:initial-designs:further-constraint-analysis}
+\subsection{Further constraint analysis} \label{sec:design-process:preliminary-design:further-constraint-analysis}
 
-Using the refined parameters found in \S \ref{sec:design-process:initial-designs:operation-and-initial-constraint-analysis}, design decisions made, and further analysis of the UAV, the constraint analyses were combined to show all parts of the flight profile and hence find the minimum power requirement.
+Using the refined parameters found in \S \ref{sec:design-process:preliminary-design:operation-and-initial-constraint-analysis}, design decisions made, and further analysis of the UAV, the constraint analyses were combined to show all parts of the flight profile and hence find the minimum power requirement.
 This code gave more refined estimates for the power requirement in different areas of the flight envelope, as well as takeoff speed, which could be updated quickly and easily as design decisions were made and various operational parameters were refined.
 Figure \ref{fig:constraint-analysis} shows the final plots after all research and design decisions were made.
 
@@ -76,7 +76,7 @@ Figure \ref{fig:constraint-analysis} shows the final plots after all research an
 It can be seen that the lowest thrust to weight ratio required is around 0.29, which corresponds to a power requirement of around \watts{520}; though this is for a wing loading of only \npmsq{100}.
 The final wing loading of ELMO UAV turned out to be approximately \npmsq{111}, giving a thrust to weight requirement of just over 0.3 and a corresponding power requirement of around \watts{650}, and so the final selection of motors was sufficient with a small amount of power to spare. 
 
-\subsection{Wing} \label{sec:design-process:initial-designs:wing}
+\subsection{Wing} \label{sec:design-process:preliminary-design:wing}
 
 Early in the project due to its nature, the complexity of certain components, and the limited budget, it was decided that a simple rectangular wing would be used on the UAV.
 Taking the modularity onto account, a rectangular wing would reduce the number of engine housing units needed, therefore reducing the amount of design and manufacturing, and hence the cost of the project. 
@@ -110,7 +110,7 @@ Of the five aerofoils above, further analysis would be carried out on the Clark 
 
 \importimage{alpha-characteristics}{variation of \cl, \cl$/$\cd, and \cM\, with $\alpha$.}{Angle of attack characteristics}{0.9}
 
-\subsection{Fuselage} \label{sec:design-process:initial-designs:fuselage}
+\subsection{Fuselage} \label{sec:design-process:preliminary-design:fuselage}
 
 Given the project objectives, the design of the UAV was based around commercial aircraft, discounting any lightweight or double fuselage seen on many UAVs such as SPOTTER \cite{spotter-19}. 
 Initial designs included a square, circular, and aerofoil-shaped fuselage.
@@ -135,7 +135,7 @@ This would give a combination of aerodynamic design and ease of manufacturing.
 The NACA0012 was chosen as a suitable aerofoil as it would provide enough height to hold all of the electronics, as well as enough room to reach inside if needed. 
 The initial fuselage design was \metres{1.5} long, with a width of \mm{175} and a height (at the thickest part) equal to around \mm{180}. 
 
-\subsection{Tail} \label{sec:design-process:initial-designs:tail}
+\subsection{Tail} \label{sec:design-process:preliminary-design:tail}
 
 Note that for many of the tail and control surface mathematical design processes, details of the equations used are unnecessary for understanding; but for the interested reader can been found in the appendices. 
 
@@ -153,7 +153,7 @@ The horizontal tail spars were modelled as having a $5g$ (\newtons{49.05}) load 
 Based on values for the inner and outer diameters of the spars, length, and chosen material stiffness, the tip deflection was found.
 The main structural arm was determined by modelling a $10g$ point load in line with the horizontal spars, and using inner and outer widths instead of diameters, as it was decided that this would be a square section to prevent parts rotating around it.
 
-\subsection{Control surfaces, electronics, and avionics} \label{sec:design-process:initial-designs:control-surfaces-electronics-and-avionics}
+\subsection{Control surfaces, electronics, and avionics} \label{sec:design-process:preliminary-design:control-surfaces-electronics-and-avionics}
 
 The initial design was with the first wind tunnel test in mind, and as such had no plans for functional control surfaces, electronics, or avionics.
 It was hoped that the first test would finalise the basics of the fuselage, wing, and tail geometry, and highlight where changes would be required from the initial design
@@ -186,9 +186,9 @@ All data could be logged by a relatively simple program, written in C++, to be d
 \importimage{flight-controller-computer}{flight controller plugged into a computer running the flight configurator.}{Flight controller configuration}{0.6}
 \importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.5}
 
-\subsection{Propulsion} \label{sec:design-process:initial-designs:propulsion}
+\subsection{Propulsion} \label{sec:design-process:preliminary-design:propulsion}
 
-\subsubsection{Twist-in motor attachment} \label{sec:design-process:initial-designs:propulsion:twist-in-motor-attachment}
+\subsubsection{Twist-in motor attachment} \label{sec:design-process:preliminary-design:propulsion:twist-in-motor-attachment}
 
 \begin{figure}[H]
     \centering
@@ -233,7 +233,7 @@ The motor is then secured in place using a small grub screw which engages with t
 The large cut-out in the housing is to allow room for the wires of the motor when it is being fitted, as they protrude from the rear part of the motor out to the side, shown in Figure \ref{fig:twist-in:in-place}.
 On the final design for the tail there is a full routing designed for the wires but that was not designed here as this housing was intended for the wing before being deprecated.
 
-\subsubsection{Sizing} \label{sec:design-process:initial-designs:propulsion:sizing}
+\subsubsection{Sizing} \label{sec:design-process:preliminary-design:propulsion:sizing}
 
 Initial sizing started from the constraint analysis' power requirement estimations, allowing motors to be selected.
 The constraint analysis at this point suggested a power requirement of around \watts{600}, and so motors of around this power were researched from a recommended supplier Outlander, and a number of suitable cost-effective motors were found for both the fuselage and wing locations, as listed in Figure \ref{fig:unknown}.  % TODO: find needed figure
@@ -582,5 +582,19 @@ Figure \ref{fig:thrust-comparison} shows how the effect of the motor efficiency 
 This is due to the RPM of the propeller being lower for a given input power in the test than in the manufacturer data.
 Furthermore, this graph shows that the relationship between the thrust and the input power is tending towards an approximately liner relationship, and so the assumption that this is linear is a sensible one to make when updating battery life calculations.
 Using this in comparison with the aforementioned \pc{77} of maximum thrust required in cruise, it can be assumed that the power draw will be \pc{77} of the maximum, therefore giving an estimate battery life of just over 9 minutes if the power draw is constantly at this level; and so the flight time would be limited to 7 minutes for safety in order to ensure that the power does not cut off mid-flight. 
+
+\section{Design revision} \label{sec:design-process:design-revision}
+
+\subsection{Wing}
+
+\subsection{Fuselage}
+
+\subsection{Nose}
+
+\subsection{Tail}
+
+\subsection{Control surfaces}
+
+\subsection{Electronics}
 
 \end{document}
