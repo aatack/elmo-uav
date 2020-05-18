@@ -783,40 +783,44 @@ Small holes cut through both parts of the mount allowed for threaded inserts to 
 
 \subsection{Mathematical modelling} \label{sec:final-design-proposal:control-surfaces:mathematical-modelling}
 
-The control surfaces were designed around their ability to meet several criteria that commercial aircraft must satisfy to be flyable. While this UAV isn’t required to meet the same stringent safety standards, many are there simply to ensure the aircraft flies properly, so it was prudent to meet them, a such, the rudder was designed to maintain trim control in the unlikely event of a wing tip motor failing resulting in worst case asymmetric thrust.  
+% TODO: put this into design process
 
-To begin, the rudder was parameterised in terms of the ratio of it’s chord to the root chord of the vertical stabiliser, it’s span, and it’s inside offset from the root of the stabiliser allowing space for the servo.
-Several useful parameters were derived from this including the MAC ratio, which was used on a plot from (Sadraey, 2013) to find the angle of attack effectiveness ($tau$) of the rudder, which was used to calculate the rudder control derivative using equation 12.100 in (Sadraey, 2013).
+The control surfaces were designed around their ability to meet several criteria that commercial aircraft must satisfy to be airworthy.
+While the ELMO UAV is not required to meet the same stringent safety standards, many are there simply to ensure the aircraft flies properly, so it was prudent to meet them.
+As such, the rudder was designed to maintain trim control in the unlikely event of a wing tip motor failing resulting in worst case asymmetric thrust.  
+
+To begin, the rudder was parameterised in terms of the ratio of its chord to the root chord of the vertical stabiliser, its span, and its inside offset from the root of the stabiliser, allowing space for the servo.
+Several useful parameters were derived from this including the MAC ratio, which was used on a plot from Sadraey \cite{sadraey-13} to find the angle of attack effectiveness $\tau$ of the rudder, which was used to calculate the rudder control derivative using equation 12.100 in \cite{sadraey-13}.
 The rudder was modelled to be functioning at the predicted stall speed of the aircraft as it would be expected to maintain control at this speed.
-A maximum deflection of 30 degrees was selected based (Sadraey, 2013), then this and relevant values substituted into equation 12.104a in (Sadraey, 2013) to calculate the vertical stabiliser lift with a deflected rudder. 
+A maximum deflection of \degr{30} was selected based on \cite{sadraey-13}, and then this and relevant values were substituted into equation 12.104a \cite{sadraey-13} to calculate the vertical stabiliser lift with a deflected rudder. 
 
-The first version of this with only the upper vertical stabiliser yielded a lift of 5.08 N.
+The first version of this with only the upper vertical stabiliser yielded a lift of \newtons{5.08}.
 This required comparing to the moment from the tip motor at full thrust, at stall speed.
 The thrust of the motor changes with the inflow velocity.
-Analysis of motor test data gave the thrust at predicted stall speed to be 8.73 N.
-The wing has a semi-span of 1 m, so this is equal to the moment theoretically created in an asymmetric thrust scenario at this speed.
-The tail arm was initially to be 1 m, but was reduced to 0.9 m for the purpose of moving the centre of mass forward, giving a tail moment of 4.57 Nm, which is approximately half of that required by the asymmetric thrust scenario.
-This design flaw, combined with the fact that the rear propeller in that configuration would be unprotected on rotation or a hard landing, led to the decision to add a lower vertical stabiliser, despite it being surplus required vertical stabiliser area. 
+Analysis of motor test data gave the thrust at predicted stall speed to be \newtons{8.73}.
+The wing had a semi-span of \zmetres{1}, so this force is equal to the moment theoretically created in an asymmetric thrust scenario at this speed.
+The tail arm was initially to be \metres{1}, but was reduced to \metres{0.9} for the purpose of moving the centre of mass forward, giving a tail moment of \Nm{4.57}, which is approximately half of that required by the asymmetric thrust scenario.
+This design flaw, combined with the fact that the rear propeller in that configuration would be unprotected on rotation or a hard landing, led to the decision to add a lower vertical stabiliser, despite it being surplus to the required vertical stabiliser area. 
 
-The upper stabiliser was extended very slightly, the same root and tip chords maintained for upper and lower stabilisers, and simply a span extended below the fuselage until it extended approximately an inch beyond the lowest reach of the rear propeller, visible in figure 53. 
+The upper stabiliser was extended very slightly, the same root and tip chords maintained for upper and lower stabilisers, and simply a span extended below the fuselage until it extended approximately an inch beyond the lowest reach of the rear propeller, visible in Figure \ref{fig:tail-assembly:horizontal-stabiliser}.  % TODO: check this reference 
 
 The values of both spans were altered until the force created by the deflected rudder was sufficient to counteract the moment from the asymmetric thrust.
-The increase of the span had the effect of increasing the effective aspect ratio of the vertical stabiliser, which increased the efficiency, and thus the 3D lift curve slope, so it wasn’t required to simply double the area. 
+The increase of the span had the effect of increasing the effective aspect ratio of the vertical stabiliser, which increased the efficiency, and thus the 3D lift curve slope, so doubling the area was not required. 
 
-The calculation was run with different speed values in Excel, to plot the rudder effectiveness and the motor thrust moment, over the expected speed range of the UAV: 
+The calculation was run with different speed values in Excel, to plot the rudder effectiveness and the motor thrust moment, over the expected speed range of the UAV (Figure \ref{fig:rudder-thrust-moment}).
 
 \importimage{rudder-thrust-moment}{rudder against thrust moment at various speeds.}{Rudder against thrust moment}{0.95}
 
 With this requirement satisfied, design of the rudder was concluded.
 The lack of runway landing and already excessive rudder size lead to the decision to forgo other rudder validation tests. 
 
-The next stage of the design was the elevators, which began with parameterized geometry of the elevator through a root chord ratio.
-A value of a quarter chord was selected initially, and this proved to be more than sufficient for all subsequent analyses, so remained.
+The next stage of the design was the elevators, which began with parameterised geometry of the elevator through a root chord ratio.
+A value of a quarter chord was selected initially, and this proved to be more than sufficient for all subsequent analyses, and so remained.
 The elevators took up all available trailing edge span of the horizontal stabiliser, leaving only room for the servo required to control it.  
 
-The first attempt at the analysis of required deflections implemented a MATLAB code from (Sadraey, 2013) section 12.8.2, in Excel, to plot out the elevator deflections for the most fore and aft centre of gravity, and over the predicted speed range of the UAV.
-The output of this code appeared to not be able to capture the 0 elevator deflection required at cruise speed (as the tail mounting angle has been designed around this).
-Prof. Towell provided another method to try before assuming that the tail mounting angle calculations were wrong.  
+The first attempt at the analysis of required deflections implemented a MATLAB code from \cite{sadraey-13} \S 12.8.2, in Excel, to plot out the elevator deflections for the most fore and aft centre of gravity, and over the predicted speed range of the UAV.
+The output of this code appeared to not be able to capture the zero elevator deflection required at cruise speed (as the tail mounting angle has been designed around this).
+The project supervisor provided another method to try before assuming that the tail mounting angle calculations were wrong.  
 
 The process given started with a moment balance about the centre of gravity of the aircraft including lift, tail lift, wing pitch moment equated to the tail lift moment.
 This could have values substituted in for lift, and be rearranged for the tail lift coefficient: 
@@ -825,13 +829,13 @@ This could have values substituted in for lift, and be rearranged for the tail l
     C_{L_h} = \frac{q S C_L (h-h_0) c + T z_T + q S C_{M_0}}{q S_h l}
 }{cog-moment-balance}
 
-Then performing analysis of forces in vertical equilibrium, rearranging and substituting for the tail lift coefficient above  and rearranging for alpha, yielded the fuselage angle of attack at a given cruise condition: 
+Then performing analysis of forces in vertical equilibrium, rearranging and substituting for the tail lift coefficient above and rearranging for $\alpha$, yields the fuselage angle of attack at a given cruise condition: 
 
 \importequation{
     \alpha = \frac{2 (mgl - Tz_T) V^{-2} - c C_{M_0}}{\rho S C_{L_\alpha}(l + (h - h_0)c)}
 }{vertical-equilibrium}
 
-With alpha found for a range of speeds, it could be used to find the tail lift coefficient for that particular speed, which is found by a rearranged version of the equation for tail lift coefficient, noting $\frac{S_h l}{Sc} = \overline{V}_h$, yielding: 
+With $\alpha$ found for a range of speeds, it could be used to find the tail lift coefficient for that particular speed, which is found by a rearranged version of the equation for tail lift coefficient, noting $\frac{S_h l}{Sc} = \overline{V}_h$, yielding: 
 
 \importequation{
     C_{L_h} = \frac{C_{L_\alpha}\alpha(h-h_0) + \frac{Tz_T}{qSc} + C_{M_0}}{\overline{V}_h}
@@ -847,33 +851,33 @@ The process used above, along with the failed MATLAB code, repeated for a range 
 
 \importimage{elevator-deflection}{elevator deflection plots for both processes.}{Elevator deflection plots}{0.95}
 
-The second process captured the 0 deflection required at cruise speed, and appeared to be correct, so design was concluded as satisfactory in this case.
-Additionally the deflections required from below the stall (and take off) speed are within the maximum deflections of the elevator selected.
-The last test for the elevator was that it was satisfactory for aircraft rotation performance, which was based on a process from section 12.8.2 in (Sadraey, 2013), and involved determining all forces and moments on the aircraft for the elevator to overcome on aircraft rotation.
-To begin, the take-off induced drag factor was determined using equation 5.22 in (Sadraey, 2013), then this and other pre-determined values were used to determine the take-off drag coefficient using equation 5.68 from (Sadraey, 2013).
-This was then used to determine the take-off drag using the basic drag equation at a take-off speed of 13 m s-1 and a value of 11.56 N was calculated.  
+The second process captured the zero deflection required at cruise speed, and appeared to be correct, so design was concluded as satisfactory in this case.
+Additionally, the deflections required from below the stall (and takeoff) speed are within the maximum deflections of the elevator selected.
+The last test for the elevator was that it was satisfactory for aircraft rotation performance, which was based on a process from section 12.8.2 in \cite{sadraey-13}, and involved determining all forces and moments on the aircraft for the elevator to overcome on aircraft rotation.
+To begin, the takeoff induced drag factor was determined using equation 5.22 in \cite{sadraey-13}, then this and other pre-determined values were used to determine the takeoff drag coefficient using equation 5.68 from \cite{sadraey-13}.
+This was then used to determine the takeoff drag using the basic drag equation at a takeoff speed of \mps{13} and a value of \newtons{11.56} was calculated.  
 
-Next the pitching moment about the aerodynamic centre was estimated as the wing 0 lift pitch moment coefficient, and then a basic pitch moment equation to determine the moment on take-off as -2.55 Nm.
-The aircraft’s linear acceleration on rotation was then determined using equation 12.55 from (Sadraey, 2013) with an estimated friction coefficient of grass from Table 9.7 in (Sadraey, 2013). 
+Next the pitching moment about the aerodynamic centre was estimated as the wing zero lift pitch moment coefficient, and then a basic pitch moment equation to determine the moment on take-off as \Nm{-2.55}.
+The aircraft's linear acceleration on rotation was then determined using equation 12.55 \cite{sadraey-13} with an estimated friction coefficient of grass from Table 9.7 \cite{sadraey-13}. 
 
-Next, several geometric parameters of the aircraft were determined from the CAD model to be then substituted into equation 12.72 in (Sadraey, 2013) to determine the lift required of the tail to achieve a set angular acceleration given the aircraft’s mass moment inertia about the pitch axis.
-This yielded a tail lift of -3.17 N, which gave a tail lift coefficient of -0.192.
-Checking using the method defined previously to determine the elevator deflections at various speeds gave+ a required deflection of -7.59o, which is less than the maximum of -25o, so this is acceptable.
+Next, several geometric parameters of the aircraft were determined from the CAD model to be then substituted into equation 12.72 \cite{sadraey-13} to determine the lift required of the tail to achieve a set angular acceleration given the aircraft's mass moment inertia about the pitch axis.
+This yielded a tail lift of \newtons{-3.17}, which gave a tail lift coefficient of $-0.192$.
+Checking using the method defined previously to determine the elevator deflections at various speeds gave a required deflection of \degr{-7.59}, which is less than the maximum of \degr{-25}, so this is acceptable.
 This concluded elevator design. 
 
 Finally, the ailerons required sizing.
 This was based around their ability to reach a required roll angle within a set time.
-This requirement varies based on the aircraft type and flight phase, which was determined from table 12.12b in (Sadraey, 2013) as a class II at phase C, at level 1.
-The ailerons were parameterized by chord ratio (beginning with a value of 0.25, which proved satisfactory, so remained), and their inboard and outboard spans, however these were limited by the motor mount locations, so the main value to iterate upon was the chord ratio.  
+This requirement varies based on the aircraft type and flight phase, which was determined from table 12.12b \zcite{sadraey-13} as a class II at phase C, at level 1.
+The ailerons were parameterised by chord ratio (beginning with a value of 0.25, which proved satisfactory, so remained), and their inboard and outboard spans, however these were limited by the motor mount locations, so the main value to iterate upon was the chord ratio.  
 
-A process from section 12.8.1 of (Sadraey, 2013) was used to determine aileron performance, beginning with the determination of the angle of attack effectiveness of the ailerons using the same method as previously.
-This and several parameters were used in equation 12.23 from (Sadraey, 2013) to determine the aileron rolling moment coefficient derivative, yielding a value of 0.273 rad s-1, which was then used to determine the aileron rolling moment coefficient at the maximum deflection of the aileron using equation 12.13 in (Sadraey, 2013), which gave a value of 0.095. 
+A process from \S 12.8.1 \cite{sadraey-13} was used to determine aileron performance, beginning with the determination of the angle of attack effectiveness of the ailerons using the same method as previously.
+This and several parameters were used in Equation 12.23 \cite{sadraey-13} to determine the aileron rolling moment coefficient derivative, yielding a value of \radsec{0.273}, which was then used to determine the aileron rolling moment coefficient at the maximum deflection of the aileron using Equation 12.13 \cite{sadraey-13}, which gave a value of 0.095. 
 
 The ailerons need to be effective at an estimated approach velocity of 1.1 times the stall speed.
-The aileron lift was then determined using equation 12.11 in (Sadraey, 2013) which resulted as 10.04 N.
-This was then used to determine the steady state roll rate using equation 12.37 in (Sadraey, 2013), which gave a value of 7.14 rad s-1, which was then used to determine the bank angle at which the steady state roll rate would be achieved, using equation 12.43 in (Sadraey, 2013), which gave a value of 74.57 degrees.
-The rate of roll rate could then be calculated using equation 12.49 in (Sadraey, 2013), which gave a value of 0.342 rad s-2.
-Finally, the time to reach a bank angle of 30 degrees could be calculated using equation 12.47 in (Sadraey, 2013), which resulted as 1.75 seconds, less than the maximum 1.8 seconds, so the aircraft satisfied roll control requirements.
+The aileron lift was then determined using Equation 12.11 \cite{sadraey-13}, which resulted as \newtons{10.04}.
+This was then used to determine the steady state roll rate using Equation 12.37 \cite{sadraey-13}, which gave a value of \radsec{7.14}, which was then used to determine the bank angle at which the steady state roll rate would be achieved, using Equation 12.43 \cite{sadraey-13}, which gave a value of \degr{74.57}.
+The rate of roll rate could then be calculated using Equation 12.49 \cite{sadraey-13}, which gave a value of \radsecsec{0.342}.
+Finally, the time to reach a bank angle of \degr{30} could be calculated using Equation 12.47 \cite{sadraey-13}, which resulted in 1.75 seconds, less than the maximum 1.8 seconds; so the aircraft satisfied roll control requirements.
 The time reduced to 1.17 seconds for the same process repeated at cruise speed. 
 
 To conclude control surface mathematical design, it was checked using XFOIL that the servos chosen would be able to cope with the hinge moments.
@@ -912,13 +916,16 @@ The SG90S had been selected, and was appropriate for all control surfaces, apart
 The rudder basic shape was cut out from a duplicate of the vertical stabiliser model.
 The space for the servo was cut out from the root, then additional cut-outs made for the stiffening spar near the leading edge, and foam cutter wire paths.
 Next a thin second body was extruded from the root to define a laser cut profile that would allow for the servo arm to have a place to nest into, allowing for control of the rudder.
-Lastly a small circular profile (designed to be cut off manually later) was extruded on the trailing edge so that the foam cutter would not damage the trailing edge since it was so thin.
+Lastly a small circular profile (designed to be cut off manually at a later stage) was extruded on the trailing edge so that the foam cutter would not damage the trailing edge since it was so thin.
 The secondary rudder and elevators were defined identically. 
 
-The ailerons were generated from a sketch of the aerofoil profile which was defined from the wing profile sketch, then one aileron extruded in a long profile, then, planes were defined in the model that referenced the motor mount surfaces in contact with the aileron root and tip surfaces.
-Material outside of these two planes was then removed to define one aileron, which was then mirrored about the centre plane, defining both ailerons in a way that would instantly react to changes in motor mount location and spans between them.
-Next a small amount was cut off the roots of the ailerons and replaced with a small laser cut profile extruded outwards, similarly to the tail control surfaces that allowed for the inline servo arm to control the aileron.
+The ailerons were generated from a sketch of the aerofoil profile which was defined from the wing profile sketch, then one aileron extruded in a long profile.
+Planes were then defined in the model that referenced the motor mount surfaces in contact with the aileron root and tip surfaces.
+Material outside these two planes was then removed to define one aileron, which was then mirrored about the centre plane, defining both ailerons in a way that would instantly react to changes in motor mount location and spans between them.
+Next, a small amount was cut off the roots of the ailerons and replaced with a small laser cut profile extruded outwards, similarly to the tail control surfaces that allowed for the inline servo arm to control the aileron.
 Finally, holes were added for a stiffening spar, and wire paths added for the foam cutter. 
+
+% TODO: End move to design process
 
 \section{Electronics} \label{sec:final-design-proposal:electronics}
 
@@ -1102,13 +1109,13 @@ However, it was not flow due to the coronavirus lockdown, and so the electronics
 
 \section{Propulsion} \label{sec:final-design-proposal:propulsion}
 
-The design of the housing for the motors and its subsidiary systems focused on permitting the repositioning of these system in a small time window without the need for alteration to the design.
-Thus increasing the amount of flights which can be completed in one day.
+% TODO: rewrite in the present tense, more descriptive?
+
+The design of the housing for the motors and its subsidiary systems focused on permitting the repositioning of these system in a small time window without the need for alteration to the design, thereby increasing the number of flights that can be completed in one day.
 This was crucial so that the difference in atmospheric conditions are reduced to minimum. 
-A self-contained housing storing the motor, the ESC and the battery was designed; referred as ‘Power Unit Cell’ (PUC).
-The use of such design allowed the reduction of wires running through the wing as well as making those components more accessible for maintenance.
+The use of the PUC design allowed the reduction of wires running through the wing as well as making those components more accessible for maintenance.
 Furthermore, the use of a compact design allowed for a standard PUC which could be used in all wing propulsion configurations.
-This was achieved by creating a standard simple profile for the surfaces normal to the attachment points; this is evident in Fig. 12.
+This was achieved by creating a standard simple profile for the surfaces normal to the attachment points; this is evident in Figure \ref{fig:puc-assemblies}.
 In order to guarantee a smooth passage of the flow around the housing an adapter is created for each configuration.
 This slots onto the standardized surfaces of the power unit cell and mounts directly on the wing surfaces blending the two together.
 Furthermore, they ensure that the thrust line in unvaried between tractor and pusher configurations. 
@@ -1147,26 +1154,21 @@ Furthermore, they ensure that the thrust line in unvaried between tractor and pu
 \end{figure} 
 
 The distance from the trailing edge to the propeller in the pusher layout is equivalent to the distance from the leading edge to the propeller in the tractor layout.
-Moreover, as in can be seen in Fig. 12.
-The attachment holes for the mounting bolts remain in the same position despite the change in arrangement.
-Hence, allowing to interchange propulsion layouts without the need of modifications to the components. 
-The power unit cells are as well split in two components: a front section and a rear section.
-Thus permitting to access the components stored inside with the removal of the four M4 bolts securing the two halves together.
+Moreover, as in can be seen in Figure \ref{fig:puc-assemblies}, the attachment holes for the mounting bolts remain in the same position despite the change in arrangement, thereby allowing propulsion layouts to be changed without modifying the components. 
+The power unit cells are also split in two components: a front section and a rear section, permitting to access the components stored inside with the removal of the four M4 bolts securing the two halves together.
 Four threaded inserts imbedded in the nylon structure of the front section allow the fitting of the motor.
 The battery and the ESC are instead slotted into the rear section of the cell.
-The open section into which the ESC is placed ensures the cooling of this component in all configurations setup.
-So to avoid common reliability issues caused by the overheating of this last.
-An exploded view of the PUC assembly is shown in Fig. 13. 
+The open section into which the ESC is placed ensures the cooling of this component in all configurations setup, avoiding common reliability issues caused by overheated ESCs.
+An exploded view of the PUC assembly is shown in Figure \ref{fig:puc-assemblies:exploded}. 
 
 % \importimage{puc-exploded}{exploded view of the PUC assembly.}{Exploded PUC}{0.6}
 
-Due to the fitting of the battery and the ESC, the PUC assembly has a sensible weight.
-In fact, as it will be discussed, the CG of the UAV is subject to a significant shift as the motor configuration is changed from tractor to pusher.
+Due to the fitting of the battery and the ESC, the PUC assembly has a significant weight.
+In fact, the CG of the UAV is subject to a noticeable shift as the motor configuration is changed from tractor to pusher.
 A reduction in this effect leads to a less significant need to rely on a ballast to maintain the CG in the same location. 
-In order to reduce this effect, the battery was located in a closer position to half chord length with some compromises made for the aerodynamic aspect.
-Furthermore, a work of light weighting of the components was carried.
-Hence the use of ribs and reinforcements where loads concentrate and the use of thin walls shown in Fig. 14.
-This resulted into an overall housing dry weight of 207g. 
+In order to alleviate this effect, the battery was located closer to half chord length with some compromises made for the aerodynamic aspect.
+Further lightweighting work produced more efficient components through the use of ribs and reinforcements, where loads concentrate, and thin walls as shown in Figure \ref{fig:puc-design:rear}.
+This resulted into an overall housing dry weight of 207 g. 
 
 % \importimage{puc-front}{PUC front section inner structure.}{PUC front section}{0.3}
 % \importimage{puc-rear}{PUC rear section inner structure.}{PUC rear section}{0.3}
