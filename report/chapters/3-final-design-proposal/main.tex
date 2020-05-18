@@ -606,35 +606,37 @@ It was designed to be screwed in in the same manner as the motor.
 
 \subsection{Mathematical modelling} \label{sec:final-design-proposal:tail:mathematical-modelling}
 
-The tail needs to provide adequate stability to the aircraft in all stages of flight, as well as house the elevator and rudder control surfaces.
-Design for the tail and stability systems essentially re-started following research and dialogue with our supervisor after the wing tunnel test, which revealed the true scope of the design process required. 
+% TODO: move this to section on revised designs
 
-Design began with the tail surfaces themselves.
-As the centre of gravity of the aircraft would not be in line with the centre of lift, the tailplane would need an angle of attack that would facilitate the aircrafts stability throughout flight, with minimal to no trim from the elevators.
-The sizing of the tail surfaces, and their angles were again determined using processes from (Sadraey, 2013).
-In particular an example of tail design was followed from section 6.1 (and slightly modified) to obtain the tail dimensions and setting angle. 
+The tail is required to provide adequate stability to the aircraft in all stages of flight, as well as house the elevator and rudder control surfaces.
+Design for the tail and stability systems was restarted following research and dialogue with the project supervisors after the wind tunnel test, which revealed the true scope of the design process required. 
 
-The process began similarly as that of the wind tunnel model.
-Revised volume coefficients were suggested as 0.8 for the horizontal tail, and 0.06 for the vertical tail (Towell, 2019).
-Equations [1] and [2], were used to determine the tail planform area as 0.16 m2 for the horizontal tail, and 0.08 m2 for the vertical tail.  
+Revision began with the tail surfaces themselves.
+As the centre of gravity of the aircraft would not be in line with the centre of lift, the tailplane would need an angle of attack that would facilitate the aircraft's stability throughout flight, with minimal to no trim from the elevators.
+The sizing of the tail surfaces and their angles were again determined using processes described by Sadraey \cite{sadraey-13}.
+In particular an example of tail design was followed from \S 6.1 (and slightly modified) to obtain the tail dimensions and setting angle. 
 
-Next the cruise lift coefficient was determined, using equation 6.27 from (Sadraey, 2013) and was found to be 0.4671, based on a weight of 7g (68.67 N), cruise speed of 20 m s-1 and wing planform area of 0.6 m2.
-Next the wing/fuselage aerodynamic pitching moment coefficient required estimating.
-Sadraey’s book provided an equation for this, however at the suggestion of Prof. Towell, equation E-40, which determined the change in wing pitching moment due to the fuselage, from E. Torenbeek’s book, ‘Synthesis of Subsonic Airplane Design’ (Torenbeek, 1976).
-This was determined to be -0.0398.
-Based on a chart from ‘Airfoil Tools’ for the NACA 6412 aerofoil, the wing 0 lift pitching moment coefficient was determined to be -0.137 (Airfoil Tools, 2020).
-Then, this and the fuselage offset were summed to give a value of the wing/fuselage pitch moment coefficient of -0.1768. 
+The process began similarly to that of the wind tunnel model.
+Revised volume coefficients were suggested as 0.8 for the horizontal tail, and 0.06 for the vertical tail \cite{towell-19}.
+The tail planform area was determined as $0.16 \mathrm{m^2}$ for the horizontal tail, and $0.08 \mathrm{m^2}$ for the vertical tail.  % TODO: work out where these equations went (originally [1] and [2])
+
+Next, the cruise lift coefficient was determined, using equation 6.27 from \cite{sadraey-13}, and was found to be 0.4671, based on a weight of \kg{7} (\newtons{68/67}), cruise speed of \mps{20}, and wing planform area of $0.6 \mathrm{m^2}$.
+The wing/fuselage aerodynamic pitching moment coefficient then needed to be estimated.
+Sadraey provided an equation for this, but at the suggestion of the project supervisor, equation E-40 $-$ which determined the change in wing pitching moment due to the fuselage $-$ from E. Torenbeek’s book \cite{torenbeek-76} was used instead.
+This was determined to be $-0.0398$.
+Based on a chart from 'Airfoil Tools' for the NACA6412 aerofoil, the wing 0 lift pitching moment coefficient was determined to be -0.137 \cite{airfoil-tools-19}.
+This and the fuselage offset were then summed to give a value of the wing/fuselage pitch moment coefficient of $-0.1768.$ 
 
 The next stage of the process required values for the centre of lift and mass locations in terms of percent of the MAC of the wing.
-As these were unknown at this stage, they were estimated to be h = 0.25 (quarter chord) for the centre of lift (a reasonable assumption for most wings) and h0 = 0.5 (half chord) for the centre of mass, which was a worst case value. 
+As these were unknown at this stage, they were estimated to be $h = 0.25$ (quarter chord) for the centre of lift (a reasonable assumption for most wings) and $h_0 = 0.5$ (half chord) for the centre of mass, which was a worst case value. 
 
-Next, the required lift coefficient of the horizontal tailplane was required.
-Essentially, the moment caused by the lift, thrust and weight, as well as the wing pitching moment has to be counteracted by a moment provided by the tail.
-It was decided that this should be negated at the cruise speed of the UAV, reducing the work required by the pilot for the bulk of the flight.
-The tail uses a symmetrical aerofoil, and as such provides no lift force at 0 incidence, so requires a mounting angle to provide a balancing moment.
-However, this has to take into account changes to flow incidence caused by the fuselage angle of attack at cruise to make the wing provide sufficient weight balancing lift, as well as flow downwash caused by the wing. 
+Next, the required lift coefficient of the horizontal tailplane needed to be determined.
+Essentially, the moment caused by the lift, thrust and weight, as well as the wing pitching moment, has to be counteracted by a moment provided by the tail.
+It was decided that this should be negated at the cruise speed of the UAV, reducing the work required by the pilot for the majority of the flight.
+The tail uses a symmetrical aerofoil, and as such provides no lift force at \degr{0} incidence, so requires a mounting angle to provide a balancing moment.
+This has to take into account changes to flow incidence caused by the fuselage angle of attack at cruise to make the wing provide sufficient weight, balancing lift $-$ as well as flow downwash $-$ caused by the wing. 
 
-To calculate the tail cruise lift coefficient, (Sadraey, 2013) provided equation 6.29, however Prof. Towell suggested a method which rearranged a substituted force and moment balance of the aircraft in cruise, which resulted in an equation for the angle of attack of the fuselage relative to the wing zero lift line: 
+To calculate the tail cruise lift coefficient, equation 6.29 from Sadraey \cite{sadraey-13} could be used; the project supervisor, however, suggested a method which rearranged a substituted force and moment balance of the aircraft in cruise, which resulted in an equation for the angle of attack of the fuselage relative to the wing zero lift line: 
 
 \importequation{
     \alpha_{F_{0L}} = \frac{
@@ -644,16 +646,16 @@ To calculate the tail cruise lift coefficient, (Sadraey, 2013) provided equation
     }
 }{tail-cruise-lift-coefficient}
 
-At 20 m s-1, the fuselage angle was determined to be 0.0944 radians (relative to wing zero lift).
-The tail cruise lift coefficient could then be determined using a modified version of equation 6.29 from (Sadraey, 2013) as -0.0871.
-Using an equation for the lift coefficient $C_L = C_{L\alpha}\alpha$, the required incidence of the tail could then be determined as -1.238o.
-The fuselage angle of attack had been determined relative to the wing 0 lift line previously.
-The wing 0 lift line is 5.7o, and the wing is mounted at 2o, giving the wing zero lift line as 7.7 o relative to the fuselage datum.
-This gives the fuselage angle of attack in flight as -2.294o.  
+At \mps{20}, the fuselage angle was determined to be 0.0944 radians (relative to wing zero lift).
+The tail cruise lift coefficient could then be determined using a modified version of equation 6.29 from Sadraey \cite{sadraey-13} as $-0.0871$.
+Using an equation for the lift coefficient $C_\mathrm{L} = C_{L\alpha}\alpha$, the required incidence of the tail could then be determined as \degr{-1.238}.  % TODO: add mathrm inside $
+The fuselage angle of attack had been determined relative to the wing zero lift line previously.
+The wing zero lift line was \degr{5.7}, and the wing was mounted at \degr{2}, giving the wing zero lift line as \degr{7.7} relative to the fuselage datum.
+This gave the fuselage angle of attack in flight as \degr{-2.294}.  
 
-The wing downwash calculation requires the downwash at 0 angle of attack, and the downwash curve slope.
-These were both determined using equation E-52 in (Torenbeek, 1976): Calculating these values and substituting into the equation for downwash gave a value for the downwash caused by the wing, at the tail as 1.924o.
-Finally, the tail setting angle could be calculated , which resulted as a setting angle relative to the fuselage datum of 2.979o. 
+The wing downwash calculation required the downwash at zero angle of attack, and the downwash curve slope.
+These were both determined using equation E-52 in \cite{torenbeek-76}: calculating these values and substituting into the equation for downwash gave a value for the downwash caused by the wing, at the tail as \degr{1.924}.
+Finally, the tail setting angle could be calculated, which resulted in a setting angle relative to the fuselage datum of \degr{2.979}. 
 
 % \importimage{resulting-tail-design}{the resulting tail design.}{Resulting tail design}{0.4}
 % \importimage{resulting-tail-design-side}{the resulting tail design, viewed from the side.}{Resulting tail design side}{0.4}
@@ -679,29 +681,29 @@ Finally, the tail setting angle could be calculated , which resulted as a settin
     \label{fig:final-tail-design}
 \end{figure} 
 
-One verification was to calculate the pitch stability derivative, using equation 6.67 in (Sadraey, 2013), which resulted as -0.6301.
-A negative value indicates that the pitch moment decreases with alpha, which is desirable.
-Following a process from Aerospace course year 2 notes from Mechanics of Flight gave a stick fixed static margin of 0.1574, and a stick fixed manoeuvre margin of 0.2747, both of which are acceptable values (De-Kat, 2017). 
+One verification was to calculate the pitch stability derivative, using equation 6.67 in \cite{sadraey-13}, which resulted in $-0.6301$.
+A negative value indicates that the pitch moment decreases with $\alpha$, which is desirable.
+Following a process from \cite{de-kat-17} gave a stick fixed static margin of 0.1574, and a stick fixed manoeuvre margin of 0.2747, both of which are deemed to be acceptable values. 
 
-Work on the yaw control requirements of the aircraft led to the decision to have an upper and lower vertical stabiliser, since extra rudder area was required, and to act as a bumper so that that in tail pusher propeller configuration, where take off rotation or a hard landing might lead to tail propeller contacting the ground, the propeller and therefore the aircraft would be protected.
-It was considered to mount a wheel on this bumper when thought to use a tail wheel configuration, however the team eventually settled on a nose wheel configuration, so the bumper remained (visible in figure 49 above). 
+Work on the yaw control requirements of the aircraft led to the decision to have an upper and lower vertical stabiliser, since extra rudder area was required, and to act as a bumper so that in the tail pusher propeller configuration $-$ where take off rotation or a hard landing might lead to tail propeller contacting the ground $-$ the propeller and therefore the aircraft would be protected.
+Mounting a wheel on this bumper was considered when the UAV was planning use a tail wheel configuration, but when a nose wheel configuration was eventually settled upon, the bumper remained. 
 
 Tail spars were resized using the same process as the wind tunnel model, as it had been decided to switch to pultruded carbon fibre rather than aluminium to save weight and move the centre of gravity forward.
-The process does not account for the bonding of the extra foam material to the spars, so the estimated deflection will likely be pessimistic.  
+The process does not account for the bonding of the extra foam material to the spars, so the estimated deflection would likely be pessimistic.  
 
-Basic calculations from Year 3 Aircraft Structural Design module (Bresloff, 2018) were made to assess the potential effect of gusts and manoeuvres on tail loading.
-It was estimated that the maximum load likely to be seen in a gust encounter at the predicted flight altitude was approximately 39 N.
-The maximum expected load from a manoeuvre was approximately 14 N, both within the 10g limit load designed for. 
+Basic calculations from \cite{bresloff-18} were made to assess the potential effect of gusts and manoeuvres on tail loading.
+It was estimated that the maximum load likely to be seen in a gust encounter at the predicted flight altitude was approximately \newtons{39}.
+The maximum expected load from a manoeuvre was approximately \newtons{14}, both within the $10g$ limit load for which the aircraft was designed. 
 
 \subsection{CAD modelling} \label{sec:final-design-proposal:tail:cad-modelling}
 
 The tail surface CAD was generated as a lofted base using aerofoil profiles of a NACA0012 with a scaling factor applied to make a NACA0018, lining up at the trailing edge.
-The root was shortened to allow for the tail mount geometry, and cut-outs added for the tail spars, control surfaces and hot wire routes.
-Initially the control surfaces were to be pinned into place with a laser cut sheet bonded to the end of the lifting surface holding a pin extending into control surface for it to rotate around, however in order to facilitate disassembly of the tail sub-assembly, this was changed into a 3D printed component that would neatly hold a nut on the end of a threaded rod bonded to the end of the tail spar.
+The root was shortened to allow for the tail mount geometry, and cutouts were added for the tail spars, control surfaces, and hot wire routes.
+Initially the control surfaces were to be pinned into place with a laser cut sheet bonded to the end of the lifting surface holding a pin extending into control surface for it to rotate around, but in order to facilitate disassembly of the tail sub-assembly, this was changed into a 3D printed component that would neatly hold a nut on the end of a threaded rod bonded to the end of the tail spar.
 
 The tail surfaces were designed to be inserted into 3D printed component as it was realised that the tail would require a lot of functionality that would be hard to facilitate with a foam or set of laser cut parts.
-This was decided to be a piece that would split in half vertically, allowing the vertical surfaces to be inserted easily, and the horizontal surfaces would require a small amount of trimming to allow them to slide in over the spars, and then secured using bolts.
-The CAD process for the final version of the tail mount can be seen below:
+This was decided to be a piece that would split in half vertically, allowing the vertical surfaces to be inserted easily, and the horizontal surfaces would require a small amount of trimming to allow them to slide in over the spars, before being secured using bolts.
+The CAD process for the final version of the tail mount can be seen in Figure \ref{fig:tail-mount-progression}.
 
 % \importimage{tail-mount-one}{tail mount design, version one.}{Tail mount version one}{0.3}
 % \importimage{tail-mount-two}{tail mount design, version two.}{Tail mount version two}{0.3}
@@ -734,23 +736,21 @@ The CAD process for the final version of the tail mount can be seen below:
     \label{fig:tail-mount-progression}
 \end{figure} 
 
-The process began with a tapered section hollowed out to 1.5 mm wall thickness, and a rectangular tube added for the tail spar.
+% TODO: can this be turned into a section describing the final design rather than the CAD process?
+
+The process began with a tapered section hollowed out to \mm{1.5} wall thickness, and a rectangular tube added for the tail spar.
 The inside and outside corners were filleted. 
-
-Next ribs were added for lightweight structural support, made by a complex series of combined bodies.  
-
+Next, ribs were added for lightweight structural support, made by a complex series of combined bodies.
 Supporting structure was added from the outside walls to meet the spar tube in the centre.
-A mounting location was added for the tail motor, and channels to run securing bolts through added, as it was planned to make the part in two halves to aid assembly.  
-
-In an assembly, the tail lifting surfaces were added, and moved to the correct position using mates, and then their bodies subtracted from the mount body. 
+A mounting location was added for the tail motor, and channels to run securing bolts through were added, as it was intended to make the part in two halves to aid assembly.  
+In an assembly, the tail lifting surfaces were added, and moved to the correct position using mates, and then their bodies were subtracted from the mount body. 
 
 Servo mounts were added and a motor mounting solution added based on a teammates previous design, and then a shroud was added over the motor, as well as a wire route for the motor connections.
 The structure was eventually split in half and holes for spars added, and the model tidied up for 3D printing. 
+A small structure was added to the front to allow for mounting to the foam ahead of it.
 
-A small structure was added to the front to allow for mounting to the foam ahead of it 
-
-Finally a small 3D printed part was designed to fit into the attachment location at the rear of the tail mount.
-This was based on Michael Pywell’s design earlier on in the project, and simply had a cylinder with wide radial teeth protruding from the inside.
+Finally, a small 3D printed part was designed to fit into the attachment location at the rear of the tail mount.
+This was based on a prior design from earlier on in the project's design process, and simply had a cylinder with wide radial teeth protruding from the inside.
 The motor mount had the same teeth, and would slide axially in the cylinder through the gaps, and then rotate, the teeth overlapping to prevent the mount from moving.
 Small holes cut through both parts of the mount allowed for threaded inserts to be placed inside, and then screws through the same holes would secure the mount in place. 
 
