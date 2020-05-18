@@ -402,115 +402,33 @@ Small holes cut through both parts of the mount allowed for threaded inserts to 
 
 % TODO: describe final control surface design here?
 
-\section{Electronics} \label{sec:final-design-proposal:electronics}
+\section{Avionics} \label{sec:final-design-proposal:avionics}
 
-% TODO: split into subsubsections
-
-While a Futaba transmitter was originally to be loaned from the university, scheduling constraints resulted in its unavailability for the duration of the project.
-As an alternative, a FrSky Taranis X9D was purchased upon recommendation of its being a good tradeoff between price and flexibility.
-The model is widely used and compatible with a wide range of receivers, uses a standard communication protocol, and also runs a configurable operating system, OpenTx, which enables it to be programmed in Lua.
-As well as the standard joysticks, the handset has triggers and switches which can be mapped to the flaps and autopilot channels. 
-
-Two primary factors constrained the selection of receiver.
-The first was the output method, which needed to be SBUS to be compatible with the Matek flight controller, and have at least eight output channels.
-The second was compatibility with the Taranis transmitter, which ruled out a number of Futaba receivers operating on a proprietary communication protocol. 
-
-Other factors, while less important, included the power usage, cost, and size of the receiver.
-The receiver was intended to fit onto an electronics tray along with the flight controller, and would be powered by the same battery as the flight controller, microcontroller, and servos.
-A receiver, the FrSky X8R, was found, operating on 100mA at 5V (the standardised output voltage of the flight controller), and weighing less than 20g.
-Its profile is also similar to that of the flight controller, meaning that it would not be the limiting factor in the size and shape of the electronics tray when the fuselage was designed. 
-
-When bound to a Taranis X9D, the X8R is capable of receiving sixteen independent channels via FrSky’s radio transfer protocol ACCESS (a newer and more robust version of ACCST).
-This would be more than sufficient for the eight channels required as a baseline for the project, and would also leave room for the expansion of the project with additional features, as mentioned previously, with the eight leftover channels.
-The operating range of 1.5km would also be more than sufficient for the project. 
-
-As well as being compatible with the Taranis transmitter and capable of outputting to SBUS, the receiver had a number of serial ports (standard PWM outputs) which could be used for testing and validating its functionality without having to pass the signals through the flight controller first.
-It was thought that this could be useful in the later stages of the project while troubleshooting any issues, being able to remove the flight controller from the loop and isolate the receiver to check that it was communicating properly with the transmitter. 
-
-All moveable surfaces on the aircraft are actuated by servos.
-These are split into four groups: ailerons, elevators, rudder, and flaps.
-The first three are the control surfaces by which the aircraft is controlled, and would need to be sized for a fairly limited selection of manoeuvres.
-It was not expected that the aircraft would be performing any tight turns, but the load that would be transferred through the aileron servos could depend greatly on the configuration of the propulsion modules.
-With the modules located at the end of the wings, the greatly increased moment of inertia of the aircraft would mean that actuating the ailerons would not produce nearly as much inertial relief as when the motors and batteries were located on the centreline.
-As such, the servos could be expected to see a fairly variable range of loads.
-In addition, the loads experienced by the rudder servos was found to be far in excess of the loads experienced by all other servos when the possibility of an asymmetric motor failure at the wingtips was considered.
-It was decided that these servos would need to be of a different type to those elsewhere in the aircraft. 
-
-In all, fourteen servos would be required to control the aircraft, including the two servos of different specification for the rudder.
-The exact configuration of these servos, as well as the signals passed to each of them, is shown below. 
-
-\importimage{signal-splitters}{control signal splitter schematic.}{Signal splitter schematic}{0.7}
-
-Note that each flap is supported by two servos of opposing deflection directions.
-While the flaps increase the lift of the aircraft quite dramatically, and thereby exert a large moment onto their supporting servos, the distribution of this load across four flap segments and eight servos meant that the smaller servo size was capable of holding the flaps in place during takeoff and landing. 
-
-One potential issue with the servos selected was the degradation of the plastic-toothed gears they use.
-Information from peers suggested that sufficient use would wear the gears down and reduce their effective strength, causing the gears to slide at a smaller load than suggested by the servos’ data sheets.
-An experiment was devised to repetitively test a servo under load (actuating it far more times than would ever be expected of a servo in a flight model) to see whether its strength afterwards was the same as upon its delivery; but this experiment was never carried out due to the COVID-19 pandemic.
-In the event that it had been found to significantly impact the strength of the servos, metal-toothed servos could have been purchased at a slightly higher cost. 
-
-The entirety of the electronics subsystem was to be powered by a single battery, referred to as the avionics battery.
-This would be connected to the flight controller, powering it directly, and indirectly powering the receiver, microcontroller, and servos.
-While throttle signals would be supplied to the motors from the flight controller directly, the bulk of their power would come from the ESCs, which are in turn powered by the battery local to that propulsion module. 
-
-In order to size the battery used for the avionics, the approximate power draw of each of the electrical components needed to be determined.
-Research was conducted, considering the following items drawing power during a typical 10-minute flight: 
-
-\begin{itemize}
-    \item Servos
-        \begin{itemize}
-            \item Draw 10mA while idle, 100-250mA while moving, and have a stall current of 360mA 
-            \item The stall torque of the servos being used is 1.7kg.cm, meaning that for a 4cm control surface, a load of roughly 0.5kg would need to be applied to cause a stall.
-                Considering that there are nine control surfaces and that the total lift generated by the aircraft is around 7kg, it can reasonably be assumed that the likelihood of any individual control surface experiencing a load of 0.5kg is extremely small; certainly small enough that it will occur only momentarily and does not need to be factored into the draw calculations 
-            \item 8 servos are being used for the flaps and so will only move for a few seconds per flight 
-            \item One servo connected to the nose gear, which will likely only be moving periodically within two 30-second windows at the start and end of each flight 
-            \item 5 servos are connected to the control surfaces.
-                It is assumed that control surfaces will only move for around 50\% of the time while in the air.
-                To build in a bit of redundancy and account for the movement of the flap/gear servos, it is assumed that the power drain from servos will be equivalent to five servos moving constantly 
-            \item This then means 1000mA drawn by servos 
-        \end{itemize}
-    \item Receiver: listed as drawing a continuous 100mA 
-    \item Flight controller: listed as drawing a continuous 500mA, a conservative estimate 
-    \item The exact current draw of a microcontroller is difficult to determine as it depends primarily on how much the processor is being used.
-        Even conservative estimates resulted in around 20mA of draw, so that was neglected here as it is so much smaller than the other components 
-\end{itemize}
-
-An additional constraint placed on the battery was the required voltage of between 9 and 30 volts.  As the battery needs to be a LiPo battery, this limited the selection to those with between 3 and 6 cells. 
-
-Given a total of 1600mA drawn while in flight (a conservative estimate which also accounts for the small amount of additional power used for one-off events during takeoff and landing), and the voltage requirements, a few batteries were found which could power the avionics.
-Several higher-capacity batteries were heavier and more expensive and, while they would enable multiple flights on one battery, switching out multiple lower-capacity batteries which were both lighter and cheaper was found to be more cost- and mass-effective, and also in keeping with the modular nature of the project. 
-
-The battery settled on was therefore a 450mA, 11.1V, and 65-130C discharge, which should provide for at least 15 minutes of flight on a conservative estimate of the power draw.
-Its low cost means that multiple can be bought and swapped out between flights, while used batteries are recharged. 
-
-With all the components of the avionics subsystem specified, a wiring diagram could be created and from this an iron bird constructed.
-The primary goal of this exercise was to check that every required component was present, and that they would all fit together with the necessary wires. 
+Few drastic changes were made to the avionics between the revised and final designs.
+The final wiring diagram, including all components comprising the avionics and electronics subsystem for the final model, is shown in Figure \ref{fig:wiring-diagram}.
 
 \importimage{wiring-diagram}{wiring diagram for the avionics subsystem.}{Wiring diagram}{0.6}
 
-From the above diagram, the iron bird was built onto a miniaturised cutout of the same general shape as the full-size aircraft. 
+One key difference not mentioned previously is the inclusion of several signal splitters, designed to split signals for each control surface from the single corresponding output on the flight controller to the multiple servos belonging to that group.
+The arrangement of splitters, shown in Figure \ref{fig:signal-splitters}, distributes the signals to the relevant locations while using a minimal amount of wiring and also keeping the number of splitters as low as possible.
+Primarily this is accomplished by sharing common lines such as power and ground between groups, and branching individual lines off to servos in a tree-like structure.
+In locations where two servos are within a relatively short distance of each other, these are both served by a single splitter, with wires leading to each one.
 
-\importimage{iron-bird}{iron bird.}{Iron bird}{0.7}
-
-While not all of the servos were included in the iron bird, each servo group was represented.
-The iron bird also gave a much clearer indication of roughly how much wiring would be needed to connect the various groups, and which layout would be most efficient for splitting the signals; that is, which signals should be brought down each of the main “limbs” of the aircraft, and where should they be split.
-Once this was decided, the splitters could be designed and manufactured. 
+The splitters themselves (Figure \ref{fig:splitter-schematic}) consist of a copper stripboard with header pins soldered across.
+Each spitter is specified in terms of the signals designated as inputs and outputs, and soldering the header pins across the stripboard enables the same signal $-$ from one input $-$ to be output to multiple locations.
+Splitters are also chained together where needed, and some splitters have breaks in the stripboard to accommodate a more compact design.
+A small outcrop of stripboard is left around the edge of each splitter so that they can be secured in place within the aircraft; it is thought that wires are less likely to become damaged if their attachment points cannot move, thereby reducing the risk of failure or electrical damage.
 
 \importimage{splitter-schematic}{manufacturing schematic for a single splitter.}{Manufacturing schematic}{0.5}
 
-A schematic similar to the one shown above was drawn out for each of the splitters identified in Figure \ref{fig:splitter-schematic}.
-This includes the specification of the splitter in terms of the signals designated as inputs and outputs, and shows its layout in terms of header pins (rectangular boxes) soldered (ovals) across a stripboard whose strips are assumed to go across the page horizontally.
-Breaks in the stripboard are shown here by small vertical lines instead of a dot representing the corresponding hole. 
+Ultimately all of the servos $-$ along with the avionics $-$ are powered by the avionics battery via the flight controller.
+Jumper wires are soldered to the flight controller, which can plug into the female JST connector that powers the battery.
+The battery itself is attached to the electronics tray by velcro, and can therefore be removed with ease.
 
-These splitters were manufactured from small cut segments of stripboard by simply soldering header pins in the correct locations.
-The seven splitters also had small outcrops of stripboard so that they could be fastened to relevant locations throughout the body of the aircraft. 
-
-\importimage{manufactured-splitters}{each of the manufactured splitters.}{Manufactured splitters}{0.8}
-
-Although the full electronics system was never assembled in the UAV due to the COVID-19 pandemic, all of the necessary physical components were purchased and manufactured, and their compatibility was tested in the iron bird. 
-
-% \importimage{electronics-housing}{render of the electronics housing bay in the tractor nose propulsion configuration.}{Electronics housing}{0.4}
-% \importimage{electronics-exploded}{exploded view of the avionics subsystem.}{Avionics subsystem}{0.4}
+Along with the flight controller, battery, and receiver, a microcontroller is included for data logging.
+The efficiency of the UAV is to be measured by repeatedly sampling the current draw (which can be read through the flight controller's UART port) and multiplying the draw by the time step to sum to a cumulative capacity drawn.
+Maintaining this as a cumulative total means it can easily be stored in RAM and downloaded to a computer when the UAV touches down via a serial port.
+Because of the miniscule processing requirement of this task and its small size, an Arduino Nano is recommended as the microcontroller of choice.
 
 \begin{figure}[H]
     \centering
@@ -532,20 +450,9 @@ Although the full electronics system was never assembled in the UAV due to the C
     \label{fig:electronics-subsystem}
 \end{figure} 
 
-\importimage{bixler}{image of the Bixler 3 RC plane.}{Bixler model}{0.5}
-
-Before the electronics were to be flown on the UAV, they needed to be tested.
-There was thorough testing of the electronics out of any aircraft first, but in order to be deemed flight worthy it needed to be tested in the air in a sacrificial flight vehicle.
-The foamy selection was based on the constraints of the fuselage size required in order to have room to fit all of the electronics inside, keeping the cost as low as possible, and having an aircraft that we could fly ourselves (easy to fly for beginners).
-The fuselage needed to be able to fit all of the necessity electronics; battery, ESC, receiver, as well as our additional electronics to control the autopilot; Arduino, Matek, and GPS.
-Therefore we needed a beginners plane that had excess fuselage space, and so we chose the Bixler 3 as it has a large internal space for the necessity electronics, as well as an empty nose for installation of a camera for FPV flying, and this space would be suitable for fitting in our additional electronics.
-Additionally the plane is designed for beginners and so has a large surface area wing for low speed flying, high mounted for flight stability, the motor and propeller face rearwards above the fuselage to get them out of the way of damage in the event of a crash, and the underside of the fuselage is strengthened to act as a skid if the landing gear comes off in a particularly heavy landing.
-All of this makes it ideal for our use case.
-However, it was not flow due to the coronavirus lockdown, and so the electronics could not be flight tested. 
-
-\section{Avionics and software} \label{sec:final-design-proposal:avionics-and-software}
-
-% TODO: populate from electronics section
+The majority of the electronics subsystem is housed inside a removable electronics bay within the fuselage (Figure \ref{fig:electronics-subsystem}).
+Each component of the subsystem was chosen in part for its sleek profile, which means the tray can be removed by sliding it out; this allows quick and easy access to the microcontroller $-$ for data retrieval $-$ and the avionics battery $-$ for recharging $-$ between runs.
+In principle, data can be downloaded from the microcontroller and the avionics battery can be swapped out in less time than it takes to swap the PUCs, thereby ensuring that the avionics is not the throttling factor for the effectiveness of the UAV's modularity.
 
 \section{Propulsion} \label{sec:final-design-proposal:propulsion}
 
@@ -631,8 +538,6 @@ This resulted into an overall housing dry weight of 207 g.
     
     \caption{inner structure of the PUC.}
     \label{fig:puc-design}
-\end{figure} 
-
-\importimage{puc-printed}{PUC, printed in SLS nylon.}{SLS nylon PUC}{0.5}
+\end{figure}
 
 \end{document}

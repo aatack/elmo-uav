@@ -181,10 +181,11 @@ With the additional channels it would in principle be feasible to implement extr
 Also of interest were the UART ports (Figure \ref{fig:matek}), which is a serial communication protocol broadly compatible with a number of microcontrollers, including Arduinos.
 This would be a good option for extracting the data from the current sensor and passing it to a microcontroller $-$ most likely an Arduino Nano $-$ which could then integrate the current draw over time to provide an estimate of the battery capacity used by a particular configuration.
 Being able to do this onboard was appealing because the need for telemetry, which would have significantly increased the complexity of the radio system, could be removed.
-All data could be logged by a relatively simple program, written in C++, to be downloaded after each flight. 
+All data could be logged by a relatively simple program, written in C++, to be downloaded after each flight.
+
+Small GPS and airspeed modules were also found online which were designed specifically to be compatible with the Matek F405-Wing.
 
 \importimage{flight-controller-computer}{flight controller plugged into a computer running the flight configurator.}{Flight controller configuration}{0.6}
-\importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.5}
 
 \subsection{Propulsion} \label{sec:design-process:preliminary-design:propulsion}
 
@@ -1095,5 +1096,106 @@ Next, a small amount was cut off the roots of the ailerons and replaced with a s
 Finally, holes were added for a stiffening spar, and wire paths added for the foam cutter. 
 
 \subsection{Electronics} \label{sec:design-process:revised-design:electronics}
+
+With the choice of flight controller finalised, the only other critical component of the electronics was the receiver.
+Once the model of the receiver was also known, the type and quantity of wires that would be needed to distribute power and control signals to the rest of the aircraft could be determined.
+
+\subsubsection{Receiver} \label{sec:design-process:revised-design:electronics:receiver}
+
+The model of receiver that could be used was constrained primarily by the model of transmitter to which it would be bound.
+While a Futaba transmitter was originally to be loaned from the university, scheduling constraints resulted in its unavailability for the duration of the project.
+As an alternative, a FrSky Taranis X9D transmitter was purchased upon recommendation of its being a good tradeoff between price and flexibility.
+The model is widely used and compatible with a wide range of receivers, uses a standard communication protocol, and also runs a configurable operating system, OpenTx, which enables it to be programmed in Lua.
+As well as the standard joysticks, the handset has triggers and switches which can be mapped to the flaps and autopilot channels. 
+
+One further factor constrained the selection of receiver: the signal output protocol needed to be SBUS to be compatible with the Matek flight controller, and have at least eight output channels.
+Other factors, while less important, included the power usage, cost, and size of the receiver.
+The receiver was intended to fit onto an electronics tray along with the flight controller, and would be powered by the same battery as the flight controller, microcontroller, and servos.
+A receiver, the FrSky X8R (Figure \ref{fig:flight-controller-receiver}), was found, operating on 100 mA at \volts{5} (the standardised output voltage of the flight controller), and weighing less than 20 g.
+Its profile is also similar to that of the flight controller, meaning that it would not be the limiting factor in the size and shape of the electronics tray when the fuselage was designed. 
+
+\importimage{flight-controller-receiver}{receiver undergoing the binding procedure.}{Receiver binding}{0.5}
+
+When bound to a Taranis X9D, the X8R is capable of receiving sixteen independent channels via FrSky's radio transfer protocol ACCESS (a newer and more robust version of ACCST).
+This would be more than sufficient for the eight channels required as a baseline for the project, and would also leave room for the expansion of the project with additional features, as mentioned previously, with the eight leftover channels.
+The operating range of 1.5 km would also be more than sufficient for the project. 
+
+As well as being compatible with the Taranis transmitter and capable of outputting to SBUS, the X8R had a number of serial ports (standard PWM outputs) which could be used for testing and validating its functionality without having to pass the signals through the flight controller first.
+It was thought that this could be useful in the later stages of the project while troubleshooting any issues, being able to remove the flight controller from the loop and isolate the receiver to check that it was communicating properly with the transmitter.
+
+\subsubsection{Servos} \label{sec:design-process:revised-design:electronics:servos}
+
+All moveable surfaces on the aircraft were to be actuated by servos.
+These are split into four groups: ailerons, elevators, rudder, and flaps.
+The first three are the control surfaces by which the aircraft is controlled, and would need to be sized for a fairly limited selection of manoeuvres.
+It was not expected that the aircraft would be performing any tight turns, but the load that would be transferred through the aileron servos could depend greatly on the configuration of the PUCs.
+With the units located at the end of the wings, the greatly increased moment of inertia of the aircraft would mean that actuating the ailerons would not produce nearly as much inertial relief as when the motors and batteries were located on the centreline.
+As such, the servos could be expected to see a fairly variable range of loads.
+In addition, the loads experienced by the rudder servos was found to be far in excess of the loads experienced by all other servos when the possibility of an asymmetric motor failure at the wingtips was considered.
+It was decided that these servos would need to be of a different type to those elsewhere in the aircraft. 
+
+In all, fourteen servos were required to control the aircraft, including the two servos of different specification for the rudder.
+The exact configuration of these servos, as well as the signals passed to each of them, is shown below. 
+
+\importimage{signal-splitters}{control signal splitter schematic.}{Signal splitter schematic}{0.7}
+
+Note that each flap is supported by two servos of opposing deflection directions.
+While the flaps increase the lift of the aircraft quite dramatically, and thereby exert a large moment onto their supporting servos, the distribution of this load across four flap segments and eight servos meant that the smaller servo size was capable of holding the flaps in place during takeoff and landing. 
+
+One potential issue with the servos selected was the degradation of the plastic-toothed gears they use.
+Information from peers suggested that sufficient use would wear the gears down and reduce their effective strength, causing the gears to slide at a smaller load than suggested by the servos' data sheets.
+An experiment was devised to repetitively test a servo under load (actuating it far more times than would ever be expected of a servo in a flight model) to see whether its strength afterwards was the same as upon its delivery; but this experiment was never carried out due to the COVID-19 pandemic.
+In the event that it had been found to significantly impact the strength of the servos, metal-toothed servos could have been purchased at a slightly higher cost. 
+
+\subsubsection{Avionics battery} \label{sec:design-process:revised-design:electronics:avionics-battery}
+
+The entirety of the electronics subsystem was to be powered by a single battery, referred to as the avionics battery.
+This would be connected to the flight controller, powering it directly, and indirectly powering the receiver, microcontroller, and servos.
+While throttle signals would be supplied to the motors from the flight controller directly, the bulk of their power would come from the ESCs, which are in turn powered by the battery local to the corresponding PUC. 
+
+In order to size the battery used for the avionics, the approximate power draw of each of the electrical components needed to be determined.
+Research was conducted, considering the following items drawing power during a typical 10-minute flight: 
+
+\begin{itemize}
+    \item Servos
+        \begin{itemize}
+            \item Draw 10 mA while idle, 100 to 250 mA while moving, and have a stall current of 360 mA 
+            \item The stall torque of the servos being used is 1.7 kg.cm, meaning that for a \cm{4} control surface, a load of roughly \kg{0.5} would need to be applied to cause a stall.
+                Considering that there are nine control surfaces and that the total lift generated by the aircraft is around \kg{7}, it could reasonably be assumed that the likelihood of any individual control surface experiencing a load of \kg{0.5} is extremely small; certainly small enough that it would occur only momentarily and did not need to be factored into the draw calculations 
+            \item 8 servos were used for the flaps and so would only move for a few seconds per flight 
+            \item One servo was connected to the nose gear, which would likely only be moving periodically within two 30-second windows at the start and end of each flight 
+            \item 5 servos were connected to the control surfaces.
+                It was assumed that control surfaces would only move for around \pc{50} of the flight duration.
+                To build in a bit of redundancy and account for the movement of the flap and gear servos, it was assumed that the power drain from servos would be equivalent to five servos moving constantly 
+            \item This then equated to \amps{1} drawn by servos 
+        \end{itemize}
+    \item Receiver: listed as drawing a continuous 100 mA 
+    \item Flight controller: listed as drawing a continuous 500 mA, a conservative estimate 
+    \item The exact current draw of a microcontroller was difficult to determine as it depends primarily on how much the processor is being used.
+        Even conservative estimates resulted in around 20 mA of draw, so that was neglected in this calculation as it is so much smaller than the other components 
+\end{itemize}
+
+An additional constraint placed on the battery was the required voltage of between 9 and 30 volts.
+As the battery was required to be a LiPo battery, this limited the selection to those with between 3 and 6 cells. 
+
+Assuming a total of 1600 mA drawn while in flight (a conservative estimate which also accounted for the small amount of additional power used for one-off events during takeoff and landing), and the voltage requirements, a few batteries were found which could power the avionics.
+Several higher-capacity batteries were heavier and more expensive and, while they would enable multiple flights on one battery, switching out multiple lower-capacity batteries which were both lighter and cheaper was found to be more cost- and mass-effective, and also in keeping with the modular nature of the project. 
+
+The battery settled on was therefore a 450 mA, \volts{11.1}, and 65 to 130 C discharge, which would provide for at least 15 minutes of flight on a conservative estimate of the power draw.
+Its low cost meant that multiple could be bought and swapped out between flights, while used batteries are recharged.
+
+\subsubsection{Foam model} \label{sec:design-process:revised-design:electronics:foam-model}
+
+\importimage{bixler}{image of the Bixler 3 RC plane.}{Bixler model}{0.5}
+
+Before the electronics were to be flown on the UAV they needed to be tested.
+There was thorough testing of the electronics out of the aircraft first, but in order to be deemed flight worthy it needed to be tested in the air in a sacrificial flight vehicle.
+
+The foam model selection was based on the constraints of the fuselage size required to fit all of the electronics inside, keeping the cost as low as possible, and having an aircraft that could be flown by the members of the project, with little to no flying experience.
+The fuselage needed to be able to fit all of the necessity electronics: battery, ESC (which, in this case, was not stored in the PUC), receiver, Arduino, Matek, and GPS.
+
+The optimal model was therefore a beginners' plane that had excess fuselage space, and so the Bixler 3 was chosen for its large internal cavities including an empty nose, giving ample room for the necessary components.
+Furthermore, the plane is designed for beginners and so has a large surface area wing for low speed flying, high mounted wings for stability, a rear-facing motor and propeller above the fuselage to remove them from harm's way in the event of a crash, and a strengthened fuselage belly to act as a skid if the landing gear comes off in a particularly heavy landing.
+All of this made it ideal for this use case.
 
 \end{document}
