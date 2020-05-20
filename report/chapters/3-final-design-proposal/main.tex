@@ -430,25 +430,29 @@ The efficiency of the UAV is to be measured by repeatedly sampling the current d
 Maintaining this as a cumulative total means it can easily be stored in RAM and downloaded to a computer when the UAV touches down via a serial port.
 Because of the miniscule processing requirement of this task and its small size, an Arduino Nano is recommended as the microcontroller of choice.
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{electronics-housing}
-        \caption{Housing bay}
-        \label{fig:electronics-subsystem:bay}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{electronics-exploded}
-        \caption{Subsystem, exploded}
-        \label{fig:electronics-subsystem:exploded}
-    \end{subfigure}
-    
-    \caption{renders of the key parts of the electronics subsystem.}
-    \label{fig:electronics-subsystem}
-\end{figure} 
+\importimage{electronics-housing}{Electronics housing bay.}{electronics-subsystem:bay}{0.7}
+
+\importimage{electronics-exploded}{View of electronics subsystem}{electronics-subsystem:exploded}{0.9}
+
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}[b]{0.7\columnwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{electronics-housing}
+%        \caption{Housing bay}
+%        \label{fig:electronics-subsystem:bay}
+%    \end{subfigure}
+%    \hfill
+%    \begin{subfigure}[b]{0.9\columnwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{electronics-exploded}
+%        \caption{Subsystem, exploded}
+%        \label{fig:electronics-subsystem:exploded}
+%    \end{subfigure}
+%    
+%    \caption{renders of the key parts of the electronics subsystem.}
+%    \label{fig:electronics-subsystem}
+%\end{figure} 
 
 The majority of the electronics subsystem is housed inside a removable electronics bay within the fuselage (Figure \ref{fig:electronics-subsystem}).
 Each component of the subsystem was chosen in part for its sleek profile, which means the tray can be removed by sliding it out; this allows quick and easy access to the microcontroller $-$ for data retrieval $-$ and the avionics battery $-$ for recharging $-$ between runs.
