@@ -1,5 +1,23 @@
 \documentclass[../main.tex]{subfiles}
 
+% Image file name, textwidth multiplier
+\newcommand{\appendiximage}[2]{
+    \begin{figure}[H]
+        \begin{center}
+        \includegraphics[width=#2\columnwidth]{#1}
+        \end{center}
+    \end{figure}
+}
+
+% Heading, contents
+\newcommand{\appendixtable}[2]{
+    \begin{table}[H]
+        \begin{tabular}{#1}
+            #2
+        \end{tabular}
+    \end{table}
+}
+
 \begin{document}
 
 \chapter*{Appendices} \label{chapter:appendices}
@@ -9,16 +27,9 @@
 \setcounter{section}{0}
 \renewcommand*{\theHsection}{chX.\the\value{section}}
 
-\section{Nomenclature} \label{appendix:nomenclature}
-
-\importtable{l l}{
-    \cl & Lift coefficient \\
-    \cd & Drag coefficient \\
-}{}{}
-
 \section{Abbreviations} \label{appendix:abbreviations}
 
-\importtable{l l}{
+\appendixtable{l l}{
     UAV & Unmanned aerial vehicle \\
     ELMO & Electric modular \\
     GDP & Group design project \\
@@ -28,11 +39,176 @@
     CNC & Computer numerical control \\
     PUC & Power unit cell \\
     CG & Centre of gravity \\
+    LE & Leading edge \\
+    AC & Aerodynamic centre \\
     IMU & Inertial measurement unit \\
-}{}{}
+    HLD & High lift device \\
+}
+
+\section{Parameters} \label{appendix:parameters}
+
+\appendixtable{l l}{
+    $A$ & Aspect ratio \\
+    $\alpha$ & Angle of attack, normally defined relative to the zero lift line \\
+    $b$ & Span \\
+    $c$ & Chord length \\
+    $C_\mathrm{D}$ & Drag coefficient \\
+    $C_\mathrm{L}$ & Lift coefficient \\
+    $C_\mathrm{M}$ & Moment coefficient \\
+    $C\mathrm{n}$ & Control derivative coefficient \\
+    $\delta$ & Control surface deflection \\
+    $e$ & Oswald span efficiency \\
+    $\epsilon$ & Downwash \\
+    $\eta$ & Efficiency \\
+    $F$ & Frictional force \\
+    $g$ & Gravitational acceleration \\
+    $h$ & Distance between LE and CG as a proportion of $c$ \\
+    $h_0$ & Distance between AC and CG as a proportion of $c$ \\
+    $I$ & Mass moment of inertia \\
+    $K$ & Induced drag factor \\
+    $l$ & Moment arm length \\
+    $L$ & Lift force \\
+    $m$ & Mass \\
+    $M$ & Moment \\
+    $n$ & Load factor \\
+    $P$ & Roll rate \\
+    $\phi$ & Bank angle \\
+    $q$ & Dynamic pressure \\
+    $\rho$ & Density of air \\
+    $S$ & Planform area \\
+    $T$ & Thrust force \\
+    $t$ & Time \\
+    $\tau$ & Angle of attack effectiveness \\
+    $\theta$ & Generic angle \\
+    $V$ & Velocity \\
+    $\overline{V}$ & Volume coefficient \\
+    $W$ & Weight \\
+    $w$ & Height \\
+    $x$ & Roll axis \\
+    $y$ & Pitch axis \\
+    $z$ & Yaw axis \\
+    $\lambda$ & Taper ratio \\
+}
+
+\section{Subscripts} \label{appendix:subscripts}
+
+\appendixtable{l l}{
+    0 & Relating to the zero lift condition \\
+    0L & Relating to the zero lift line \\
+    a & Relating to aileron control surfaces \\
+    AC & Relating to the AC of the lifting surface \\
+    approach & Relating to the approach of the aircraft \\
+    c & Relating to the aircraft in cruise \\
+    D & Relating to drag value or centre of action \\
+    e & Relating to elevator control surfaces \\
+    f & Relating to flap HLDs \\
+    F & Relating to the fuselage \\
+    h & Relating to the horizontal stabiliser \\
+    i & Relating to the inboard location of a surface \\
+    L & Relating to the lift of a surface \\
+    M & Relating to the pitch moment of the aircraft \\
+    MAC & Related to the mean aerodynamic chord of a surface \\
+    mg & Relating to the main gear \\
+    n & Relating to the control derivative of a surface \\
+    NoHLDs & Relating to the surface area of surface with no trailing edge taken up by control surfaces or HLDs \\
+    o & Relating to the outboard location of a surface \\
+    r & Relating to the rudder \\
+    SS & In a steady state condition \\
+    T & Relating to the thrust or thrust centre of action \\
+    TO & Relating to the takeoff condition \\
+    v & Relating to the vertical stabiliser \\
+    W or none & Relating to the wing \\
+    WF & Relating to the combined wing and fuselage \\
+    WT & Relating to the combined wing and tail \\
+    yy & Relating to action about the pitch axis \\
+    zz & Relating to axis about the yaw axis \\
+    $\alpha$ & Denotes a derivative wrt. angle of attack \\
+    $\delta$ & Denotes a derivative wrt. a control surface deflection \\
+}
 
 \section{Calculation process for initial parameter selection} \label{appendix:calculation-process-for-initial-parameter-selection}
 
-% TODO: import pictures from appendix B
+Motor, battery, and ESC selection:
+
+\appendiximage{motor-battery-esc-selection-table}{0.95}
+
+Propeller selection:
+
+\appendiximage{propeller-selection-table}{0.95}
+
+\section{Initial project plan} \label{appendix:initial-project-plan}
+
+\appendiximage{initial-project-plan}{0.95}
+
+\section{Uncertainty analysis tables} \label{appendix:uncertainty-analysis-tables}
+
+Uncertainty calculation table for \cd:
+
+\appendiximage{uncertainty-table-a}{0.95}
+
+Uncertainty calculation table for lift:
+
+\appendiximage{uncertainty-table-b}{0.95}
+
+Uncertainty calculation table for $C_\mathrm{PM}$:
+
+\appendiximage{uncertainty-table-c}{0.95}
+
+\section{Initial constraint analysis} \label{appendix:initial-constraint-analysis}
+
+Function used to form an early estimate of the cruise velocity:
+
+\begin{lstlisting}[language=python,firstnumber=1]
+import numpy as np
+
+
+def v_cruise():
+    mass_kg = 7
+    lift_n = 9.81 * mass_kg
+    cl = np.random.normal(0.8, 0.1)
+    ar = np.random.normal(10, 1)
+    b = np.random.normal(1.8, 0.2)
+    s = (b ** 2) / ar
+    return np.sqrt(lift_n / (0.5 * 1.225 * s * cl))
+\end{lstlisting}
+
+Function used to form an early estimate of the cruise power:
+
+\begin{lstlisting}[language=python,firstnumber=1]
+import numpy as np
+
+
+def power():
+    efficiency = np.random.normal(0.6, 0.1)
+    mass_kg = 7
+    lift_n = 9.81 * mass_kg
+    v_cruise = np.random.normal(21, 0.5)
+    cl = np.random.normal(0.8, 0.1)
+    s = lift_n / (0.5 * 1.225 * (v_cruise ** 2) * cl)
+    cd = np.random.normal(0.1, 0.02)
+    drag = 0.5 * 1.225 * (v_cruise ** 2) * s * cd
+    return drag * (v_cruise / efficiency)
+\end{lstlisting}
+
+\section{XFOIL code for hinge moment determination} \label{appendix:xfoil-code}
+
+\begin{lstlisting}[language=python,firstnumber=1]
+XFOIL c> NACA6412 (for wing, NACA0018 for tail surfaces) 
+XFOIL c> GDES 
+.GDES c> flap 
+Enter flap hinge x location r> [hinge location value] 
+Enter flap hinge y location (or 999 to specify y/t) r> 999 
+Enter flap hinge relative y/t location r> 0.5 
+Enter flap deflection in degrees (+ down) r> [flap or control surface deflection value] 
+.GDES c> eXec 
+.GDES c> {ENTER} 
+XFOIL c> oper 
+.OPERi c> r [Reynolds number value] 
+.OPERi c> m [Mach number value] 
+.OPERi c> visc 
+.OPERv c> iter [iteration count, 250 used] 
+.OPERv c> alfa [lifting surface incidence] 
+.OPERv c> fmom 
+\end{lstlisting}
 
 \end{document}
