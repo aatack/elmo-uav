@@ -99,6 +99,8 @@ At takeoff speed of \mps{13}, flaps deployed at \degr{20} incidence and \degr{5}
 
 Simulating the interaction between the airframe and the flow arriving from the propeller required more computational power due to the use of a rotating reference frame.
 This tool allows the recreation of the rotation of the propeller by imposing a rotating flow domain within the free moving flow domain.
+A separate cylindrical domain is created around the propeller, the diameter of this is set as twice the one of the propeller.
+Furthermore it extends both forward and backwards of the propeller by \pc{25} of its diameter.
 This method was first verified against the results gathered from the propeller wind tunnel test.
 A difference of \pc{10} was observed from the real results for the case of \mps{15} wind speed and 11500 RPM, with residuals on the order of $10^{-5}$.
 This difference can be attributed, in part, to the inaccuracies present in the CAD model of the propeller due to the lack of accurate data describing its geometry.
@@ -108,7 +110,7 @@ A simulation recreating the conditions described in \cite{kroo-86}, where the pr
 
 % \importimage{propellor-flow}{propellor flow structure.}{Propellor flow}{0.3}
 % \importimage{trailing-edge-flow}{flow quality at the trailing edge during takeoff.}{Trailing edge flow}{0.3}
-% \importimage{flap-flow}{flow behaviour with flaps deployed at 30 degrees incidence.}{Flap flow behaviour}{0.3}
+% \importimage{flap-flow}{flow behaviour with flaps deployed at 20 degrees incidence.}{Flap flow behaviour}{0.3}
 
 \begin{figure}[H]
 

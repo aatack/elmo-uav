@@ -11,7 +11,7 @@
 
 The wing assembly was designed to be unfastened from the fuselage assembly with ease.
 Such a decision was established so as to reduce the encumbrance of the UAV during transportation.
-The wing assembly is comprised of two carbon spars placed respectively at quarter and half chord, and extending for the entire \metres{2} wingspan, each half of the wing containing three ribs (Figure \ref{fig:ribs}).
+The wing assembly is comprised of two carbon spars placed respectively at quarter and half chord, and extending for the entire \metres{2} wingspan, each half of the wing containing three ribs (Figure \ref{fig:ribs}) REFER TO `wing-exploded-assy'.
 These ribs fulfil multiple functions in the wing assembly and will be discussed in further detail later.
 The use of profiles carved out of blue styrofoam (extruded polystyrene) provide a lightweight structure for the aerodynamic profiles such as flaps, aileron, and wing itself.
 A hollow profile also allows the fitting of wires in the wing structure.
@@ -139,14 +139,15 @@ Furthermore, as will be discussed in more detail later, the housing for the acti
 A nylon printed mounting plate is located at the centre of the wing assembly and is tightly mounted to the wing spars so as to guarantee a rigid support.
 The wing assembly is then clamped onto the fuselage attachment plate by four M6 bolts.
 These are positioned at the corners of the 3D printed plate as shown in Figure \ref{fig:wing-assembly}.
-A styrofoam cover placed on top of the mounting plate is responsible for the blending of the wing assembly with the rest of the fuselage. 
+A styrofoam cover placed on top of the mounting plate is responsible for the blending of the wing assembly with the rest of the fuselage.
 
 \importimage{wing-assembly}{exploded view of the wing assembly attachment procedure}{Wing assembly attachment}{0.8}
 
 The two cylinders housing the carbon spars (Figure \ref{fig:wing-plate:cad}) ensure an even distribution of the loads though a large area.
-This is essential since this component is subject to the entirety of the load transferring from the wing to the fuselage and vice versa.
+This is essential since this component is subject to the entirety of the vertical loads transferring from the wing to the fuselage and vice versa.
 Extensive work was therefore conducted using finite element analysis to generate a reliable and light design.
-The peak loading for this component was established to be $4g$, simulating an abrupt increase in lift as in Figure \ref{fig:wing-plate:fea}, and producing the optimal design that was eventually used. 
+The wing's mounitng plate was designed to withstand loads up to $4g$, simulating an abrupt increase in lift as in Figure \ref{fig:wing-plate:fea}; thus, producing the optimal design that was eventually used.
+Furthermore, this component ensures the passing of the wires necessary for the functioning of the components mounted in the wing assembly.
 
 % \importimage{wing-plate-cad}{CAD representation of the wing mounting plate.}{Wing mounting plate CAD}{0.6}
 % \importimage{wing-plate-fea}{stress concentration due to an applied load of 275 N.}{Wing mounting plate FEA}{0.6}
@@ -180,7 +181,8 @@ The peak loading for this component was established to be $4g$, simulating an ab
 
 The main focus for the design of the UAV's fuselage was to provide a reliable and simple platform for the experiments.
 The concept for the design of the fuselage revolved around the idea of providing easy access to the electronics.
-Changing the motor configuration multiple times demands the ability to check and modify the electronics with ease in order to proceed with the experiments in a smooth manner.
+Considering that for each wing position, four different layouts are available, it is of great importance developing a design which enables to check and add modifications to the electronics with ease.
+Thus, permitting a smooth operations of all the planned tests.
 The design therefore presents a large electronics tray placed in the lower section of the fuselage, shown in purple in Figure \ref{fig:fuselage-inner-structure}.
 This can be accessed through the removal of the UAV's nose.
 
