@@ -86,11 +86,10 @@ The chord length was initially at \cm{25}, closer to the desired aspect ratio of
 Concerns regarding the size of flaps and ailerons were raised, however, as a significant amount of the wingspan would be lost to the motor housing units, so the chord length was increased to \cm{30} as a compromise.  
 
 Once a wing shape had been decided, a more detailed analysis of possible aerofoil sections took place.
-Initial 2D simulations were run on XFLR \cite{xflr-19} to narrow the choice down to five aerofoils.
-The analysis was run at a Reynolds number of \stdf{1.35}{6}, calculated using standard atmospheric conditions at a cruise speed of \mps{20} and a reference length on XFLR of \metres{1}. 
-
+Initial 2D simulations were run on XFLR5 \cite{xflr-19} to narrow the choice down to five aerofoils.
+The analysis was run at a Reynolds number of \stdf{1.35}{6}, calculated using standard atmospheric conditions at a cruise speed of \mps{20} and a reference length on XFLR5 of \metres{1}, tits default setting.
 Although the purpose of the project was to improve the efficiency of electric aircraft by altering the position of the propulsion units, the aim was not to produce the most efficient aircraft; moreso a test craft which can be reused to run experiments at a lower cost than a wind tunnel.
-Therefore, when choosing the aerofoil, the main considerations where not only $L/D$ but also stall angle, maximum \cl, and moment coefficient, amongst others.
+Therefore, when choosing the aerofoil, the main considerations where not only $L/D$ but also stall angle, maximum \cl, and moment coefficient, amongst others. to narrow down the required analysis, aerofoils were chosen which had been recommended during research, either in papers, or on model enthusiast websites.
 The analysis narrowed down to four potential aerofoils: the Clark Y, S1223, NACA6412, RG15A213, whose coordinates were taken from Airfoil Tools \cite{airfoil-tools-19}.
 Figure \ref{fig:alpha-characteristics} shows the \cl, \cl$/$\cd, and \cm\, curves respectively for four suitable aerofoils. 
 
@@ -129,7 +128,7 @@ Initial designs included a square, circular, and aerofoil-shaped fuselage.
 
 \importimage{potential-aerofoil-design}{potential aerofoil fuselage design.}{Potential aerofoil design}{0.5}
 
-For the wind tunnel model, it was decided that a hybrid of a square fuselage and an aerofoil shaped fuselage would be beneficial.
+For the wind tunnel model, it was decided that a hybrid of a square fuselage and an aerofoil shaped fuselage, similar to that seen in (REFERENCE - Improved Aerodynamic Characteristics of Aerofoil shaped Fuselage than that of the Conventional Cylindrical Shaped Fuselage - G.M Jahangir Alam, M. Mamun, A.K.M Sadrul Islam), would be beneficial.
 It was thought that a side profile of a NACA0012 aerofoil would reduce drag and increase lift, whilst a square front section would make manufacturing easier.
 This would give a combination of aerodynamic design and ease of manufacturing.  
 The NACA0012 was chosen as a suitable aerofoil as it would provide enough height to hold all of the electronics, as well as enough room to reach inside if needed. 
@@ -137,7 +136,7 @@ The initial fuselage design was \metres{1.5} long, with a width of \mm{175} and 
 
 \subsection{Tail} \label{sec:design-process:preliminary-design:tail}
 
-Note that for many of the tail and control surface mathematical design processes, details of the equations used are unnecessary for understanding; but for the interested reader can been found in the appendices. 
+Note that for many of the tail and control surface mathematical design processes, details of the equations used are unnecessary for understandng; but for the interested reader can been found in the appendices. 
 
 The tail was designed with a volume coefficient process.
 First, volume coefficients were estimated from Table 9.4 in Raymer \cite{raymer-89}, and a value of 0.8 was selected for the horizontal and 0.07 for the vertical tail volume.
@@ -266,7 +265,7 @@ After analysis of thrust data, the 8x6E was chosen to be used in a motor and pro
 The fuselage was designed around a hollow \metres{1} long and \mm{20} square aluminium boom as its core structural element.
 Around the boom was a foam and poplar plywood structure, similar to the wing. 
 
-The driving force behind the fuselage design was the need to be able to change the setting angle of the wing with ease.
+The driving force behind the fuselage design was the need to be able to change the setting angle of the wing between tests with ease.
 As a result, the metal boom was fixed to four layers of poplar ply ribs which ran the length of the fuselage. 
 
 To allow the wing setting angle to be changed easily, three sets of holes ran through the fuselage.
@@ -696,7 +695,9 @@ The forwardmost centre of gravity (CG) meant $x=150\,\mathrm{mm}$ and $y=765\,\m
 The rearmost CG led to $x=200\,\mathrm{mm}$ and $y=815\,\mathrm{mm}$; the maximum static loadings for this condition are \newtons{55.13} and \newtons{13.53} over the front and rear wheels respectively.
 Based on these calculations, a load of \newtons{57.4} and \newtons{13.53} were used in future calculations and analyses. 
 
-A vertical velocity of \mps{3} was assumed to be an aggressive landing velocity in the hands of a competent pilot and so was used in calculation to ensure the landing gear would be strong enough to withstand multiple rough landings.
+That landing gear was designed to survive a ‘worst case scenario’.
+If an issue were to occur during flight, the plane could still be controlled to a safe landing, if this was unable to happen, it was predicted that the UAV would not necessarily land on its landing gear.
+Therefore, even during a failure, a vertical landing velocity of \mps{3} would be considered excessively large.
 Using Newton's $2^\mathrm{nd}$ law, and an assumed impact time of 0.5 seconds, the maximum force of the UAV would be equal to \newtons{42}, meaning a total force of \newtons{110.67} on landing.
 Since most UAVs land with their main wheels touching down first, the main landing gear must absorb the majority of the load: from previous calculations, the main gear should withstand \newtons{99.4}.  
 
@@ -747,6 +748,7 @@ FEA was carried out on the design and small changes were made until an optimal d
     \caption{progression of the main gear design.}
     \label{fig:main-gear-progression}
 \end{figure}
+
 
 \subsection{Nose} \label{sec:design-process:revised-design:nose}
 

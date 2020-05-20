@@ -316,6 +316,56 @@ It can be seen in Figure \ref{fig:landing-leg-simulaion} that the peak loads exp
 It can also be seen that the peak stress on the landing gear brackets is around 100 MPa, below the yield stress of around 270 MPa of the aluminium from which they are made.
 With the scale modified to a reduced upper bound, the stresses on the other parts can be seen, with the peak stress experienced by the landing gear mounts seen as around 10 MPa, which is far below the yield stress of carbon fibre and so $-$ although the properties of carbon fibre sandwich panel are varied $-$ this is not close to failure. 
 
+<<<<<<< HEAD
+=======
+\section{Landing gear} \label{sec:final-design-proposal:landing-gear}
+
+Using a similar process to that used in the original tail wheel design, it was calculated that the main landing gear would experience up to \newtons{105.8} on landing.  % TODO: add section reference if reordered
+The main gear in the final design proposal is located behind the centre of gravity, behind the internal electronics.
+This, along with a redesigned fuselage means the landing gear could be designed as a single part and attached easily to the bottom of the fuselage. 
+
+% \importimage{main-gear-design}{main gear design.}{Main gear design}{0.4}
+\importimage{main-gear-fea}{main gear FEA stress results.}{Main gear FEA}{0.6}
+
+The main shape of the design remains unchanged from the initial design, and is a similar design to that seen on many small UAVs which is simple, easy to implement, and robust.
+The final design is expected to experience a maximum stress of 92.5 MPa on a rough landing, and is manufactured from carbon fibre because it can be manufactured cheaply in university workshops and has a high strength to weight ratio.
+The final design has a maximum thickness of \mm{6} at the top where it joins the fuselage, narrowing to \mm{4} by the wheels.
+The depth remained constant at \mm{65}, with a wheelbase of \mm{490} and a height of \mm{220} to avoid hitting the under-rudder on takeoff.
+The redesigned fuselage structure with two lower plates means that the landing gear can easily be mounted to the fuselage using two M4 bolts. 
+
+Eventually, a landing gear model very similar to the one described here was found online and purchased instead of manufacturing one from scratch; this was found to be more time- and cost-effective.
+
+\importimage{landing-gear-join}{landing gear joining mechanism.}{Landing gear joining mechanism}{0.6}
+
+The nose gear was chosen at the recommendation of the project co-supervisor and is the same as the one used on the SPOTTER aircraft \cite{spotter-19}, a \kg{24} split fuselage UAV.
+It is easy to implement into the nose and is steerable, while also being cheap, lightweight, and strong. 
+
+\section{Nose} \label{sec:final-design-proposal:nose}
+
+The final design of the nose incorporates a steerable landing gear.
+This part of the design was carefully considered throughout the design process, but only fully implemented after the landing gear design had been finalised. 
+
+% \importimage{steerable-gear}{integration of the steerable nose gear.}{Steerable nose gear}{0.7}
+
+Figure \ref{fig:nose-design:steerable-nose-gear} shows how the nose gear is incorporated within the vent design.
+The nose gear is secured using two collars, one above and one below the thicker part of the nose, with the top of the nose gear sitting flush with the top of the battery tray.
+An extra collar is used to secure the servo arm in place.
+The servo arm is attached to the servo via two springs, which alleviate impacts and prevent the nose from rapid direction changes due to bumps.
+The servo is bolted onto the battery tray, to one side, to allow space for the battery tray to be removed. 
+
+As mentioned during the analysis of the landing gear, depending on the configuration, the landing gear will have to withstand a force of up to around \newtons{35} on landing.
+Therefore, further FEA was carried out on the nose.
+The results (Figure \ref{fig:nose-connection-fea}) show a moderate level of stress on the wall at the bottom of the vent, although this was about half of the perceived yield strength of the SLS nylon which is to be used. 
+
+\importimage{nose-connection-fea}{FEA on nose and landing gear connection.}{Nose connection FEA}{0.7}
+
+When the nose motor is not needed it can be removed and replaced with a small insert.
+The hollow insert is to be 3D printed on the university 3D printer using PLA as it is not a structural component.
+It was designed to be screwed in in the same manner as the motor. 
+
+\importimage{nose-motor-filler}{nose motor filler.}{Nose motor filler}{0.5}
+
+>>>>>>> edits-tc
 \section{Tail} \label{sec:final-design-proposal:tail}
 
 % TODO: rewrite this? To describe the final tail design?
