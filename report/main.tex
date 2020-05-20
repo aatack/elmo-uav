@@ -136,25 +136,27 @@
 \end{titlepage}
 
 \begin{multicols*}{3}
+
+\begingroup
+\let\clearpage\relax
+
+\chapter*{Abstract}
+
+Optimisation algorithms which are often used in engineering are not well suited to avoiding specific disallowed solutions such as those with degenerate geometries.
+This project introduces an adaptation of the generative adversarial network architecture in which a discriminator is trained to determine the viability of solutions, and a generator is trained to sample from a range of solutions that satisfy the discriminator.
+The architecture of the generator is also adapted so that its output can be parameterised by a constraint describing the space of viable solutions.
+In so doing, a latent space parameterised by a constraint vector is learned, allowing optimisation algorithms to explore only those solutions which will satisfy the constraint.
+
+Promising results are obtained, showing that the generator is capable of learning effective mappings that satisfy a range of constraints, including equality constraints.
+Some limitations of the proposed architecture are also explored, and the reasons behind them identified for improvement by future work.
+
 \columnbreak
-\begin{abstract}
-    Optimisation algorithms which are often used in engineering are not well suited to avoiding specific disallowed solutions such as those with degenerate geometries.
-    This project introduces an adaptation of the generative adversarial network architecture in which a discriminator is trained to determine the viability of solutions, and a generator is trained to sample from a range of solutions that satisfy the discriminator.
-    The architecture of the generator is also adapted so that its output can be parameterised by a constraint describing the space of viable solutions.
-    In so doing, a latent space parameterised by a constraint vector is learned, allowing optimisation algorithms to explore only those solutions which will satisfy the constraint.
 
-    Promising results are obtained, showing that the generator is capable of learning effective mappings that satisfy a range of constraints, including equality constraints.
-    Some limitations of the proposed architecture are also explored, and the reasons behind them identified for improvement by future work.
-\end{abstract}
-\end{multicols*}
-
-\begin{multicols*}{2}
 \tableofcontents
-\end{multicols*}
+\endgroup
 
-\begin{multicols*}{3}
 
-\subfile{nomenclature/main}
+
 \subfile{chapters/0-introduction/main}
 \subfile{chapters/1-design-specification/main}
 \subfile{chapters/2-design-process/main}
@@ -173,5 +175,7 @@
 
 \begin{multicols*}{2}
 \subfile{appendix/main}
+
 \end{multicols*}
+
 \end{document}
