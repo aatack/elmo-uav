@@ -13,7 +13,7 @@
 To size the propulsion systems, initial analysis was conducted by estimating a number of design and environment parameters, using a normal distribution around each one to form a distribution of the most likely power requirement.
 From this, early estimates of crucial parameters such as motor power, wingspan, and aspect ratio could be made.
 
-The cruise speed was estimated using preliminary values of mass, \cl, aspect ratio, and span.
+The cruise speed was estimated using preliminary values of mass - 7kg, \cl - 0.8, aspect ratio - 10, and span - 1.8m.
 The function is shown in Appendix \ref{appendix:calculation-process-for-initial-parameter-selection}.
 This function could then be used to form a probability distribution, shown in Figure \ref{fig:cruise-distribution:velocity}, and hence the most likely value of the cruise velocity based on the estimated values.
 It was found that the mean and median both have values of approximately \mps{21}, and so this was taken as the estimated cruise velocity during the initial phases of the project. 
@@ -47,7 +47,7 @@ There is more uncertainty in power than \vcruise\, due to the larger range of va
 \subsection{Further constraint analysis} \label{sec:design-process:preliminary-design:further-constraint-analysis}
 
 Using the refined parameters found in \S \ref{sec:design-process:preliminary-design:operation-and-initial-constraint-analysis}, design decisions made, and further analysis of the UAV, the constraint analyses were combined to show all parts of the flight profile and hence find the minimum power requirement.
-This code gave more refined estimates for the power requirement in different areas of the flight envelope, as well as takeoff speed, which could be updated quickly and easily as design decisions were made and various operational parameters were refined.
+This code, based in ADRpy [REF Dr Andras Sobester, ADRpy, available at https://pypi.org/project/ADRpy/] gave more refined estimates for the power requirement in different areas of the flight envelope, using the parameters shown in (Appendix \ref{appendix:full-constraint-analysis-parameters}), as well as takeoff speed, which could be updated quickly and easily as design decisions were made and various operational parameters were refined.
 Figure \ref{fig:constraint-analysis} shows the final plots after all research and design decisions were made.
 
 % \importimage{full-constraint-analysis}{full constraint analysis plot with feasible region highlighted.}{Full constraint analysis}{0.85}
@@ -237,7 +237,7 @@ On the final design for the tail there is a full routing designed for the wires 
 \subsubsection{Sizing} \label{sec:design-process:preliminary-design:propulsion:sizing}
 
 Initial sizing started from the constraint analysis' power requirement estimations, allowing motors to be selected.
-The constraint analysis at this point suggested a power requirement of around \watts{600}, and so motors of around this power were researched from a recommended supplier Outlander, and a number of suitable cost-effective motors were found for both the fuselage and wing locations, as listed in Figure \ref{fig:unknown}.  % TODO: find needed figure
+The constraint analysis at this point suggested a power requirement of around \watts{600}, and so motors of around this power were researched from a recommended supplier Outlander, and a number of suitable cost-effective motors were found for both the fuselage and wing locations.
 These were then used to find suitable ESCs, which were recommended for the motors as \amps{60} and \amps{30}, but due to this being the most common part to fail on previous projects due to overloading, a decision was made to oversize the ESCs by \pc{30} and so \amps{40} and \amps{80} ESCs were selected.
 The batteries were then chosen based on the voltage and current requirements of the motors, meaning that they needed to be 4S to provide the required \volts{14.8}, and the capacity initially chosen simply on weight and cost, with the largest capacity shown being the heaviest that could be used.
 The C value is used to find the maximum current output of the battery and so this was chosen to ensure a large safety margin between the maximum of the battery and the maximum of the motor, reducing any chance of the battery overheating while in use. 
@@ -247,7 +247,7 @@ This meant that the battery capacities could be checked for time of flight based
 While this is an overestimate, it gives a useful conservative estimation of the flight time.
 This showed that the smaller capacity batteries would not be enough to provide a flight time suitable for recording the needed data while having a margin in the battery to avoid a power cut-out mid-flight.
 
-Along with finalising the battery selection, the propellers could now be researched as shown in Figure \ref{fig:unknown}.
+Along with finalising the battery selection, the propellers could now be researched.
 This initially required the maximum propeller diameter to be found for the motors, based on the max RPM of the motor, which would give a Mach number of the propeller of around 0.7, which would maximise thrust without having large increases in power requirement due to transonic effects at the blade tip.
 This was then used to refine an iterative search of the available propellers from APC, a manufacturer trusted by the university.
 The advance ratio was found based on the blade diameter, RPM, and a target maximum flight speed of \mps{25}, and then a suitable propeller was found in the database that had a power draw similar to that of the maximum of the motor at the target flight speed and RPM, while providing enough thrust based on estimations of the aircraft drag.
@@ -461,7 +461,7 @@ The drag data will now rely on CFD and additional wind tunnel tests for clarific
 
 Figure \ref{fig:wind-tunnel-results:wing-setting-angle} shows the results from the initial test carried out, where the setting angle of the two wings were found by increasing the angle of the wing against the fuselage until the lift exceeded the target weight of \newtons{70} at the target cruise speed of \mps{20}.
 This graph shows that the NACA6412 exceeded this lift at \degr{1}, and so was set at \degr{2} for the rest of the test to give a margin as the final wing is expected to produce slightly less lift due to the attachment of the propulsion units.
-The Clark Y exceeded the required lift at around \degr{3} and so was set at \degr{4} for the same reason. 
+The Clark Y exceeded the required lift at around \degr{3} and so was set at \degr{4} for the same reason.  The differences in lift are due to the higher camber on the NACA aerofoil.
 
 Figures \ref{fig:wind-tunnel-results:lift-comparison} and \ref{fig:wind-tunnel-results:drag-comparison} show the comparison between the NACA6412 and Clark Y wings through a full sweep of angle of attack.
 At this point the wings were set at their optimal angles, and so the whole model was moved through the range of angles of attack to give the data.
@@ -470,9 +470,9 @@ This is one of the reasons the NACA6412 was chosen as the aerofoil for the final
 It can also be seen that the Clark Y has a higher \cd\, at all angles of attack, and so is less efficient than the NACA6412.
 
 Figures \ref{fig:wind-tunnel-results:naca-lift-coefficient} through \ref{fig:wind-tunnel-results:cl-against-cd} show the plots for the wind tunnel model equipped with the NACA6412 at a range of airspeeds, showing the performance throughout the target flight envelope of the UAV.
-Figure \ref{fig:wind-tunnel-results:naca-lift-coefficient} shows that the \cl\, remains almost constant as the airspeed changes and that, as expected, there are no compressibility effects as these speeds.
-Figure \ref{fig:wind-tunnel-results:naca-drag-coefficient} shows that the \cd\, reduces with the increase in airspeed, which is due to the reduction of lift induced drag at higher speeds.
-Figure \ref{fig:wind-tunnel-results:cl-against-cd} shows that the highest aerodynamic efficiency is therefore found at the highest tested speed of \mps{22}, and although this speed is above the targeted cruise speed of the UAV, one can conclude that to maximise range the UAV should be flown as fast as possible. 
+Figure \ref{fig:wind-tunnel-results:naca-lift-coefficient} shows that the \cl\, remains almost constant as the airspeed changes and that, as expected, there are no compressibility effects as these speeds. The slight differences are due to changes in the boundary layer development at the different Reynolds numbers
+Figure \ref{fig:wind-tunnel-results:naca-drag-coefficient} shows that the \cd\, reduces with the increase in airspeed, which is due to the variation of $C_\mathrm{D,0}$ and $C_\mathrm{D,i}$ with airspeed.
+Figure \ref{fig:wind-tunnel-results:cl-against-cd} shows that the highest aerodynamic efficiency is therefore found at the highest tested speed of \mps{22}, and although this speed is above the targeted cruise speed of the UAV, one can conclude that to maximise range the UAV should be flown above the intended cruise speed. 
 
 Figures \ref{fig:wind-tunnel-results:flap-drag-comparison} and \ref{fig:wind-tunnel-results:flap-lift-comparison} show the results of the flap test that was performed with the NACA6412 wing.
 Figure \ref{fig:wind-tunnel-results:flap-drag-comparison} shows the increase in \cd\, that comes with each increment of the flap angle, while Figure \ref{fig:wind-tunnel-results:flap-lift-comparison} shows that the \cl\, increases significantly with the flaps activated but that the variation of the flap angle has little to no effect on the increase in \cl.
@@ -482,7 +482,7 @@ The wing had not stalled at this point and so there was the possibility that the
 Even so, it became clear that the design of the flaps needed to be modified to improve their effectiveness, and also that the area of the wing used for the flaps should be increased in order to maximise their effectiveness. 
 
 The wind tunnel test also provided data for the pitching moment about the aerodynamic centre of the wing, as shown in Figure \ref{fig:wind-tunnel-results:moment-coefficients}, which gives an insight into the aerodynamic stability of the model and the pitching moment developed by the wing.
-The data show that the coefficient of pitching moment is independent of airspeed is negative at \degr{0} angle of attack, which is less than ideal since it implies that the aircraft would want to pitch down, requiring the pilot to trim the model or use constant elevator in order to fly level.
+The data show that the coefficient of pitching moment is independent of airspeed and is negative at \degr{0} angle of attack, which is less than ideal since it implies that the aircraft would be trimmed at \degr{-3} angle of attack corresponding to higher than the intended cruise speed, thus requiring the pilot to trim the model or use constant elevator in order to fly level at any cruise speed or slower.
 The negative gradient of the line on the plot is good, however, as it implies that the aircraft is aerodynamically statically stable in pitch, so any pitching up of the aircraft would produce an increase in the pitching down moment and the aircraft would automatically stabilise.
 Furthermore, with an adjustment to the tailplane, the magnitude of the pitching moment could be made zero at \degr{0} angle of attack by producing a counteracting moment with an angled tailplane, meaning that the pilot would not need to trim the aircraft to the same extent. 
 
@@ -534,7 +534,7 @@ Because of this, little work went into analysing the results from this test in t
 \importimage{motor-bracket}{the motor bracket attached to the rear of the motor.}{Motor bracket}{0.5}
 \importimage{motor-test}{the motor in the wind tunnel.}{Motor test}{0.5}
 
-Once the motor and propeller selection had been completed based on wind tunnel results and propeller performance analysis, one of the wing motors was ordered with its tractor configuration propeller in order to test them together.
+Once the motor and propeller selection had been completed based on wind tunnel results and propeller performance analysis (\ref{sec:design-process:preliminary-design:propulsion:sizing}), one of the wing motors was ordered with its tractor configuration propeller in order to test them together.
 This test was to be performed in a small wind tunnel so as to give data for the motor in flight as well as a static thrust test.
 The motor mount was a load cell located at the centre of the wind tunnel section, as shown in Figure \ref{fig:motor-test}, and to attach the motor a bracket was required.
 The main part of this bracket had already been made for the testing of a different motor by the university, and so only a small plate was required to mount the purchased motor to the existing setup.
@@ -542,14 +542,14 @@ This mount was made from aluminium sheet to fit to the back of the motor and mou
 It required some precision marking and drilling for the outer holes as there were tight tolerances on the bracket to which it was to attach, while the motor holes could be slightly less precise due to the countersunk bolts holding it in place.
 A central clearance hole was required to allow the motor shaft to pass through into the void created by the existing bracket, to avoid the motor shaft hitting the load cell.
 
-The tests carried out were at wind speeds of \mps{0}, \mps{10}, and \mps{15}, and at each wind speed the voltage was held at around \volts{14.9} $-$ representing a partially drained battery $-$ and the current was varied from \amps{0} to \amps{22}, giving a range of RPM at which the thrust and torque data were collected, up to a maximum power of \watts{330}.
+The tests carried out were at wind speeds of \mps{0}, \mps{10}, and \mps{15}, and at each wind speed the voltage was held at around \volts{14.85} +/- \volts{0.05} $-$ representing a partially drained battery $-$ and the current was varied from \amps{0} to \amps{22}, giving a range of RPM at which the thrust and torque data were collected, up to a maximum power of \watts{330}.
 The RPM was measured from the input to the motor, rather than directly from the blades, because the blades of the propeller were too short to reach in front of the laser.
-Nevertheless, this RPM data were accurate enough for this experiment.
+Nevertheless, this RPM data was accurate to within 100RPM which was adequate for this experiment.
 
-The load cell used to mount the motor formed a blockage in the wake of the propeller, and so while this will have affected the results, the effect of this was reduced as much as possible by minimising the size of the manufactured bracket.
+The load cell used to mount the motor formed a blockage in the wake of the propeller, and so while this will have affected the results, the effect of this was minimised by minimising the size of the manufactured bracket.
 Furthermore, the motor $-$ when attached to the model $-$ would have the blockage of the wing and the power unit housing behind it, so this effect could be a good representation of the motor in flight.
 In order to maximise the performance of the propeller, it was sanded before the test to remove any manufacturing defects and to ensure a smooth surface for the airflow.
-The propeller was balanced by the manufacturer, and during the test showed no significant signs of imbalance, with the output data remaining smooth throughout the test showing no signs of large vibrations. 
+The propeller was balanced by the manufacturer, and during the test showed no signs of imbalance, with the output data remaining smooth throughout the test showing no signs of large vibrations. 
 
 \subsubsection{Results and analysis} \label{sec:design-process:interim-design-review:motor-and-propellor-test:results-and-analysis}
 

@@ -50,7 +50,7 @@ This decision was taken since this one is the heaviest configuration, presenting
 Figure \ref{fig:puc-locations} shows all possible configurations of PUCs, with each side of the table as each side of the wing, except for D and E which are the fuselage locations.
 Blue areas show where both wings have the same configuration and so data can be recorded for that overall layout during a flight with that configuration; green is the initial configurations that would be tested in a knockout format in order to minimise the number of flights required to find the best configuration with the D and E calls as green/blue because they are in both; red is repeats of the lower half of the matrix; and black is for impossible configurations due to both being fuselage locations.
 It should be noted that D and E cannot be doubled up either, so where D is on both wings, that is a configuration of only one motor on the nose and the same for E.
-There are however configurations where a fuselage motor is combined with a wing motor: this would create an unstable aircraft so in these cases the wing motor would be applied to both wings and the UAV would be flown with three motors, the fuselage motor acting as a safety backup in the case of a wing motor failing.
+There are however configurations where a fuselage motor is combined with a wing motor: this would create an unbalanced aircraft due to an off centre CofG so in these cases the wing motor would be applied to both wings and the UAV would be flown with three motors, the fuselage motor acting as a safety backup in the case of a wing motor failing.
 
 \importimage{knockout-table}{knockout table for determining the best configuration with minimal runs.}{Knockout table}{0.8}
 
@@ -154,6 +154,7 @@ With a larger budget, more nylon could be used to print the aircraft, thereby ke
 The final budget is shown in Figure \ref{fig:budget} and it shows costs that were realised in black text, and items that were budgeted for but were never bought due to the university shutdown in blue text.
 The budget was maximised as much as possible in order to cover the costs of the 3D printing, but the 3D printing budget itself was not fully accounted for, with over £85 remaining, due to the limitations on suppliers of nylon-printed parts, which increased that part's cost by around \pc{100} for Nylon SLS parts; and more for ABS or PLA parts.
 This meant that other parts could not be made using this budget as they would go overbudget, and there was no option of supplementing the costs from another part of the funding.
+
 The university funding was fully allocated, with much of the spending being on parts and supplies for the wind tunnel model, with the carbon fibre parts ordered just before the university shutdown while it was still thought that the building of the final flight model would be possible.
 The external funding is also fully accounted for, with the parts ordered being the initial purchases for the electronics of the flight model, along with the expendable flight vehicle that was to be used for testing of the avionics and autopilot. 
 

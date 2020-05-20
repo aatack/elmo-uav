@@ -243,13 +243,13 @@ The carbon fibre sandwich panels bulkheads were designed in the same manner as t
 
 \importimage{carbon-fibre-sandwich}{CAD representation of the carbon fibre sandwich panel components.}{Carbon fibre sandwich}{0.5}
 
-\subsection{Finite element analysis} \label{sec:final-design-proposal:fuselage:finite-element-analysis}
+\subsection{Fuselage Structural Analysis} \label{sec:final-design-proposal:fuselage:finite-element-analysis}
 
 In order to verify the strength of the design and identify any weak points, some FEA was carried out using the simulation function in SolidWorks.
-This is a fairly basic FEA system and can only use coarse meshes $-$ otherwise the simulations fail $-$ but it gives a good indication of the strong and weak areas of the fuselage design.
+This is a fairly basic FEA system and can only use coarse meshes $-$ otherwise the simulations fail due to too many cells $-$ but it gives a good indication of the strong and weak areas of the fuselage design.
 The materials of the parts of the fuselage were all specified and the data for those materials applied as accurately as possible in order to ensure the parts' relative strengths were reflected in the simulations.
 The model was stripped down to the minimum components required to perform the simulations in order to save computational time and simplify the simulations.
-Initially a simulation was run to test the effects of high turning loads, with the main tail boom fixed in place as the reference point of the study, with loads of \newtons{210} applied vertically upwards on the wing spar holes in the wing mount, and \newtons{80} applied vertically down on the component tray.
+Initially a simulation was run to test the effects of high turning loads, with the main tail boom fixed in place as the reference point of the study, with loads of \newtons{210} applied vertically upwards on the wing spar holes in the wing mount, and \newtons{80} applied vertically down on the component tray, with the loads experienced by the nose and tail neglected for simplicity to focus purely on the central fuselage section.
 These loads were chosen to simulate $3g$ loads in a turn, with the mass of the components assumed to be evenly distributed over the tray.
 Figure \ref{fig:fuselage-stress-distribution} shows the results.
 
@@ -268,7 +268,7 @@ The forces applied are \newtons{350} vertically up and \newtons{105} horizontall
 
 It can be seen in Figure \ref{fig:landing-leg-simulaion} that the peak loads experienced by the landing gear are around 260 MPa, which is below the yield stress of the carbon fibre as previously stated, and although it is nearing the yield stress, this is an extreme case of a particularly heavy landing and so a heavier landing than this would not be expected unless it occurs in a crash landing scenario (in which case the UAV's survival can never be guaranteed).
 It can also be seen that the peak stress on the landing gear brackets is around 100 MPa, below the yield stress of around 270 MPa of the aluminium from which they are made.
-With the scale modified to a reduced upper bound, the stresses on the other parts can be seen, with the peak stress experienced by the landing gear mounts seen as around 10 MPa, which is far below the yield stress of carbon fibre and so $-$ although the properties of carbon fibre sandwich panel are varied $-$ this is not close to failure. 
+With the scale modified to a reduced upper bound, the stresses on the other parts can be seen, with the peak stress experienced by the landing gear mounts seen as around 10 MPa, which is 50x below the yield stress of carbon fibre and so $-$ although the properties of carbon fibre sandwich panel are varied $-$ this is not close to failure. 
 
 \section{Landing gear} \label{sec:final-design-proposal:landing-gear}
 
