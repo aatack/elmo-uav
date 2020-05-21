@@ -108,6 +108,83 @@
     $\delta$ & Denotes a derivative wrt. a control surface deflection \\
 }
 
+\section{Calculation process for elevator deflection angles} \label{appendix:elevator-deflection}
+
+Rearrangement process to determine elevator deflection angles provided by Prof. Towell (Towell, 2019):
+
+Beginning with a moment balance about the centre of gravity:
+
+\importequation{
+	L(h-h_0)c+Tz_T+M=L_hl	
+	}{moment-balance-towell}
+
+Which becomes:
+	
+\importequation{
+	qSC_L(h-h_0)c+Tz_T+qScC_{M_0}=qS_hlC_{L_h}
+}{moment-balance-rearranged-towell}
+	
+Rearrange for $C_{L_h}$:
+
+\importequation{
+	C_{L_h}=\frac{qSC_L(h-h_0)c+Tz_T+qScC_{M_0}
+	}{qS_hl}
+}{CLT_rearrange-towell}
+	
+Then performing analysis of vertical equilibrium:
+
+\importequation{
+	l+L_h=nW
+}{vert-force-balance-towell}
+	
+Rearranging: 
+
+\importequation{
+q(C_LS+S_hC_{L_h})=nmg
+}{vert-balance-rearranged-towell}
+	
+Substituting for $C_{L_h}$ and simplifying:
+
+\importequation{
+	qSC_L+\frac{qSC_L(h-h_0)c+Tz_T+qScC_{M_0}}{l}=nmg
+}{substitution-towell}
+
+Rearranging for q:
+
+\importequation{
+	q=\frac{nmgl-Tz_T}{SC_Ll+SC_L(h-h_0)c+ScC_{M_0}}
+}{q-towell}
+	
+Now since $q=1/2\rho V^2$, and $C_L=C_{L_\alpha}  \alpha$, this can be substituted for q and $C_L$, rearranged for $\alpha$ and simplified (n excluded as flying in cruise condition, so n = 1):
+
+\importequation{
+	\alpha = \frac{2(mgl-Tz_T)V^{-2}-cC_{M_0}}{\rho S C_{L_\alpha}(h-h_0)c}
+}{alpha-towell}
+
+With $\alpha$ found, it can be used to find the tail lift coefficient for that particular speed:
+
+\importequation{
+	C_{L_h}=\frac{qSC_L(h-h_0)c+Tz_T +qScC_{M_0}}{qS_hl}
+}{new-CLh-towell}
+
+\importequation{
+	=\frac{C_{L_\alpha}\alpha(h-h_0)+\frac{Tz_T}{qSc}+C_{M_0}}{\frac{S_hl}{SC}}
+}{clt-rearrangement-2-towell}
+	   	
+Now $\frac{S_h  l}{S c}=\bar{V}_h$, so this becomes (final form of $C_{L_h}$):
+
+\importequation{
+	C_{L_h}=\frac{C_{L_\alpha}\alpha(h-h_0)+\frac{Tz_T}{qSc}+C_{M_0}}{\bar{V}_h}
+}{Final-clt-towell}
+	
+With this the elevator deflection can finally be calculated using:
+
+\importequation{
+	\delta =\frac{C_{L_h}}{C_{L_{{\alpha}_h}}}-\alpha (1-{\epsilon}_\alpha)-{\epsilon}_0-\frac{{\alpha}_h}{{\tau}_e}
+}{elevator-deflection-towell}
+	
+This can then be converted to degrees.
+
 \section{Calculation process for initial parameter selection} \label{appendix:calculation-process-for-initial-parameter-selection}
 
 Motor, battery, and ESC selection:

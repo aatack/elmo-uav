@@ -401,6 +401,18 @@ Figure \ref{fig:wind-tunnel-results:naca-lift-coefficient} shows that the \cl\, 
 Figure \ref{fig:wind-tunnel-results:naca-drag-coefficient} shows that the \cd\, reduces with the increase in airspeed, which is due to the variation of $C_\mathrm{D,0}$ and $C_\mathrm{D,i}$ with airspeed.
 Figure \ref{fig:wind-tunnel-results:cl-against-cd} shows that the highest aerodynamic efficiency is therefore found at the highest tested speed of \mps{22}, and although this speed is above the targeted cruise speed of the UAV, one can conclude that to maximise range the UAV should be flown above the intended cruise speed. 
 
+Figures \ref{fig:wind-tunnel-results:flap-drag-comparison} and \ref{fig:wind-tunnel-results:flap-lift-comparison} show the results of the flap test that was performed with the NACA6412 wing.
+Figure \ref{fig:wind-tunnel-results:flap-drag-comparison} shows the increase in \cd\, that comes with each increment of the flap angle, while Figure \ref{fig:wind-tunnel-results:flap-lift-comparison} shows that the \cl\, increases significantly with the flaps activated but that the variation of the flap angle has little to no effect on the increase in \cl.
+This suggests that the flaps are stalling at \degr{30}, and so the flap angle to be used in the final model was chosen to be \degr{30}.
+Figure \ref{fig:wind-tunnel-results:30-degree-flap-lift} shows that the lift increase was not enough to provide the required lift at the target takeoff and landing speed of \mps{12}, with the maximum lift produced being just under \newtons{60} at \degr{10}.
+The wing had not stalled at this point and so there was the possibility that the wing could produce more lift at a higher angle of attack, though this could not be tested as \degr{10} was the highest wing-body angle that could be reached.
+Even so, it became clear that the design of the flaps needed to be modified to improve their effectiveness, and also that the area of the wing used for the flaps should be increased in order to maximise their effectiveness. 
+
+The wind tunnel test also provided data for the pitching moment about the aerodynamic centre of the wing, as shown in Figure \ref{fig:wind-tunnel-results:moment-coefficients}, which gives an insight into the aerodynamic stability of the model and the pitching moment developed by the wing.
+The data show that the coefficient of pitching moment is independent of airspeed and is negative at \degr{0} angle of attack, which is less than ideal since it implies that the aircraft would be trimmed at \degr{-3} angle of attack corresponding to higher than the intended cruise speed, thus requiring the pilot to trim the model or use constant elevator in order to fly level at any cruise speed or slower.
+The negative gradient of the line on the plot is good, however, as it implies that the aircraft is aerodynamically statically stable in pitch, so any pitching up of the aircraft would produce an increase in the pitching down moment and the aircraft would automatically stabilise.
+Furthermore, with an adjustment to the tailplane, the magnitude of the pitching moment could be made zero at \degr{0} angle of attack by producing a counteracting moment with an angled tailplane, meaning that the pilot would not need to trim the aircraft to the same extent. 
+
 \newcommand{\multiimagewidth}{0.4}
 
 \begin{figure}[H]
@@ -473,18 +485,6 @@ Figure \ref{fig:wind-tunnel-results:cl-against-cd} shows that the highest aerody
     \caption{graphical results of the analysis of data gathered during the wind tunnel test.}
     \label{fig:wind-tunnel-results}
 \end{figure}
-
-Figures \ref{fig:wind-tunnel-results:flap-drag-comparison} and \ref{fig:wind-tunnel-results:flap-lift-comparison} show the results of the flap test that was performed with the NACA6412 wing.
-Figure \ref{fig:wind-tunnel-results:flap-drag-comparison} shows the increase in \cd\, that comes with each increment of the flap angle, while Figure \ref{fig:wind-tunnel-results:flap-lift-comparison} shows that the \cl\, increases significantly with the flaps activated but that the variation of the flap angle has little to no effect on the increase in \cl.
-This suggests that the flaps are stalling at \degr{30}, and so the flap angle to be used in the final model was chosen to be \degr{30}.
-Figure \ref{fig:wind-tunnel-results:30-degree-flap-lift} shows that the lift increase was not enough to provide the required lift at the target takeoff and landing speed of \mps{12}, with the maximum lift produced being just under \newtons{60} at \degr{10}.
-The wing had not stalled at this point and so there was the possibility that the wing could produce more lift at a higher angle of attack, though this could not be tested as \degr{10} was the highest wing-body angle that could be reached.
-Even so, it became clear that the design of the flaps needed to be modified to improve their effectiveness, and also that the area of the wing used for the flaps should be increased in order to maximise their effectiveness. 
-
-The wind tunnel test also provided data for the pitching moment about the aerodynamic centre of the wing, as shown in Figure \ref{fig:wind-tunnel-results:moment-coefficients}, which gives an insight into the aerodynamic stability of the model and the pitching moment developed by the wing.
-The data show that the coefficient of pitching moment is independent of airspeed and is negative at \degr{0} angle of attack, which is less than ideal since it implies that the aircraft would be trimmed at \degr{-3} angle of attack corresponding to higher than the intended cruise speed, thus requiring the pilot to trim the model or use constant elevator in order to fly level at any cruise speed or slower.
-The negative gradient of the line on the plot is good, however, as it implies that the aircraft is aerodynamically statically stable in pitch, so any pitching up of the aircraft would produce an increase in the pitching down moment and the aircraft would automatically stabilise.
-Furthermore, with an adjustment to the tailplane, the magnitude of the pitching moment could be made zero at \degr{0} angle of attack by producing a counteracting moment with an angled tailplane, meaning that the pilot would not need to trim the aircraft to the same extent. 
 
 The uncertainty of the results was calculated and is shown as vertical bars for every point on the plots in Figure \ref{fig:wind-tunnel-results}.
 The uncertainties were calculated using the known accuracies of the recorded results, as well as repeats performed during the testing.
@@ -825,6 +825,26 @@ The inner component would be secured to the fuselage at all times, and the front
 The inner part would be secured to the boom using a clamping mechanism, originally devised for the landing gear, via three M3 bolts located underneath the boom.
 The outer part would then twist into the inner part and be locked in place using two M3 bolts. 
 
+% \importimage{nose-inner-section}{inner section of the nose.}{Nose inner section}{0.7}
+
+The inner part would had a \mm{1} wall thickness, supported by \mm{5} deep and \mm{3} wide support structures common on 3D printed UAV components as they are such a light way of increasing strength.
+The clamping system was supported by a web-like structure.
+The battery tray and ESC compartment were given a small redesign, with two larger vents channelling airflow to the ESC.
+The steerable landing gear were also incorporated into the design, through the air vents. 
+
+% \importimage{nose-outer-section}{outer section of the nose.}{Nose outer section}{0.7}
+
+The outer section would be held in place via a twist and lock system.
+To remove the front section, two screws would be removed from the side of the nose; the front would then twist anticlockwise and be removed.
+Once removed, the electronics inside could be easily removed over the battery tray.
+The motor could easily be removed via four screws located towards the front of the nose and replaced by a 3D printed part for aerodynamic purposes when the nose motor is not in use.
+The motor mount area was also lightened, with similar structural supports on the \mm{1} outer wall. 
+
+FEA was carried out on the outer section to ensure it was strong enough to support the fuselage.
+Figure \ref{fig:outer-nose-fea} shows a \newtons{140} force applied to the locking tabs.
+For SLS nylon the yield strength was set at 60 Mpa.
+With the \newtons{140} load applied, however, the maximum stress reached was 5.582 MPa, resulting in a maximum displacement of \mm{0.1}. 
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.6\columnwidth}
@@ -852,27 +872,7 @@ The outer part would then twist into the inner part and be locked in place using
     \label{fig:nose-design}
 \end{figure} 
 
-% \importimage{nose-inner-section}{inner section of the nose.}{Nose inner section}{0.7}
-
-The inner part would had a \mm{1} wall thickness, supported by \mm{5} deep and \mm{3} wide support structures common on 3D printed UAV components as they are such a light way of increasing strength.
-The clamping system was supported by a web-like structure.
-The battery tray and ESC compartment were given a small redesign, with two larger vents channelling airflow to the ESC.
-The steerable landing gear were also incorporated into the design, through the air vents. 
-
-% \importimage{nose-outer-section}{outer section of the nose.}{Nose outer section}{0.7}
-
-The outer section would be held in place via a twist and lock system.
-To remove the front section, two screws would be removed from the side of the nose; the front would then twist anticlockwise and be removed.
-Once removed, the electronics inside could be easily removed over the battery tray.
-The motor could easily be removed via four screws located towards the front of the nose and replaced by a 3D printed part for aerodynamic purposes when the nose motor is not in use.
-The motor mount area was also lightened, with similar structural supports on the \mm{1} outer wall. 
-
 \importimage{outer-nose-fea}{FEA on the outer nose join.}{Nose join FEA}{0.7}
-
-FEA was carried out on the outer section to ensure it was strong enough to support the fuselage.
-Figure \ref{fig:outer-nose-fea} shows a \newtons{140} force applied to the locking tabs.
-For SLS nylon the yield strength was set at 60 Mpa.
-With the \newtons{140} load applied, however, the maximum stress reached was 5.582 MPa, resulting in a maximum displacement of \mm{0.1}. 
 
 \subsection{Tail} \label{sec:design-process:revised-design:tail}
 
