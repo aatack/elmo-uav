@@ -379,82 +379,6 @@ Once a suitable amount of data were collected, similar sweeps of the parameter s
 
 \subsubsection{Results and analysis} \label{sec:design-process:interim-design-review:wind-tunnel-test:results-and-analysis}
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{wing-setting-angle}
-        \caption{Wing setting angle}
-        \label{fig:wind-tunnel-results:wing-setting-angle}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{lift-comparison}
-        \caption{Lift comparison}
-        \label{fig:wind-tunnel-results:lift-comparison}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{drag-comparison}
-        \caption{Drag comparison}
-        \label{fig:wind-tunnel-results:drag-comparison}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{naca-lift-coefficient}
-        \caption{NACA lift coefficient}
-        \label{fig:wind-tunnel-results:naca-lift-coefficient}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{naca-drag-coefficient}
-        \caption{NACA drag coefficient}
-        \label{fig:wind-tunnel-results:naca-drag-coefficient}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{cl-against-cd}
-        \caption{\cl\, against \cd}
-        \label{fig:wind-tunnel-results:cl-against-cd}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{flap-drag-comparison}
-        \caption{Flap drag comparison}
-        \label{fig:wind-tunnel-results:flap-drag-comparison}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{flap-lift-comparison}
-        \caption{Flap lift comparison}
-        \label{fig:wind-tunnel-results:flap-lift-comparison}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{30-degree-flap-lift}
-        \caption{30$^o$ flap lift}
-        \label{fig:wind-tunnel-results:30-degree-flap-lift}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{moment-coefficients}
-        \caption{Moment coefficients}
-        \label{fig:wind-tunnel-results:moment-coefficients}
-    \end{subfigure}
-
-    \caption{graphical results of the analysis of data gathered during the wind tunnel test.}
-    \label{fig:wind-tunnel-results}
-\end{figure}
-
 The results from the wind tunnel test required considerable post-processing before analysis could be carried out, but once this was complete the graphs could be made and the results easily analysed.
 There was a significant problem when the correction for the drag of the mounting structure, used to hold the model in the wind tunnel, was implemented because it caused some of the drag results to be negative.
 The drag data were therefore unreliable, but the trends seen in the results could still be useful.
@@ -474,6 +398,79 @@ Figures \ref{fig:wind-tunnel-results:naca-lift-coefficient} through \ref{fig:win
 Figure \ref{fig:wind-tunnel-results:naca-lift-coefficient} shows that the \cl\, remains almost constant as the airspeed changes and that, as expected, there are no compressibility effects as these speeds. The slight differences are due to changes in the boundary layer development at the different Reynolds numbers
 Figure \ref{fig:wind-tunnel-results:naca-drag-coefficient} shows that the \cd\, reduces with the increase in airspeed, which is due to the variation of $C_\mathrm{D,0}$ and $C_\mathrm{D,i}$ with airspeed.
 Figure \ref{fig:wind-tunnel-results:cl-against-cd} shows that the highest aerodynamic efficiency is therefore found at the highest tested speed of \mps{22}, and although this speed is above the targeted cruise speed of the UAV, one can conclude that to maximise range the UAV should be flown above the intended cruise speed. 
+
+\newcommand{\multiimagewidth}{0.4}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{wing-setting-angle}
+        \caption{Wing setting angle}
+        \label{fig:wind-tunnel-results:wing-setting-angle}
+    \end{subfigure}
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{lift-comparison}
+        \caption{Lift comparison}
+        \label{fig:wind-tunnel-results:lift-comparison}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{drag-comparison}
+        \caption{Drag comparison}
+        \label{fig:wind-tunnel-results:drag-comparison}
+    \end{subfigure}
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{naca-lift-coefficient}
+        \caption{NACA lift coefficient}
+        \label{fig:wind-tunnel-results:naca-lift-coefficient}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{naca-drag-coefficient}
+        \caption{NACA drag coefficient}
+        \label{fig:wind-tunnel-results:naca-drag-coefficient}
+    \end{subfigure}
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{cl-against-cd}
+        \caption{\cl\, against \cd}
+        \label{fig:wind-tunnel-results:cl-against-cd}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{flap-drag-comparison}
+        \caption{Flap drag comparison}
+        \label{fig:wind-tunnel-results:flap-drag-comparison}
+    \end{subfigure}
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{flap-lift-comparison}
+        \caption{Flap lift comparison}
+        \label{fig:wind-tunnel-results:flap-lift-comparison}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{30-degree-flap-lift}
+        \caption{30$^o$ flap lift}
+        \label{fig:wind-tunnel-results:30-degree-flap-lift}
+    \end{subfigure}
+    \begin{subfigure}[b]{\multiimagewidth\columnwidth}
+        \centering
+        \includegraphics[width=\textwidth]{moment-coefficients}
+        \caption{Moment coefficients}
+        \label{fig:wind-tunnel-results:moment-coefficients}
+    \end{subfigure}
+
+    \caption{graphical results of the analysis of data gathered during the wind tunnel test.}
+    \label{fig:wind-tunnel-results}
+\end{figure}
 
 Figures \ref{fig:wind-tunnel-results:flap-drag-comparison} and \ref{fig:wind-tunnel-results:flap-lift-comparison} show the results of the flap test that was performed with the NACA6412 wing.
 Figure \ref{fig:wind-tunnel-results:flap-drag-comparison} shows the increase in \cd\, that comes with each increment of the flap angle, while Figure \ref{fig:wind-tunnel-results:flap-lift-comparison} shows that the \cl\, increases significantly with the flaps activated but that the variation of the flap angle has little to no effect on the increase in \cl.
