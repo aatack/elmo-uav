@@ -47,7 +47,7 @@ There is more uncertainty in power than \vcruise\, due to the larger range of va
 \subsection{Further constraint analysis} \label{sec:design-process:preliminary-design:further-constraint-analysis}
 
 Using the refined parameters found in \S \ref{sec:design-process:preliminary-design:operation-and-initial-constraint-analysis}, design decisions made, and further analysis of the UAV, the constraint analyses were combined to show all parts of the flight profile and hence find the minimum power requirement.
-This code, based in ADRpy [REF Dr Andras Sobester, ADRpy, available at https://pypi.org/project/ADRpy/] gave more refined estimates for the power requirement in different areas of the flight envelope, using the parameters shown in (Appendix \ref{appendix:full-constraint-analysis-parameters}), as well as takeoff speed, which could be updated quickly and easily as design decisions were made and various operational parameters were refined.
+This code, based in ADRpy \cite{sobester}, gave more refined estimates for the power requirement in different areas of the flight envelope, using the parameters shown in (Appendix \ref{appendix:initial-constraint-analysis}), as well as takeoff speed, which could be updated quickly and easily as design decisions were made and various operational parameters were refined.
 Figure \ref{fig:constraint-analysis} shows the final plots after all research and design decisions were made.
 
 % \importimage{full-constraint-analysis}{full constraint analysis plot with feasible region highlighted.}{Full constraint analysis}{0.85}
@@ -490,7 +490,7 @@ Furthermore, with an adjustment to the tailplane, the magnitude of the pitching 
 The uncertainty of the results was calculated and is shown as vertical bars for every point on the plots in Figure \ref{fig:wind-tunnel-results}.
 The uncertainties were calculated using the known accuracies of the recorded results, as well as repeats performed during the testing.
 The maximum number of repeats for one test was only two, and so while the sample size is not significant, the uncertainties are still reasonably small even with a \pc{95.45} confidence.
-These uncertainties were then converted to percentages and applied to all results of that type, with an example table for the uncertainty of \cl\, shown in Table \ref{tbl:cl-uncertainty}, and the others provided in Appendix \ref{appendix:unknown}.  % TODO: find appendix reference 
+These uncertainties were then converted to percentages and applied to all results of that type, with an example table for the uncertainty of \cl\, shown in Table \ref{tbl:cl-uncertainty}, and the others provided in Appendix \ref{appendix:uncertainty-analysis-tables}.
 
 % TODO: units
 % TODO: define uncertainty and variance outside table

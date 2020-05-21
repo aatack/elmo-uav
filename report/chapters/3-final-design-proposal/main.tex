@@ -314,12 +314,10 @@ The forces applied are \newtons{350} vertically up and \newtons{105} horizontall
 \importimage{landing-leg-simulation}{simulated stress distribution over one of the landing legs.}{Landing leg simulation}{0.4}
 \importimage{fuselage-landing-simulation}{stress distribution over the fuselage during a simulated landing.}{Fuselage landing simulation}{0.6}
 
-It can be seen in Figure \ref{fig:landing-leg-simulaion} that the peak loads experienced by the landing gear are around 260 MPa, which is below the yield stress of the carbon fibre as previously stated, and although it is nearing the yield stress, this is an extreme case of a particularly heavy landing and so a heavier landing than this would not be expected unless it occurs in a crash landing scenario (in which case the UAV's survival can never be guaranteed).
+It can be seen in Figure \ref{fig:landing-leg-simulation} that the peak loads experienced by the landing gear are around 260 MPa, which is below the yield stress of the carbon fibre as previously stated, and although it is nearing the yield stress, this is an extreme case of a particularly heavy landing and so a heavier landing than this would not be expected unless it occurs in a crash landing scenario (in which case the UAV's survival can never be guaranteed).
 It can also be seen that the peak stress on the landing gear brackets is around 100 MPa, below the yield stress of around 270 MPa of the aluminium from which they are made.
 With the scale modified to a reduced upper bound, the stresses on the other parts can be seen, with the peak stress experienced by the landing gear mounts seen as around 10 MPa, which is 50x below the yield stress of carbon fibre and so $-$ although the properties of carbon fibre sandwich panel are varied $-$ this is not close to failure. 
 
-<<<<<<< HEAD
-=======
 \section{Landing gear} \label{sec:final-design-proposal:landing-gear}
 
 Using a similar process to that used in the original tail wheel design, it was calculated that the main landing gear would experience up to \newtons{105.8} on landing.  % TODO: add section reference if reordered
@@ -367,7 +365,6 @@ It was designed to be screwed in in the same manner as the motor.
 
 \importimage{nose-motor-filler}{nose motor filler.}{Nose motor filler}{0.5}
 
->>>>>>> edits-tc
 \section{Tail} \label{sec:final-design-proposal:tail}
 
 % TODO: rewrite this? To describe the final tail design?
@@ -506,7 +503,7 @@ Because of the miniscule processing requirement of this task and its small size,
 %    \label{fig:electronics-subsystem}
 %\end{figure} 
 
-The majority of the electronics subsystem is housed inside a removable electronics bay within the fuselage (Figure \ref{fig:electronics-subsystem}).
+The majority of the electronics subsystem is housed inside a removable electronics bay within the fuselage (Figure \ref{fig:electronics-housing}).
 Each component of the subsystem was chosen in part for its sleek profile, which means the tray can be removed by sliding it out; this allows quick and easy access to the microcontroller $-$ for data retrieval $-$ and the avionics battery $-$ for recharging $-$ between runs.
 In principle, data can be downloaded from the microcontroller and the avionics battery can be swapped out in less time than it takes to swap the PUCs, thereby ensuring that the avionics is not the throttling factor for the effectiveness of the UAV's modularity.
 
